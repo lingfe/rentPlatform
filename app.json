@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/personal/personal",
+    "pages/crowdFunding/crowdFunding",
+    "pages/message/message",
+    "pages/pageJie/pageJie"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "租(Zu)平台",
+    "navigationBarBackgroundColor": "#14BAC8",
+    "backgroundColor": "#f8f8f8",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#C4C4C4",
+    "backgroundColor": "#fff",
+    "selectedColor": "#5E7E88",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "广场",
+        "iconPath": "assets/images/index1.png",
+        "selectedIconPath": "assets/images/index0.png"
+      },
+      {
+        "pagePath": "pages/pageJie/pageJie",
+        "text": "借(Jie)",
+        "iconPath": "assets/images/yz0.png",
+        "selectedIconPath": "assets/images/yz1.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "assets/images/user_1.jpg",
+        "selectedIconPath": "assets/images/user_0.jpg"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "connectSocket": 10000,
+    "uploadFile": 150000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
