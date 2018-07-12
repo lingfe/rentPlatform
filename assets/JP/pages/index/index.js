@@ -7,13 +7,12 @@ Page( {
     // 轮播
     index_index_scroll_tmpl: {
       images: [
-        'https://hamlet.b0.upaiyun.com/1609/19171/2788065f96c04ad38c8db50ad723bc37.jpg!/fwfh/640x352/quality/80',
-        'https://hamlet.b0.upaiyun.com/1609/23150/4cc74e62833e4cdaaec79f3a2ef256e5.jpg!/fwfh/640x352/quality/80',
-        'https://hamlet.b0.upaiyun.com/1609/23150/4cc74e62833e4cdaaec79f3a2ef256e5.jpg!/fwfh/640x352/quality/80',
-        'https://hamlet.b0.upaiyun.com/1609/20180/934270f1be264c63bfaf85b37e545928.jpg!/fwfh/640x352/quality/80',
-        'https://hamlet.b0.upaiyun.com/1609/20171/77f7a3c93fd641bf95150501ef9a7cad.jpg!/fwfh/640x352/quality/80',
-        'https://hamlet.b0.upaiyun.com/1609/19171/2788065f96c04ad38c8db50ad723bc37.jpg!/fwfh/640x352/quality/80',
-        'https://hamlet.b0.upaiyun.com/1609/23171/70065cf9e45d46729ca51dec55d5f650.jpg!/fwfh/640x352/quality/80'
+        'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg' ,
+        'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1014232293,2284254085&fm=27&gp=0.jpg' ,
+        'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=177115290,3045947945&fm=27&gp=0.jpg',
+        'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3681281193,2494981497&fm=200&gp=0.jpg' ,
+        'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2826092681,3423904438&fm=27&gp=0.jpg' ,
+        'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=373006437,3401320826&fm=27&gp=0.jpg' ,
       ],
       indicatorDots: true,
       vertical: false,
@@ -25,17 +24,17 @@ Page( {
     index_index_navs_tmpl: {
       navs: [
         {
-          image: 'https://m.youcai.xin/static/img/gravida.png',
-          text: '大米'
+          image: 'https://www.easyicon.net/api/resizeApi.php?id=539128&size=128',
+          text: '房源'
         }, {
-          image: 'https://m.youcai.xin/static/img/confinement.png',
-          text: '蔬菜'
+          image: 'https://www.easyicon.net/api/resizeApi.php?id=1131628&size=128',
+          text: '渔具'
         }, {
-          image: 'https://m.youcai.xin/static/img/baby.png',
-          text: '配料'
+          image: 'https://www.easyicon.net/api/resizeApi.php?id=26029&size=128',
+          text: '游戏'
         }, {
-          image: 'https://m.youcai.xin/static/img/old.png',
-          text: '生鲜'
+          image: 'https://www.easyicon.net/api/resizeApi.php?id=1181411&size=128',
+          text: '其他'
         }
       ]
     },
@@ -43,14 +42,13 @@ Page( {
     // item
     index_index_items_tmpl: {
       items: [
-        {image: 'https://hamlet.b0.upaiyun.com/1609/22111/fe8765fa7f2f48cd87760c10ddd20ae6.jpg'},
-        {image: 'https://hamlet.b0.upaiyun.com/1609/22111/84439174cad04497beda3a076663beb4.jpg'},
-        {image: 'https://hamlet.b0.upaiyun.com/1609/22111/1987d8eb8b1748368b7f2382332c9718.jpg'},
-        {image: 'https://hamlet.b0.upaiyun.com/1609/22111/fe8765fa7f2f48cd87760c10ddd20ae6.jpg'},
-        {image: 'https://hamlet.b0.upaiyun.com/1609/22111/fe8765fa7f2f48cd87760c10ddd20ae6.jpg'},
-        {image: 'https://hamlet.b0.upaiyun.com/1609/22111/fe8765fa7f2f48cd87760c10ddd20ae6.jpg'},
-        {image: 'https://hamlet.b0.upaiyun.com/1609/22111/fe8765fa7f2f48cd87760c10ddd20ae6.jpg'},
-        {image: 'https://hamlet.b0.upaiyun.com/1609/22111/fe8765fa7f2f48cd87760c10ddd20ae6.jpg'}
+        { image:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3274478057,3381509204&fm=27&gp=0.jpg'},
+        { image:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg'},
+        { image:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1014232293,2284254085&fm=27&gp=0.jpg'},
+        { image: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=177115290,3045947945&fm=27&gp=0.jpg'},
+        { image: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3681281193,2494981497&fm=200&gp=0.jpg'},
+        { image: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2826092681,3423904438&fm=27&gp=0.jpg'},
+        { image:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=373006437,3401320826&fm=27&gp=0.jpg'},
       ]
     }
     
