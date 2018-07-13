@@ -12,7 +12,7 @@
 
     <view class="text">
         <view class="line_y"></view>
-        <text>平台直租</text>
+        <text>官方直租</text>
     </view>
 
     <template is="index_index_items_tmpl" data="{{...index_index_items_tmpl}}"/>

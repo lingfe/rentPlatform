@@ -13,7 +13,7 @@
 <!--index_index_navs-->
 <template name="index_index_navs_tmpl">
   <block wx:for="{{navs}}" wx:key="item.id">
-    <view class="l-c-c" catchtap="go" data-type="{{item.text}}">
+    <view class="l-c-c" catchtap="go" data-type="{{item.url}}">
       <image src="{{item.image}}" class="slide-image"/>
       <text>{{item.text}}</text>
     </view>

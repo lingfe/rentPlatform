@@ -1,0 +1,145 @@
+<view>
+    <scroll-view scroll-y="true" bindscrolltolower="loadList" class="layout">
+
+        <!-- list start -->
+        <navigator  class="hot-item-box" url="/pages/flashRent/flashRentDetailed/flashRentDetailed">
+            <view class="hot-item-top">
+                <view class="hot-img">
+                    <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg"></image>
+                </view>
+                
+                <view class="hot-item-top-right">
+                    <text class="hot-item-title">新货3m钓鱼竿</text>
+                    <view class="hot-item-price">3人想租 ¥18/月 </view>
+                    <view class="hot-item-No-time-box">
+                        <view class="hot-item-No">仅差<text class="text-red">3</text>人</view>
+                        <view class="hot-item-No">原价<text class="text-red">180.00</text></view>
+                        <view class="hot-item-time">刚刚</view>
+                    </view>
+                </view>
+            </view>
+            
+            <view class="hot-item-btm">
+                <view class="hot-item-user-box">
+                    <view  class="hot-item-user-img">
+                        <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg"></image>
+                    </view>
+                    <view  class="hot-item-user-img">
+                        <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg"></image>
+                    </view>
+                    <view  class="hot-item-user-img">
+                        <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg"></image>
+                    </view>
+                <text class="hot-item-btn">直接买</text>
+                </view>
+                <text class="hot-item-btn">参与合租</text>
+            </view>
+
+            <view class="hot-item-btm">
+              <view class="hot-item-No">来源：(商家)<text class='text-blue'>蕾蕾渔具</text></view>
+              <view class="hot-item-No">位置：南明区湿地公园</view>
+            </view>
+        </navigator>
+
+        <navigator  class="hot-item-box" url="">
+            <view class="hot-item-top">
+                <view class="hot-img">
+                    <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1972158158,1977337159&fm=27&gp=0.jpg"></image>
+                </view>
+
+                <view class="hot-item-top-right">
+                    <text class="hot-item-title">新货3m普通钓鱼竿</text>
+                    <view class="hot-item-price">¥2/天</view>
+                    <view class="hot-item-No-time-box">
+                        <view class="hot-item-No">原价<text class="text-red">88.00</text></view>
+                        <view class="hot-item-time">一小时前</view>
+                    </view>
+                </view>
+            </view>
+            
+            <view class="hot-item-btm">
+                <view class="hot-item-user-box">
+                  <text class="hot-item-btn">直接买</text>
+                </view>
+                <text class="hot-item-btn">马上租</text>
+                
+            </view>
+            <view class="hot-item-btm">
+              <view class="hot-item-No">来源：(个人)<text class="text-magenta">萝卜</text></view>
+              <view class="hot-item-No">位置：金融街二号</view>
+            </view>
+        </navigator>
+
+        <navigator  class="hot-item-box" url="">
+            <view class="hot-item-top">
+                <view class="hot-img">
+                    <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3033722004,3039145737&fm=27&gp=0.jpg"></image>
+                </view>
+
+                <view class="hot-item-top-right">
+                    <text class="hot-item-title">中央公园新楼盘出租出售</text>
+                    <view class="hot-item-price">¥1500/月</view>
+                    <view class="hot-item-No-time-box">
+                        <view class="hot-item-No">交通方便</view>
+                        <view class='hot-item-No'>房子大</view>
+                        <view class="hot-item-No">环境好</view>
+                        <view class="hot-item-time">07-13</view>
+                    </view> 
+                </view>
+            </view>
+            
+            <view class="hot-item-btm">
+                <view class="hot-item-user-box">
+                </view>
+                <text class="hot-item-btn">立即联系</text>
+                
+            </view>
+            <view class="hot-item-btm">
+              <view class="hot-item-No">来源：(公司)<text class="text-magenta">中原房地产有限责任公司</text></view>
+              <view class="hot-item-No">位置：金融街二号</view>
+            </view>
+        </navigator>
+
+        <navigator  class="hot-item-box" url="">
+            <view class="hot-item-top">
+                <view class="hot-img">
+                    <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=705330177,444516346&fm=27&gp=0.jpg"></image>
+                </view>
+
+                <view class="hot-item-top-right">
+                    <text class="hot-item-title">KTV常用大号音响</text>
+                    <view class="hot-item-price">¥100/天</view>
+                    <view class="hot-item-No-time-box">
+                        <view class="hot-item-No">音量高</view>
+                        <view class='hot-item-No'>清晰</view>
+                        <view class="hot-item-time">07-13</view>
+                    </view> 
+                </view>
+            </view>
+            
+            <view class="hot-item-btm">
+                <view class="hot-item-user-box">
+                </view>
+                <text class="hot-item-btn">马上租</text>
+                
+            </view>
+            <view class="hot-item-btm">
+              <view class="hot-item-No">来源：(商家)<text class="text-magenta">小龙配件</text></view>
+              <view class="hot-item-No">位置：金融街二号</view>
+            </view>
+        </navigator>
+        <!-- / list end -->
+
+        <!-- loading start -->
+        <view class="body-view">
+            <loading hidden="{{hidden}}">
+                加载中...
+            </loading>
+        </view>
+        <!-- / loading end -->
+
+        <!-- prompt message start -->
+        <text class="{{tipShow ? 'promptShow' : 'promptHide'}}">没有更多内容了</text>
+        <!-- / prompt message end -->
+    </scroll-view>
+</view>

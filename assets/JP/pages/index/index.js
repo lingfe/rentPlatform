@@ -25,7 +25,8 @@ Page( {
       navs: [
         {
           image: 'https://www.easyicon.net/api/resizeApi.php?id=539128&size=128',
-          text: '房源'
+          text: '房源',
+          url:'/pages/index/room/room',
         }, {
           image: 'https://www.easyicon.net/api/resizeApi.php?id=1131628&size=128',
           text: '渔具'
@@ -78,7 +79,7 @@ Page( {
   },
   go: function(event) {
     wx.navigateTo({
-      url: '../list/index?type=' + event.currentTarget.dataset.type
+      url:  event.currentTarget.dataset.type
     })
   }
 })

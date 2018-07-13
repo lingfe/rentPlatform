@@ -1,13 +1,19 @@
 {
-  "pages":[
+  "pages": [
+    "pages/indexTo/indexTo",
     "pages/index/index",
     "pages/list/index",
     "pages/component/index",
     "pages/i/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/flashRent/flashRent",
+    "pages/index/room/room",
+    "pages/detailed/detailed",
+    "pages/flashRent/flashRentDetailed/flashRentDetailed",
+    "pages/flashRent/flashRentDetailed/detail/detail"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "租平台",
     "navigationBarBackgroundColor": "#0767c8",
@@ -19,27 +25,26 @@
     "selectedColor": "#3cc51f",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "iconPath": "image/icon_component.png",
-      "selectedIconPath": "image/icon_component_HL.png",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/list/index",
-      "iconPath": "image/icon_API.png",
-      "selectedIconPath": "image/icon_API_HL.png",
-      "text": "分类"
-    }, {
-      "pagePath": "pages/component/index",
-      "iconPath": "image/icon_API.png",
-      "selectedIconPath": "image/icon_API_HL.png",
-      "text": "购物车"
-    }, {
-      "pagePath": "pages/i/index",
-      "iconPath": "image/icon_API.png",
-      "selectedIconPath": "image/icon_API_HL.png",
-      "text": "我的"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/indexTo/indexTo",
+        "text": "服务",
+        "iconPath": "images/xihuan.png",
+        "selectedIconPath": "images/xihuanfill.png"
+      },
+      {
+        "pagePath": "pages/flashRent/flashRent",
+        "iconPath": "images/hot.png",
+        "selectedIconPath": "images/hot_active.png",
+        "text": "闪租"
+      },
+      {
+        "pagePath": "pages/i/index",
+        "iconPath": "image/icon_API.png",
+        "selectedIconPath": "image/icon_API_HL.png",
+        "text": "我的"
+      }
+    ]
   },
   "networkTimeout": {
     "request": 10000,
