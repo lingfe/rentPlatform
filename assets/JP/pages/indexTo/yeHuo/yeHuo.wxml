@@ -1,0 +1,29 @@
+<!--/**  
+ *   path:  pages/indexTo/yeHuo/yeHuo.wxss   
+ *   作者:  lingfe 
+ *   时间:  2018-09-26
+ *   描述:  野货.
+ * 
+ * */-->
+<view class='page'>
+  <!-- 轮播图 start -->
+  <swiper class="index-banner" indicator-dots="{{true}}"
+    autoplay="{{true}}" interval="{{4000}}" duration="{{1000}}">
+    <block wx:for="{{lbt_images}}"  wx:key="{{item.img_url}}">
+      <swiper-item>
+        <image src="{{item.img_url}}" mode="aspectFill" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 轮播图 end -->
+
+  <!-- 菜单 start -->
+  <view class='find_menu'>
+    <view wx:for="{{lbt_images}}"  wx:key="{{item.img_url}}" class='menu' id='{{item.path_url}}'>
+       <image class='menu_img' src='{{item.img_url}}'></image>
+       <view class='menu_text'>{{item.name}}</view>
+       <view class='menu_v'>></view>
+    </view>
+  </view>
+  <!-- 菜单 end -->
+</view>

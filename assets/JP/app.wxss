@@ -1,5 +1,6 @@
 /**app.wxss**/
 @import "./style/layout.wxss";
+@import './style/weui.wxss';
 
 .container {
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -51,4 +52,15 @@ page {
 
 .tc{
     text-align: center;
+}
+
+.index-banner{
+	width: 100%;
+	height: 474rpx;
+}
+.index-banner .slide-image{
+	width: 100%;
+}
+.wx-swiper-dot text{
+	background: #f00;
 }

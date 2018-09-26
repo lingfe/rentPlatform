@@ -1,5 +1,8 @@
-//app.js
+import fjczData from './helpers/fjczData.js'
+
 App({
+  fjczData, //本地数据
+
   onLaunch: function () {
     console.log('App Launch')
       //调用API从本地缓存中获取数据

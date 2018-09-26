@@ -10,19 +10,21 @@
     "pages/index/room/room",
     "pages/detailed/detailed",
     "pages/flashRent/flashRentDetailed/flashRentDetailed",
-    "pages/flashRent/flashRentDetailed/detail/detail"
+    "pages/flashRent/flashRentDetailed/detail/detail",
+    "pages/indexTo/yeHuo/yeHuo",
+    "pages/indexTo/yuYue/yuYue"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "租平台",
-    "navigationBarBackgroundColor": "#0767c8",
-    "backgroundColor": "#fbf9fe",
+    "navigationBarBackgroundColor": "#330066",
+    "backgroundColor": "#eeeeee",
     "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#dddddd",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#330066",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "list": [
@@ -36,7 +38,7 @@
         "pagePath": "pages/flashRent/flashRent",
         "iconPath": "images/hot.png",
         "selectedIconPath": "images/hot_active.png",
-        "text": "闪租"
+        "text": "推荐"
       },
       {
         "pagePath": "pages/i/index",

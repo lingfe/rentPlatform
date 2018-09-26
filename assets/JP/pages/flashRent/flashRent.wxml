@@ -1,133 +1,97 @@
 <view>
+
+  <!-- 头部 start   -->
+  <view class="dahuo_top">
+    <navigator url="/pages/dahuo/indexCity/indexCity">
+      <view class="top_left">
+        <text>{{addressInfo}}</text>
+        <image src="/images/xlcd.png"></image>
+      </view>
+    </navigator>
+    <view class="top_zho">
+      <view class="top_zho_button" bindtap="bindtapButton">
+        <view>{{PriceRange[priceIndex]}}</view>
+      </view>
+      <view class="pricesList" wx:if="{{isPrices == true}}">
+        <image class="img" src="/images/u218.png"></image>
+        <view class="bor">
+          <view class="border_bottom" wx:for="{{tabs[0].content}}" wx:key="*this">
+            <view wx:if="{{tabs[0].content[index].minThreshold != 50}}" 
+            class="prices {{index == num ? 'color': ''}}" 
+            bindtap="bindtapPrices" 
+            data-min="{{tabs[0].content[index].minThreshold}}" 
+            data-max="{{tabs[0].content[index].maxThreshold}}" 
+            data-index="{{index}}">
+              <view wx:if="{{tabs[0].content[index].minThreshold == '全部'}}">全部</view>
+              <view wx:else="">{{tabs[0].content[index].minThreshold}} - {{tabs[0].content[index].maxThreshold}} 万</view>
+            </view>
+            <view wx:else="{{tabs[0].content[index].minThreshold == 50}}" 
+            class="prices {{index == num ? 'color': ''}}" 
+            bindtap="bindtapPrices" 
+            data-min="{{tabs[0].content[index].minThreshold}}" 
+            data-max="{{tabs[0].content[index].maxThreshold}}" data-index="{{index}}">
+              50万+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="top_right" bindtap="bindtapScreen">
+      筛选
+    </view>
+  </view>
+  <!-- 头部 end  -->
+
     <scroll-view scroll-y="true" bindscrolltolower="loadList" class="layout">
-
         <!-- list start -->
-        <navigator  class="hot-item-box" url="/pages/flashRent/flashRentDetailed/flashRentDetailed">
+        <view  class="hot-item-box"  wx:for="{{lists}}" wx:key="*this">
+            <!-- 基本说明信息 start -->
             <view class="hot-item-top">
+                <!-- 图片 start -->
                 <view class="hot-img">
-                    <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg"></image>
+                    <image src="{{item.img}}"></image>
                 </view>
-                
+                <!-- 图片 end -->
+
+                <!-- 参数 start -->
                 <view class="hot-item-top-right">
-                    <text class="hot-item-title">新货3m钓鱼竿</text>
-                    <view class="hot-item-price">3人想租 ¥18/月 </view>
+                    <text class="hot-item-title">{{item.title}}</text>
+                    <view class="hot-item-price">{{item.price}}/{{item.company}}
+                      原价/{{item.originalPrice}} {{item.explain}}
+                    </view>
                     <view class="hot-item-No-time-box">
-                        <view class="hot-item-No">仅差<text class="text-red">3</text>人</view>
-                        <view class="hot-item-No">原价<text class="text-red">180.00</text></view>
-                        <view class="hot-item-time">刚刚</view>
-                    </view>
+                        <view class="hot-item-No" wx:for="{{item.label}}" wx:key="*this">{{item}}</view>
+                        <view class="hot-item-time">{{item.time}}</view>
+                    </view> 
                 </view>
+                <!-- 参数 end -->
             </view>
-            
-            <view class="hot-item-btm">
-                <view class="hot-item-user-box">
-                    <view  class="hot-item-user-img">
-                        <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg"></image>
-                    </view>
-                    <view  class="hot-item-user-img">
-                        <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg"></image>
-                    </view>
-                    <view  class="hot-item-user-img">
-                        <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg"></image>
-                    </view>
-                <text class="hot-item-btn">直接买</text>
-                </view>
-                <text class="hot-item-btn">参与合租</text>
-            </view>
+            <!-- 基本说明信息 end -->
 
-            <view class="hot-item-btm">
-              <view class="hot-item-No">来源：(商家)<text class='text-blue'>蕾蕾渔具</text></view>
-              <view class="hot-item-No">位置：南明区湿地公园</view>
-            </view>
-        </navigator>
-
-        <navigator  class="hot-item-box" url="">
-            <view class="hot-item-top">
-                <view class="hot-img">
-                    <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1972158158,1977337159&fm=27&gp=0.jpg"></image>
-                </view>
-
-                <view class="hot-item-top-right">
-                    <text class="hot-item-title">新货3m普通钓鱼竿</text>
-                    <view class="hot-item-price">¥2/天</view>
-                    <view class="hot-item-No-time-box">
-                        <view class="hot-item-No">原价<text class="text-red">88.00</text></view>
-                        <view class="hot-item-time">一小时前</view>
-                    </view>
-                </view>
-            </view>
-            
+            <!-- 操作部分 start -->
             <view class="hot-item-btm">
                 <view class="hot-item-user-box">
                   <text class="hot-item-btn">直接买</text>
                 </view>
+                <text class="hot-item-btn">Phone</text>||
                 <text class="hot-item-btn">马上租</text>
-                
             </view>
-            <view class="hot-item-btm">
-              <view class="hot-item-No">来源：(个人)<text class="text-magenta">萝卜</text></view>
-              <view class="hot-item-No">位置：金融街二号</view>
-            </view>
-        </navigator>
+            <!-- 操作部分 end -->
 
-        <navigator  class="hot-item-box" url="">
-            <view class="hot-item-top">
-                <view class="hot-img">
-                    <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3033722004,3039145737&fm=27&gp=0.jpg"></image>
-                </view>
-
-                <view class="hot-item-top-right">
-                    <text class="hot-item-title">中央公园新楼盘出租出售</text>
-                    <view class="hot-item-price">¥1500/月</view>
-                    <view class="hot-item-No-time-box">
-                        <view class="hot-item-No">交通方便</view>
-                        <view class='hot-item-No'>房子大</view>
-                        <view class="hot-item-No">环境好</view>
-                        <view class="hot-item-time">07-13</view>
-                    </view> 
-                </view>
-            </view>
-            
+            <!-- 来源和地址信息 start -->
             <view class="hot-item-btm">
-                <view class="hot-item-user-box">
-                </view>
-                <text class="hot-item-btn">立即联系</text>
-                
+              <view class="hot-item-No" 
+              bindtap='showModal' 
+              data-title='{{item.source}}'
+              data-msg='{{item.sourceName}}'>
+                来源：({{item.source}})<text class="text-{{item.sourceCredit}}">{{item.sourceName}}</text>
+              </view>
+              <view class="hot-item-No" 
+              bindtap='showModal' 
+              data-title='位置'
+              data-msg='{{item.address}}'>位置：{{item.address}}</view>
             </view>
-            <view class="hot-item-btm">
-              <view class="hot-item-No">来源：(公司)<text class="text-magenta">中原房地产有限责任公司</text></view>
-              <view class="hot-item-No">位置：金融街二号</view>
-            </view>
-        </navigator>
-
-        <navigator  class="hot-item-box" url="">
-            <view class="hot-item-top">
-                <view class="hot-img">
-                    <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=705330177,444516346&fm=27&gp=0.jpg"></image>
-                </view>
-
-                <view class="hot-item-top-right">
-                    <text class="hot-item-title">KTV常用大号音响</text>
-                    <view class="hot-item-price">¥100/天</view>
-                    <view class="hot-item-No-time-box">
-                        <view class="hot-item-No">音量高</view>
-                        <view class='hot-item-No'>清晰</view>
-                        <view class="hot-item-time">07-13</view>
-                    </view> 
-                </view>
-            </view>
-            
-            <view class="hot-item-btm">
-                <view class="hot-item-user-box">
-                </view>
-                <text class="hot-item-btn">马上租</text>
-                
-            </view>
-            <view class="hot-item-btm">
-              <view class="hot-item-No">来源：(商家)<text class="text-magenta">小龙配件</text></view>
-              <view class="hot-item-No">位置：金融街二号</view>
-            </view>
-        </navigator>
+            <!-- 来源和地址信息 end -->
+        </view>
         <!-- / list end -->
 
         <!-- loading start -->
@@ -143,3 +107,91 @@
         <!-- / prompt message end -->
     </scroll-view>
 </view>
+
+<!-- 筛选   start-->
+<view style="display: {{screen == false ? 'none' : 'block' }};" class="page pageScreen">
+  <view class="scressClose" bindtap="bindtapScreen"></view>
+  <view class="page_bd page__bdScreen">
+    <view class="weui-tab">
+      <!-- tab菜单  start -->
+      <view class="www">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? ' border_tab' : 'stop_title'}}" bindtap="tabClick">
+            <view class="weui-navbar__title stop_1">{{item.name}}</view>
+          </view>
+        </block>
+      </view>
+      <!-- tab菜单  end -->
+      <view class="ccc">
+        <!-- 金额  start -->
+        <view class="" hidden="{{activeIndex != 0}}">
+          <checkbox-group data-index="{{activeIndex}}">
+            <label wx:for="{{tabs[activeIndex].content}}" bindtap='clearBtn_to' data-value='{{item.minThreshold}}' data-index='{{index}}' data-name="AmountOfMoney" wx:key="{{item.name}}">
+              <view class="weui-navbar__item stop">
+                <view wx:if="{{item.minThreshold == 50}}" class="weui-navbar__title stop_1 flaot_left">
+                  50万+
+                </view>
+                <view wx:else="{{item.minThreshold != 50}}" class="weui-navbar__title stop_1 flaot_left">
+                  <view wx:if="{{tabs[0].content[index].minThreshold == '全部'}}">全部</view>
+                  <view wx:else="">{{tabs[0].content[index].minThreshold}} - {{tabs[0].content[index].maxThreshold}} 万</view>
+                </view>
+                <view class="flaot_right" wx:if="{{item.checked}}">
+                  <image class="img_wh" src="/images/ttt.png" />
+                </view>
+              </view>
+            </label>
+          </checkbox-group>
+        </view>
+        <!-- 金额  end -->
+
+        <!-- 类型  start -->
+        <view class="" hidden="{{activeIndex != 1}}">
+          <checkbox-group style="overflow:scroll;height:515px;" data-index="{{activeIndex}}">
+            <label wx:for="{{tabs[activeIndex].content}}" bindtap='clearBtn_to' data-value='{{item.name}}' data-index='{{index}}' data-name="in_releaseType" wx:key="{{item.name}}">
+              <view class="weui-navbar__item stop">
+                <view class="weui-navbar__title stop_1 flaot_left">{{item.name}}</view>
+                <view class="flaot_right" wx:if="{{item.checked}}">
+                  <text class='type_text'>{{item.notype}}</text>
+                  <image class="img_wh" src="/images/ttt.png" />
+                </view>
+              </view>
+            </label>
+          </checkbox-group>
+        </view>
+        <!-- 类型  end -->
+
+        <!-- 行业  start -->
+        <view class="" hidden="{{activeIndex != 2}}">
+          <checkbox-group style="overflow:scroll;max-height:515px;" data-index="{{activeIndex}}">
+            <label wx:for="{{tabs[activeIndex].content}}" bindtap='clearBtn_to' data-value='{{item.name}}' data-index='{{index}}' data-name="in_industryChoice" wx:key="{{item.name}}">
+              <view class="weui-navbar__item stop">
+                <view class="weui-navbar__title stop_1 flaot_left">{{item.name}}</view>
+                <view class="flaot_right" wx:if="{{item.checked}}">
+                  <image class="img_wh" src="/images/ttt.png" />
+                  <!-- <icon class="weui-icon-radio" type="success_no_circle"  color="#14BAC8" size="16"></icon> -->
+                </view>
+              </view>
+            </label>
+
+            <label>
+              <view class="weui-navbar__item stop">
+                <checkbox class="weui-check" />
+                <view class="weui-navbar__title stop_1 flaot_left"></view>
+              </view>
+            </label>
+          </checkbox-group>
+        </view>
+        <!-- 行业  end -->
+      </view>
+      <view class="botton_view">
+        <!-- 操作  start -->
+        <view class="operation">
+          <view class="operation_close" bindtap="bindtapReset">重置</view>
+          <view class="operation_ok" bindtap="bindtapOk">确定</view>
+        </view>
+        <!-- 操作  end -->
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 筛选   end-->

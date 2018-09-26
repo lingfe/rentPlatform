@@ -23,17 +23,27 @@ Page({
       indexmenu: [
         {
           'icon': './../../images/icon_01.png',
-          'text': '官方出租',
+          'text': '官方闪租',
           'url': 'pages/index/index'
         },
         {
+          'icon': './../../images/icon_01.png',
+          'text': '新鲜野货',
+          'url': 'pages/indexTo/yeHuo/yeHuo'
+        },
+        {
+          'icon': './../../images/icon_01.png',
+          'text': '生活预约',
+          'url': 'pages/indexTo/yuYue/yuYue'
+        },
+        {
           'icon': './../../images/icon_03.png',
-          'text': '公司合作',
+          'text': '企业合作',
           'url': 'service'
         },
         {
           'icon': './../../images/icon_05.png',
-          'text': '商家入驻',
+          'text': '商家合作',
           'url': 'conference'
         },
         {
@@ -49,7 +59,7 @@ Page({
         {
           'icon': './../../images/icon_11.png',
           'text': '预约服务',
-          'url': 'property'
+          'url': 'pages/indexTo/yuYue/yuYue'
         },
         {
           'icon': './../../images/icon_13.png',
