@@ -1,33 +1,60 @@
 
-export default {
-
-  //背景颜色
-  color:[
-    { color:"#330066"},//主体色,
-    { color:"#ffffff,#eeeeee"},//辅助色
+export default{
+  //模块值说明
+  model:[
+    0,//闪租。钓鱼竿
+    1,//野货。八月瓜
+    2,//预约。预约剪发
   ],
 
-
-  //平台产品
-  pintai_name:[
+  //推荐
+  tuijian_list:[
     {
-      name:"闪租",content:"房子出租,工具出租..."
-    },
-    {
-      name:"野货",content:"八月瓜,野鸡,中草药...",
-    },
-    { 
-      name:"预约",content:"剪发预约,洗车预约,咨询预约,服装定制预约..."
+      model:0,
+      img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg', //图
+      title: '新货3m钓鱼竿',//标题
+      price: '18.00',//价格
+      explain: '全新3m钓鱼竿,鱼饵。租满三个月免费送',//说明
+      originalPrice: '180.00',//原价
+      company: '月',//单位(时，天,月，年)，
+      label: ['非常新'],//标签
+      types: '普通',//类型(0.普通,1.合租)
+      source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
+      sourceName: '蕾蕾渔具',//来源名称
+      sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
+      address: '湿地公园南明区',//位置
+      dateTime: '刚刚',//日期
+    },{
+      model:1,  //模块
+      img:'http://108108byg.com/uploads/180202/3-1P202210TcA.jpg', //图片
+      title:"八月炸野果八月瓜野香蕉", //标题
+      money:15, //金额
+      company:"斤",  //单位
+      surplusNum:155,//剩余数量
+      sellNum:188,//销售数量
+      likeNum:55,//喜欢人数
+      source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
+      sourceName: '八月瓜',//来源名称
+      sourceLog:'http://108108byg.com/skin/images/logo.png',//来源LOG
+      sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
+      dateTime: '刚刚',//日期
+    },{
+      model: 2,  //模块
+      img: 'https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C253%2C802%2C485%3Bw%3D720%3Bq%3D99/sign=98f69c2091504fc2b610ea45d8edcb23/e7cd7b899e510fb3b8fc67bfd333c895d1430c34.jpg', //图片
+      title: "雾都美容美发店烫染368", //标题
+      source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
+      sourceName: '雾都美容美发',//来源名称
+      sourceLog: 'https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C253%2C802%2C485%3Bw%3D720%3Bq%3D99/sign=98f69c2091504fc2b610ea45d8edcb23/e7cd7b899e510fb3b8fc67bfd333c895d1430c34.jpg',//来源LOG
+      sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
+      address:'贵阳市花溪区贵筑路19号林都国际项1栋1单元4楼',//地址
+      phone: "085183625295|",//联系电话
+      businessTime:"09:00-19:00",//营业时间
+      headUses:"65",//人均消费￥
+      dateTime: '刚刚',//日期
+      remark:"仅售368元，价值1888元美发设计师亲自染烫2选1！免费WiFi，需预约！",
     }
   ],
 
-  //平台名字
-  pingtai_name:[
-    {
-      name:"零",remark:"表示:零售,零散的,比较少的...",
-      name:"需要",remark:"出行需要代步工具,旅游需要地图导航,饮食需要健康,工作需要愉快,腻了需要新鲜感,雷了需要睡觉..",
-    }
-  ],
   throwInTheCityData: [{        //投放城市数据   
     name: "华东地区",
     index: 0,
@@ -163,7 +190,7 @@ export default {
       name: "澳门",
       checked: false
     }]
-  }],                 
+  }],
   sxData: [{          //筛选数据
     name: "金额",
     content: [{

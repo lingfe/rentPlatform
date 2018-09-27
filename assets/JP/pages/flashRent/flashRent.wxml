@@ -5,7 +5,7 @@
     <navigator url="/pages/dahuo/indexCity/indexCity">
       <view class="top_left">
         <text>{{addressInfo}}</text>
-        <image src="/images/xlcd.png"></image>
+        <image src="/assets/images/ico/ico_other/xlcd.png"></image>
       </view>
     </navigator>
     <view class="top_zho">
@@ -13,7 +13,7 @@
         <view>{{PriceRange[priceIndex]}}</view>
       </view>
       <view class="pricesList" wx:if="{{isPrices == true}}">
-        <image class="img" src="/images/u218.png"></image>
+        <image class="img" src="/assets/images/ico/ico_other/u218.png"></image>
         <view class="bor">
           <view class="border_bottom" wx:for="{{tabs[0].content}}" wx:key="*this">
             <view wx:if="{{tabs[0].content[index].minThreshold != 50}}" 
@@ -41,26 +41,29 @@
   </view>
   <!-- 头部 end  -->
 
-    <scroll-view scroll-y="true" bindscrolltolower="loadList" class="layout">
-        <!-- list start -->
-        <view  class="hot-item-box"  wx:for="{{lists}}" wx:key="*this">
+  <!-- 内容 model  start -->
+  <scroll-view scroll-y="true" bindscrolltolower="loadList" class="layout">
+    <view  wx:for="{{lists}}" wx:key="*this">
+
+        <!-- 钓鱼竿 start -->
+        <view wx:if="{{ item.model == 0 }}"  class="model" >
             <!-- 基本说明信息 start -->
-            <view class="hot-item-top">
+            <view class="model{{item.model}}_hot-item-top">
                 <!-- 图片 start -->
-                <view class="hot-img">
+                <view class="model{{item.model}}_hot-img">
                     <image src="{{item.img}}"></image>
                 </view>
                 <!-- 图片 end -->
 
                 <!-- 参数 start -->
-                <view class="hot-item-top-right">
-                    <text class="hot-item-title">{{item.title}}</text>
-                    <view class="hot-item-price">{{item.price}}/{{item.company}}
+                <view class="model{{item.model}}_hot-item-top-right">
+                    <text class="model{{item.model}}_hot-item-title">{{item.title}}</text>
+                    <view class="model{{item.model}}_hot-item-price">{{item.price}}/{{item.company}}
                       原价/{{item.originalPrice}} {{item.explain}}
                     </view>
-                    <view class="hot-item-No-time-box">
-                        <view class="hot-item-No" wx:for="{{item.label}}" wx:key="*this">{{item}}</view>
-                        <view class="hot-item-time">{{item.time}}</view>
+                    <view class="model{{item.model}}_hot-item-No-time-box">
+                        <view class="model0_hot-item-No" wx:for="{{item.label}}" wx:key="*this">{{item}}</view>
+                        <view class="model{{item.model}}_hot-item-time">{{item.dateTime}}</view>
                     </view> 
                 </view>
                 <!-- 参数 end -->
@@ -68,31 +71,97 @@
             <!-- 基本说明信息 end -->
 
             <!-- 操作部分 start -->
-            <view class="hot-item-btm">
-                <view class="hot-item-user-box">
-                  <text class="hot-item-btn">直接买</text>
+            <!-- <view class="model{{item.model}}_hot-item-btm">
+                <view class="model{{item.model}}_hot-item-user-box">
+                  <text class="model{{item.model}}_hot-item-btn">直接买</text>
                 </view>
-                <text class="hot-item-btn">Phone</text>||
-                <text class="hot-item-btn">马上租</text>
-            </view>
+                <text class="model{{item.model}}_hot-item-btn">Phone</text>||
+                <text class="model{{item.model}}_hot-item-btn">马上租</text>
+            </view> -->
             <!-- 操作部分 end -->
 
             <!-- 来源和地址信息 start -->
-            <view class="hot-item-btm">
-              <view class="hot-item-No" 
+            <view class="model{{item.model}}_hot-item-btm">
+              <view class="model{{item.model}}_hot-item-No" 
               bindtap='showModal' 
               data-title='{{item.source}}'
               data-msg='{{item.sourceName}}'>
-                来源：({{item.source}})<text class="text-{{item.sourceCredit}}">{{item.sourceName}}</text>
+                来源：({{item.source}})<text class="model{{item.model}}_text-{{item.sourceCredit}}">{{item.sourceName}}</text>
               </view>
-              <view class="hot-item-No" 
+              <view class="model{{item.model}}_hot-item-No" 
               bindtap='showModal' 
               data-title='位置'
               data-msg='{{item.address}}'>位置：{{item.address}}</view>
             </view>
             <!-- 来源和地址信息 end -->
         </view>
-        <!-- / list end -->
+        <!-- 钓鱼竿 end -->
+
+        <!-- 野货model0 start -->
+        <view wx:if="{{ item.model == 1 }}" class='model'
+           bindtap='bindtap_rescueDetails' id='{{item.id}}'>
+            <view class='model{{item.model}}_content'>
+              <view class='model{{item.model}}_content_left'>
+                <image wx:if="{{item.img}}" src='{{item.img}}' mode='aspectFill'></image>
+              </view>
+              <view class='model{{item.model}}_content_right'>
+                <view class='model{{item.model}}_content_right_title'>{{item.title}}</view>
+                
+                <view class='model{{item.model}}_content_right_text'>
+                  <progress percent="{{item.surplusNum}}" activeColor="#330066" />
+                </view>
+                <view class='model{{item.model}}_content_right_text'>
+                  <view class='model{{item.model}}_content_right_text_text'>
+                    金额:<span class="model1_text-danger">{{item.money}}</span>元/{{item.company}}
+                  </view>
+                  <view class='model{{item.model}}_content_right_text_text'>
+                    已出售：<span class="model1_text-danger">{{item.sellNum}}</span>份
+                  </view>
+                  <view class='model{{item.model}}_content_right_text_text model1_no-right'>
+                    <span class="model1_text-danger">{{item.likeNum}}</span>次转发
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class='model{{item.model}}_title'>
+              <view class='model{{item.model}}_title_image'>
+                <image src='{{item.sourceLog}}'></image>
+              </view>
+              <view class='model{{item.model}}_title_text'>{{item.sourceName}}</view>
+              <view class='model{{item.model}}_title_text model1_align_right'>
+                <span style="color: #F25B4B;font-weight: 500;">{{item.likeNum}}</span> 人喜欢
+              </view>
+            </view>
+        </view>
+        <!-- 野货model1 end -->
+
+        <!-- 预约model2 start -->
+        <view wx:if="{{ item.model == 2}}" class='model'>
+          <view  class='model{{item.model}}_navigator' bindtap='bindtapNavigator' id='{{item.id}}' data-releasetype='{{item.releaseType}}'>
+          <view class='model{{item.model}}_model_img'>
+            <image class='model{{item.model}}_img' src='{{item.img}}'></image>
+          </view>
+          <view class='model{{item.model}}_model_title'>{{item.title}}</view>
+          <view class='model{{item.model}}_model_content'>{{item.remark}} </view>
+          <view class='model{{item.model}}_model_style'>
+            <view class="model{{item.model}}_data_biaoqian_view">
+            <image src="/assets/images/info/qtje.png"></image>
+            人均 {{item.headUses}}￥
+            </view>
+            <view class="model{{item.model}}_data_biaoqian_view">
+            <image src="/assets/images/type.png"></image>
+            {{item.phone}}
+            </view>
+            <view class="model{{item.model}}_data_biaoqian_view">
+            <image src="/assets/images/hanye.png"></image>
+            {{item.dateTime}}
+            </view>
+          </view>
+          </view>
+        </view>
+        <!-- 预约model2 end-->
+
+    </view>
 
         <!-- loading start -->
         <view class="body-view">
@@ -105,7 +174,8 @@
         <!-- prompt message start -->
         <text class="{{tipShow ? 'promptShow' : 'promptHide'}}">没有更多内容了</text>
         <!-- / prompt message end -->
-    </scroll-view>
+  </scroll-view>
+  <!-- 内容 model  end -->
 </view>
 
 <!-- 筛选   start-->

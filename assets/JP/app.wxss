@@ -1,8 +1,8 @@
 /**app.wxss**/
-@import "./style/layout.wxss";
-@import './style/weui.wxss';
+/* @import "./style/layout.wxss";
+@import './style/weui.wxss'; */
 
-.container {
+/* .container {
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,8 @@
 page {
   background-color: #fbf9fe;
 }
+
+
 
 .green{
     color: #09BB07;
@@ -63,4 +65,4 @@ page {
 }
 .wx-swiper-dot text{
 	background: #f00;
-}
+} */

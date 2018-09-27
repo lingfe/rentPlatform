@@ -4,7 +4,7 @@
     "pages/index/index",
     "pages/list/index",
     "pages/component/index",
-    "pages/i/index",
+    "pages/my/my",
     "pages/logs/logs",
     "pages/flashRent/flashRent",
     "pages/index/room/room",
@@ -12,7 +12,9 @@
     "pages/flashRent/flashRentDetailed/flashRentDetailed",
     "pages/flashRent/flashRentDetailed/detail/detail",
     "pages/indexTo/yeHuo/yeHuo",
-    "pages/indexTo/yuYue/yuYue"
+    "pages/indexTo/yuYue/yuYue",
+    "pages/flashRent/publicDetail/publicDetail",
+    "pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,19 +33,19 @@
       {
         "pagePath": "pages/indexTo/indexTo",
         "text": "服务",
-        "iconPath": "images/xihuan.png",
-        "selectedIconPath": "images/xihuanfill.png"
+        "iconPath": "assets/images/ico/xihuan.png",
+        "selectedIconPath": "assets/images/ico/xihuanfill.png"
       },
       {
         "pagePath": "pages/flashRent/flashRent",
-        "iconPath": "images/hot.png",
-        "selectedIconPath": "images/hot_active.png",
+        "iconPath": "assets/images/ico/hot.png",
+        "selectedIconPath": "assets/images/ico/hot_active.png",
         "text": "推荐"
       },
       {
-        "pagePath": "pages/i/index",
-        "iconPath": "image/icon_API.png",
-        "selectedIconPath": "image/icon_API_HL.png",
+        "pagePath": "pages/my/my",
+        "iconPath": "assets/images/ico/icon_API.png",
+        "selectedIconPath": "assets/images/ico/icon_API_HL.png",
         "text": "我的"
       }
     ]

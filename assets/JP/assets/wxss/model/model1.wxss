@@ -1,0 +1,90 @@
+/**
+  path: /assets/wxss/model/model1.wxss
+  作者:  lingfe 
+  时间:  2018-09-26
+  model: 野货
+  描述:  表示模块1，用推荐菜单的数据类型展示和布局样式
+**/
+
+
+/*模块*/
+.model1{
+  width: 94%;
+  background-color: #fff;
+  border: 1rpx solid #efeff4;
+  border-radius: 10rpx;
+  margin: auto;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+.model1_title{
+  width: 94%;
+  height: 100rpx;
+  font-size: 28rpx;
+  margin: auto;
+}
+.model1_title_image{
+  width: 14%;
+  height: 100rpx;
+  float: left;
+}
+.model1_title_image image{
+  width: 100%;
+  height: 80rpx;
+  margin-top: 10rpx;
+  border-radius: 50%;
+}
+.model1_title_text{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 40%;
+  float: left;
+  margin-left: 2%; 
+}
+.model1_align_right{
+  text-align: right;
+}
+.model1_content{
+  width: 100%;
+  height: 430rpx;
+}
+.model1_content_left{
+  width: 100%;
+  height: 300rpx;
+  padding-bottom: 0rpx;
+}
+.model1_content_left image{
+  width: 100%;
+  margin: auto;
+  height: 300rpx;
+}
+.model1_content_right{
+  width:100%;
+}
+.model1_content_right_title{
+  width: 94%;
+  font-size: 34rpx;
+  margin: auto;
+  margin-top: 10rpx;
+}
+.model1_content_right_text{
+  width: 94%;
+  font-size: 26rpx;
+  color: #8f8f94;
+  margin: auto;
+  margin-top: 10rpx;
+
+}
+.model1_content_right_text_text{
+  width: 33%;
+  text-align: center;
+  float: left;
+  border-right: 1rpx solid;
+}
+.model1_no-right{
+  border-right:none;
+}
+.model1_text-danger{
+  color: #F25B4B !important
+}

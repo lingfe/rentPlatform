@@ -34,7 +34,7 @@
   text-align: center;
 }
 .top_zho_button {
-  background-color: #14BAC8;
+  background-color: #330066;
   height: 28px;
   line-height: 28px;
   border: 0rpx #fff solid;
@@ -88,7 +88,7 @@
 
 .color{
   color: #fff;
-  background-color:#14BAC8;
+  background-color:#330066;
 }
 
 .bor{
@@ -123,7 +123,7 @@
 
 .prices:active{
   color: #fff;
-  background-color: #14BAC8; 
+  background-color: #330066; 
 }
 
 /*头  end*/
@@ -330,6 +330,7 @@
 
 /*筛选   end*/
 
+/* 模块 start */
 
 .layout {
     /* position: absolute;
@@ -342,77 +343,17 @@
     margin-top:100rpx;
 
 }
-
-.hot-item-box {
+.model {
+   width: 94%;
    margin: auto;
    background-color: #fff;
    margin-bottom: 20rpx;
    box-shadow: 2px 2px 5px #888888;
    border-radius: 10rpx;
 }
-
-.hot-item-top {
-    display: flex;
-    width: 100%;
-    height: 220rpx;
-    padding: 30rpx;
-    box-sizing: border-box;
-    overflow: hidden;
-    background-color: rgb(255,255,255);
-    border-bottom:1rpx solid #aaa;
-
-}
-
-.hot-img, .hot-img image {
-    width: 160rpx;
-    height: 160rpx;
-}
-
-.hot-item-top-right {
-    width: 506rpx;
-    height: 160rpx;
-    margin-left: 24rpx;
-}
-
-.hot-item-title {
-    display: block;
-    width: 100%;
-    height: 40rpx;
-    margin: -4rpx 0 30rpx 0;
-    line-height: 40rpx;
-    font-size: 32rpx;
-    color: #444;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-.hot-item-price {
-    margin-bottom: 30rpx;
-    font-size: 28rpx;
-    color: #fb5d5d;
-    overflow:hidden;
-text-overflow:ellipsis;
-white-space:nowrap;
-
-}
-
-.hot-item-No-time-box {
-    display: flex;
-    width: 100%;
-    height: 36rpx;
-    line-height: 36rpx;
-    font-size: 24rpx;
-    color: #999;
-}
-
-.hot-item-No {
-    width: 50%;
-    overflow: hidden;
-text-overflow:ellipsis;
-white-space: nowrap;
-}
-
+@import '/assets/wxss/model/model0.wxss';
+@import '/assets/wxss/model/model1.wxss';
+@import '/assets/wxss/model/model2.wxss';
 .text-red {
     color: #fb5d5d;
 }
@@ -489,3 +430,4 @@ white-space: nowrap;
   color: green;
 }
 
+/* 模块 end */

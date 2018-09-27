@@ -5,13 +5,14 @@ var app = getApp();
 
 Page({
   data: {
+    model:0,
     PriceRange: ['全部', '0 - 1 万', '1 - 5 万', '5 - 50 万', '50万+'],
     priceIndex: 0,           //选择价格索引 
     num: 0,                  //获取选中的价格索引，控制样式
     addressInfo: '贵阳',     //城市定位
     windowHeight: 1000,      //默认高度
     screen: false,           //是否显示筛选控制
-    tabs: app.fjczData.sxData,        //筛选数据
+    tabs: app.localData.sxData,        //筛选数据
     activeIndex: 0,                    //tab切换下标
     sliderOffset: 0,                   //坐标x
     sliderLeft: 0,                     //坐标y
@@ -31,22 +32,9 @@ Page({
     page: 0,                // 当前分页
     nextPage: "",           // 分页信息
     us: "",                 // 用户分享的ID，之前为了做分享统计什么的，现在没卵用
-    lists: [{
-      img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg', //图
-      title:'新货3m钓鱼竿',//标题
-      price:'18.00',//价格
-      explain:'全新3m钓鱼竿,鱼饵。租满三个月免费送',//说明
-      originalPrice:'180.00',//原价
-      company:'月',//单位(时，天,月，年)，
-      label:['非常新'],//标签
-      types:'普通',//类型(0.普通,1.合租)
-      source:'商家',//来源(0.官方,1.个人，2.商家，3.企业)
-      sourceName:'蕾蕾渔具',//来源名称
-      sourceCredit:'2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
-      address:'湿地公园南明区',//位置
-      time:'刚刚',//日期
-    }, {
-        img: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1972158158,1977337159&fm=27&gp=0.jpg', //图
+    lists:app.localData.tuijian_list,
+    list: [ {
+      img: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1972158158,1977337159&fm=27&gp=0.jpg', //图
       title: '新货3m普通钓鱼竿',//标题
       price: '2.00',//价格
       originalPrice: '80.00',//原价

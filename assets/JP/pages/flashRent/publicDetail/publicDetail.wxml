@@ -1,0 +1,143 @@
+<!--pages/flashRent/publicDetail/publicDetail.wxml-->
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-12-7
+ *   描述:  众筹项目详情_合伙创业
+ * 
+ * */-->
+<view class='page'>
+  <view class='neiro'>
+    <view class='neiro_model'>
+      <view class='model_img'>
+        <image class='img' src='{{info.imageArray}}'></image>
+      </view>
+      <view class='model_title'>{{info.title}}</view>
+      <view class='model_style'>
+        <view class="data_biaoqian_view">
+        <image src="/assets/images/info/qtje.png"></image>
+        {{info.threshold}}万元
+        </view>
+        <view class="data_biaoqian_view">
+        <image src="/assets/images/type.png"></image>
+        {{info.releaseType}}
+        </view>
+        <view class="data_biaoqian_view">
+        <image src="/assets/images/hanye.png"></image>
+        {{info.industryChoice}}
+        </view>
+        <view class="data_biaoqian_view">
+         15025人预览
+        </view>
+      </view>
+      <view class='model_content'>{{info.projectDescription}}</view>
+    </view>
+
+    <!-- tab切换  start -->
+    <view class="weui-tab">
+       <!-- 菜单  start -->
+        <view class="weui-navbar" style="border-bottom:none;">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" 
+             class="weui-navbar__item_to {{activeIndex == index ? 'select_text' : ''}}" 
+             data-name="{{item}}" bindtap="tabClick">
+                <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" 
+          style="background-color:#14BAC8;left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <!-- 菜单  end -->
+    </view>
+    <!-- tab切换 end -->
+
+    <!-- 内容  start-->
+    <view class="weui-tab__panel">
+      <!-- 项目介绍  start-->
+      <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+       <view class='tab_content'  wx:for="{{info.projectIntroduction}}" wx:key="*this">
+          <!-- 模块标题 start  -->
+          <view class='content_title' wx:if="{{item.title !=null}}">{{item.title}}</view>
+          <!-- 模块标题 end  -->
+          
+          <!-- 模块内容 start  -->
+          <view class='content_pro' wx:for-item="pro" wx:for="{{item.content}}" wx:key="*this">
+            <view class='pro_content' wx:if="{{pro.content != null}}">{{pro.content}}
+              <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
+            </view>
+            <view class='pro_content' wx:elif="{{pro.content_Bold != null}}">
+              <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
+            </view>
+
+            <view class='img_title' wx:if="{{pro.title != null}}">{{pro.title}}</view>
+
+            <image mode="widthFix" wx:if="{{pro.img !=null}}" class='pro_img' src='{{pro.img}}'></image>
+          </view>
+          <!-- 模块内容 end  -->
+       </view>
+       <view class='bottom'></view>
+      </view>
+      <!-- 项目介绍  end-->
+
+      <!-- 对接方案  start-->
+      <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+       <view class='tab_content'  wx:for="{{info.dockingPlan}}" wx:key="*this">
+          <!-- 模块标题 start  -->
+          <view class='content_title' wx:if="{{item.title !=null}}">{{item.title}}</view>
+          <!-- 模块标题 end  -->
+          
+          <!-- 模块内容 start  -->
+          <view class='content_pro' wx:for-item="pro" wx:for="{{item.content}}" wx:key="*this">
+            <view class='pro_content' wx:if="{{pro.content != null}}">{{pro.content}}
+              <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
+            </view>
+            <view class='pro_content' wx:elif="{{pro.content_Bold != null}}">
+              <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
+            </view>
+            <image mode="widthFix" wx:if="{{pro.img !=null}}" class='pro_img' src='{{pro.img}}'></image>
+          </view>
+          <!-- 模块内容 end  -->
+       </view>
+        <view class='bottom'></view>
+      </view>
+      <!-- 对接方案  end-->
+
+      <!-- 加盟标准  start-->
+      <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+       <view class='tab_content'  wx:for="{{info.standardofJoining}}" wx:key="*this">
+          <!-- 模块标题 start  -->
+          <view class='content_title' wx:if="{{item.title !=null}}">{{item.title}}</view>
+          <!-- 模块标题 end  -->
+          <!-- 模块内容 start  -->
+          <view class='content_pro' wx:for-item="pro" wx:for="{{item.content}}" wx:key="*this">
+            <view class='pro_content' wx:if="{{pro.content != null}}">{{pro.content}}
+              <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
+            </view>
+            <view class='pro_content' wx:elif="{{pro.content_Bold != null}}">
+              <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
+            </view>
+            <image mode="widthFix" wx:if="{{pro.img !=null}}" class='pro_img' src='{{pro.img}}'></image>
+          </view>
+          <!-- 模块内容 end  -->
+       </view>
+        <view class='bottom'></view>
+      </view>
+      <!-- 加盟标准  end-->
+    </view>
+  </view>
+  <!-- 底部 start -->
+  <view class='dibu'>
+    <view class='dibu_img'>
+        <view class="img_info" bindtap='bindtabXX'>
+        <image src="/assets/images/info/xx.png"></image>
+        </view>
+        <view class="img_info" bindtap='bindtabAX'>
+        <image src="/assets/images/info/ax{{ax}}.png"></image>
+        </view>
+    </view>
+    <view class='dibu_btn_false'  wx:if="{{personalId !=true }}"  bindtap='bindtapShengqing' id='{{info.id}}'>申请加盟</view>
+    <view class='dibu_btn_ture'  wx:elif="{{personalId}}">已申请</view>
+  </view>
+  <!-- 底部 start -->
+</view>
+
+

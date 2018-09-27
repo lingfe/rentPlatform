@@ -1,7 +1,7 @@
-import fjczData from './helpers/fjczData.js'
+import localData from './assets/localData/localData.js'
 
 App({
-  fjczData, //本地数据
+  localData, //本地数据
 
   onLaunch: function () {
     console.log('App Launch')

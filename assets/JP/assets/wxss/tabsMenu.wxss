@@ -1,0 +1,59 @@
+
+/**
+  path: /assets/wxss/tabsMenu.wxss
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称:  tabs菜单导航
+  描述:  
+**/
+
+
+
+ /*菜单  start*/
+.weui-tab {
+  position:relative;
+  height:80rpx;
+  top: 20rpx;
+  background-color: #fff;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.weui-navbar{
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  height: 80px;
+  overflow-x: auto;  
+  white-space: nowrap;
+  display: flex; 
+}
+.weui-navbar__item {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-right: 1rpx #eee solid;
+  font-size: 32rpx;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  color: #999;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.select_text{
+  color: #330066;
+}
+.weui-navbar__slider {
+  position:absolute;
+  content:" ";
+  left:0;
+  bottom:0;
+  width:2.5em;
+  height:5rpx;
+  background-color:#330066;
+  -webkit-transition:-webkit-transform .3s;
+  transition:-webkit-transform .3s;
+  transition:transform .3s;
+  transition:transform .3s,-webkit-transform .3s;
+}
+/* 菜单  end*/

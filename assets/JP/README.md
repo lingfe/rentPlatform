@@ -9,12 +9,11 @@
 使用本地数据
 
 ### 目录结构：
-
-- image — 存放项目图片
-- pages — 存放项目页面相关文件，包括component,i,index,list,logs等页面
+- assets - 存放项目的所有资源文件，包括:图片，wxss，本地数据
+- pages — 存放项目页面相关页面文件，包括index,my,logs等页面
 - style — 存放公共样式
-- template — 存放复用模板
-- utils — 存放日期处理文件，可require引入
+- config — 存放配置文件
+- utils — 存放工具文件，比如：得到当前日期，弹窗；md5加密文件，表单验证文件
 
 ### 开发环境：
 
