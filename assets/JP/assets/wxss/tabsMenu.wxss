@@ -5,6 +5,20 @@
   时间:  2018-09-26
   名称:  tabs菜单导航
   描述:  
+  wxml:
+  <view class="weui-tab">
+       <!-- 菜单  start -->
+      <view class="weui-navbar" style='column-count: {{info.tabs.length}};'>
+        <view id="{{index}}"  wx:for="{{info.tabs}}" wx:key="*this"
+          class="weui-navbar__item {{activeIndex == index ? 'select_text' : ''}}" 
+          data-name="{{item}}" bindtap="tabClick">
+            {{item}}
+        </view>
+        <view class="weui-navbar__slider" 
+        style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <!-- 菜单  end -->
+  </view>
 **/
 
 

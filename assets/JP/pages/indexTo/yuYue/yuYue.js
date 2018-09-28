@@ -11,6 +11,7 @@ Page({
       { img_url: "http://img2.imgtn.bdimg.com/it/u=1302683880,3693782916&fm=26&gp=0.jpg", name:"看病预约"},
       { img_url: "http://pic.yupoo.com/lingfe/09c57752/c518bc6e.png", name:"服装上门定制预约"},
       { img_url: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1628288707,3887361580&fm=26&gp=0.jpg", name: "垃圾上门回收预约" },
+      { name: "宠物洗澡/寄养预约",img_url:"http://img2.imgtn.bdimg.com/it/u=1944903665,1677524973&fm=11&gp=0.jpg"}
     ],
   },
 
@@ -18,7 +19,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //提示
+    wx.showModal({
+      title: '预约的好处',
+      showCancel:false,
+      content: '1.无需排队，完全掌控时间。\n2.提前为您准备详尽的处理方案，提供快捷优质的服务',
+    });
   },
 
   /**

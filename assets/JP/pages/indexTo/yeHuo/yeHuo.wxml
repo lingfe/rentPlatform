@@ -19,11 +19,11 @@
 
   <!-- 菜单 start -->
   <view class='find_menu'>
-    <view wx:for="{{lbt_images}}"  wx:key="{{item.img_url}}" class='menu' id='{{item.path_url}}'>
+    <navigator url="{{item.navigator}}" wx:for="{{lbt_images}}"  wx:key="{{item.img_url}}" class='menu'>
        <image class='menu_img' src='{{item.img_url}}'></image>
        <view class='menu_text'>{{item.name}}</view>
        <view class='menu_v'>></view>
-    </view>
+    </navigator>
   </view>
   <!-- 菜单 end -->
 </view>

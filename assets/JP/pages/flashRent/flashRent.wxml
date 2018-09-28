@@ -96,10 +96,11 @@
             <!-- 来源和地址信息 end -->
         </view>
         <!-- 钓鱼竿 end -->
-
+        
         <!-- 野货model0 start -->
-        <view wx:if="{{ item.model == 1 }}" class='model'
-           bindtap='bindtap_rescueDetails' id='{{item.id}}'>
+        <navigator
+         url="/pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail"
+         wx:if="{{ item.model == 1 }}" class='model'>
             <view class='model{{item.model}}_content'>
               <view class='model{{item.model}}_content_left'>
                 <image wx:if="{{item.img}}" src='{{item.img}}' mode='aspectFill'></image>
@@ -132,7 +133,7 @@
                 <span style="color: #F25B4B;font-weight: 500;">{{item.likeNum}}</span> 人喜欢
               </view>
             </view>
-        </view>
+        </navigator>
         <!-- 野货model1 end -->
 
         <!-- 预约model2 start -->

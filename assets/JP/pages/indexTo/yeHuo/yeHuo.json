@@ -1,1 +1,4 @@
-{}
+{
+  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "新鲜野货"
+}

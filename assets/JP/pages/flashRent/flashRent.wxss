@@ -7,6 +7,7 @@
   position: fixed;
   top:0%;
   z-index: 5;
+  border-bottom:1rpx solid #eee;
 }
 .top_left {
   line-height: 80rpx;
@@ -341,7 +342,6 @@
     width: 100%;
     height: 100%; */
     margin-top:100rpx;
-
 }
 .model {
    width: 94%;
@@ -350,6 +350,7 @@
    margin-bottom: 20rpx;
    box-shadow: 2px 2px 5px #888888;
    border-radius: 10rpx;
+   border-top:1rpx solid #eee;
 }
 @import '/assets/wxss/model/model0.wxss';
 @import '/assets/wxss/model/model1.wxss';

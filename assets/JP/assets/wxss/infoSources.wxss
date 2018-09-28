@@ -1,0 +1,74 @@
+
+/**
+  path: /assets/wxss/infoSources.wxss
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称:  信息来源
+  描述:  
+  wxml:
+  <!-- 信息来源  start -->
+  <view class="infoSource">
+    <navigator url="/pages/index/info/visitFriends/visitFriends?personalId={{userinfo.id}}">
+      <view class="infoSource_image" >
+        <image src="{{info.sourceLog}}" class="image"/>
+      </view>
+      <view class="infoSource_name">
+        <text>{{info.sourceName}}</text>
+        <text class='infoSource_name_'>已实名</text>
+      </view>
+      <view class='infoSource_follow'>+关注</view>
+    </navigator>
+  </view>
+  <!-- 信息来源  end -->
+**/
+
+
+.infoSource {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+}
+.infoSource_image {
+  width: 16%;
+  float: left;
+}
+.infoSource_image image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50px;
+  background-color: #eee;
+  margin-left: 24rpx;
+  margin-top: 10rpx;
+}
+.infoSource_name {
+  width: 70%;
+  font-size: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  float: left;
+}
+.infoSource_name_{
+  margin-left: 3%;
+  border: 1rpx solid red;
+  padding: 0rpx;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+  color: red;
+}
+/*关注*/
+.infoSource_follow{
+  width: 12%;
+  float: left;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  background-color: #2A90D7;
+  color: #fff;
+  border-radius: 10rpx;
+}
+.infoSource_follow:active{
+  opacity: 0.5;
+}

@@ -7,6 +7,9 @@ export default{
     2,//预约。预约剪发
   ],
 
+  //浏览\看过次数，
+  browse_num: 1502,
+
   //推荐
   tuijian_list:[
     {
@@ -24,21 +27,154 @@ export default{
       sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
       address: '湿地公园南明区',//位置
       dateTime: '刚刚',//日期
-    },{
-      model:1,  //模块
-      img:'http://108108byg.com/uploads/180202/3-1P202210TcA.jpg', //图片
-      title:"八月炸野果八月瓜野香蕉", //标题
-      money:15, //金额
-      company:"斤",  //单位
-      surplusNum:155,//剩余数量
-      sellNum:188,//销售数量
-      likeNum:55,//喜欢人数
+    }, 
+    
+    //八月瓜 start
+    {
+      model: 1,  //模块
+      img: 'http://108108byg.com/uploads/allimg/170831/1-1FS1222647.jpg', //图片
+      title: "八月瓜果苗", //标题
+      varieties: 0,//品种 0=八月瓜,1=牛纳尔果，羊奶果，2=蘑菇
+      money: 1, //价格
+      company: "珠",  //单位
+      surplusNum: 155,//剩余数量
+      sellNum: 188,//销售数量
+      likeNum: 55,//喜欢人数
       source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
       sourceName: '八月瓜',//来源名称
-      sourceLog:'http://108108byg.com/skin/images/logo.png',//来源LOG
+      sourceLog: 'http://108108byg.com/skin/images/logo.png',//来源LOG
       sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
       dateTime: '刚刚',//日期
-    },{
+      },{
+        model:1,  //模块
+        img:'http://108108byg.com/uploads/180202/3-1P202210TcA.jpg', //图片
+        title:"八月炸野果八月瓜野香蕉", //标题
+      varieties: 0,//品种 0=八月瓜,1=牛纳尔果，羊奶果，2=蘑菇
+        money: 15, //价格
+        company:"斤",  //单位
+        surplusNum:155,//剩余数量
+        sellNum:188,//销售数量
+        likeNum:55,//喜欢人数
+        source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
+        sourceName: '八月瓜',//来源名称
+        sourceLog:'http://108108byg.com/skin/images/logo.png',//来源LOG
+        sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
+        dateTime: '刚刚',//日期
+      }, {
+        model: 1,  //模块
+        img: 'http://108108byg.com/uploads/170915/1-1F915011HO10-lp.jpg', //图片
+        title: "麻皮八月瓜", //标题
+        varieties: "八月瓜",//品种
+        money: 10, //价格
+        company: "斤",  //单位
+        surplusNum: 155,//剩余数量
+        sellNum: 188,//销售数量
+        likeNum: 55,//喜欢人数
+        source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
+        sourceName: '八月瓜',//来源名称
+        sourceLog: 'http://108108byg.com/skin/images/logo.png',//来源LOG
+        sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
+        dateTime: '刚刚',//日期
+      }, {
+        model: 1,  //模块
+        img: 'http://108108byg.com/uploads/allimg/171001/3-1G0011HJ3.jpg', //图片
+        title: "八月瓜泡茶", //标题
+        varieties: "八月瓜",//品种
+        money: 20, //价格
+        company: "斤",  //单位
+        surplusNum: 155,//剩余数量
+        sellNum: 188,//销售数量
+        likeNum: 55,//喜欢人数
+        source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
+        sourceName: '八月瓜',//来源名称
+        sourceLog: 'http://108108byg.com/skin/images/logo.png',//来源LOG
+        sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
+        dateTime: '刚刚',//日期
+      }, {
+        model: 1,  //模块
+        img: 'http://108108byg.com/uploads/allimg/170907/1-1FZH32R7.jpg', //图片
+        title: "八月瓜油", //标题
+        varieties: "八月瓜",//品种
+        money: 20, //价格
+        company: "斤",  //单位
+        surplusNum: 155,//剩余数量
+        sellNum: 188,//销售数量
+        likeNum: 55,//喜欢人数
+        source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
+        sourceName: '八月瓜',//来源名称
+        sourceLog: 'http://108108byg.com/skin/images/logo.png',//来源LOG
+        sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
+        dateTime: '刚刚',//日期
+      }, {
+        model: 1,  //模块
+        img: 'http://108108byg.com/uploads/allimg/171020/3-1G020102437.jpg', //图片
+        title: "八月瓜果酒", //标题
+        varieties: "八月瓜",//品种
+        money: 20, //价格
+        company: "斤",  //单位
+        surplusNum: 155,//剩余数量
+        sellNum: 188,//销售数量
+        likeNum: 55,//喜欢人数
+        source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
+        sourceName: '八月瓜',//来源名称
+        sourceLog: 'http://108108byg.com/skin/images/logo.png',//来源LOG
+        sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
+        dateTime: '刚刚',//日期
+      }, {
+      model: 1,  //模块
+      img: 'http://108108byg.com/uploads/171122/3-1G122225T1G6.jpg', //图片
+      title: "猫儿shi八月瓜", //标题
+      varieties: 0,//品种 0=八月瓜,1=牛纳尔果，羊奶果，2=蘑菇
+      money: 20, //价格
+      company: "斤",  //单位
+      surplusNum: 155,//剩余数量
+      sellNum: 188,//销售数量
+      likeNum: 55,//喜欢人数
+      source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
+      sourceName: '八月瓜',//来源名称
+      sourceLog: 'http://108108byg.com/skin/images/logo.png',//来源LOG
+      sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
+      dateTime: '刚刚',//日期
+    },
+    //八月瓜 end
+    
+    //牛纳尔果 start
+    {
+      model: 1,  //模块
+      img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1160545459,1736238826&fm=27&gp=0.jpg', //图片
+      title: "贵州牛纳尔果", //标题
+      varieties: 1,//品种 0=八月瓜,1=牛纳尔果，羊奶果，2=蘑菇
+      money: 8, //价格
+      company: "盒",  //单位
+      surplusNum: 5,//剩余数量
+      sellNum: 188,//销售数量
+      likeNum: 55,//喜欢人数
+      source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
+      sourceName: '八月瓜',//来源名称
+      sourceLog: 'http://108108byg.com/skin/images/logo.png',//来源LOG
+      sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
+      dateTime: '刚刚',//日期
+    },
+    {
+      model: 1,  //模块
+      img: 'http://108108byg.com/uploads/180417/1-1P41H12925a2-lp.jpg', //图片
+      title: "云南羊奶果", //标题
+      varieties: 1,//品种 0=八月瓜,1=牛纳尔果，羊奶果，2=蘑菇
+      money: 8, //价格
+      company: "盒",  //单位
+      surplusNum: 55,//剩余数量
+      sellNum: 188,//销售数量
+      likeNum: 55,//喜欢人数
+      source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
+      sourceName: '八月瓜',//来源名称
+      sourceLog: 'http://108108byg.com/skin/images/logo.png',//来源LOG
+      sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
+      dateTime: '刚刚',//日期
+    },
+    //牛纳尔果 end
+
+    /*预约剪发 start */
+    {
       model: 2,  //模块
       img: 'https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C253%2C802%2C485%3Bw%3D720%3Bq%3D99/sign=98f69c2091504fc2b610ea45d8edcb23/e7cd7b899e510fb3b8fc67bfd333c895d1430c34.jpg', //图片
       title: "雾都美容美发店烫染368", //标题
@@ -53,6 +189,7 @@ export default{
       dateTime: '刚刚',//日期
       remark:"仅售368元，价值1888元美发设计师亲自染烫2选1！免费WiFi，需预约！",
     }
+    /*预约剪发 end */
   ],
 
   throwInTheCityData: [{        //投放城市数据   

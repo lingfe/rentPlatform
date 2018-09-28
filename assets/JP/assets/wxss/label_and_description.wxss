@@ -1,0 +1,46 @@
+/**
+  path: /assets/wxss/label_and_description.wxss
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称:  标签+描述
+  描述:  
+  wxml:
+      <view class='model_content'>
+        <!-- 标价 -->
+        <text class="data_biaoqian_view">{{info.price}}元/{{info.company}}</text>
+        <!-- 服务类型 -->
+        <text class="data_biaoqian_view" wx:if="{{info.serverType}}">{{info.serverType}}</text>
+        <!-- 行业 -->
+        <text class="data_biaoqian_view" wx:if="{{info.industryChoice}}">{{info.industryChoice}}</text>
+        <!-- 浏览次数 -->
+        <text class="data_biaoqian_view">{{browse_num}}次浏览</text>
+        <!-- 描述 -->
+        <text>{{info.describe}}</text>
+      </view>
+
+**/
+
+ .model_content{
+   width: 96%;
+   height: auto;
+   max-height: 310rpx;
+   font-size: 28rpx;
+   color: #868686;
+   margin: auto;
+   overflow:hidden;
+   text-overflow: ellipsis;
+ }
+
+ .data_biaoqian_view{
+  font-size: 26rpx;
+  float: left;
+  color: #fff;
+  overflow: hidden; /**自动隐藏文字*/
+  text-overflow: ellipsis;/**文字隐藏后添加省略号*/
+  white-space: nowrap;/**强制不换行*/
+  margin-right: 4%;
+  background-color: #330066;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  margin-top: 10rpx;
+}

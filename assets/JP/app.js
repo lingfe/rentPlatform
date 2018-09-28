@@ -1,39 +1,46 @@
 import localData from './assets/localData/localData.js'
 
 App({
+  
   localData, //本地数据
 
-  onLaunch: function () {
-    console.log('App Launch')
-      //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-  },
-  getUserInfo: function (cb) {
-    var that = this
-    if (this.globalData.userInfo) {
-      typeof cb == "function" && cb(this.globalData.userInfo)
+
+  //验证非空
+  checkInput: function (data) {
+    if (data == null || data == undefined || data == "" || data == 'null') {
+      return true;
+    }
+    if (typeof data == "string") {
+      var result = data.replace(/(^\s*)|(\s*$)/g, "");
+      return result.length == 0 ? true : false;
     } else {
-      //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo
-              typeof cb == "function" && cb(that.globalData.userInfo)
-            }
-          })
-        }
-      })
+      return false;
     }
   },
-  onShow: function () {
-    console.log('App Show')
+
+  //当前时间
+  getDateTime: function () {
+    var dateTime = new Date().toLocaleString();
+    return dateTime;
   },
-  onHide: function () {
-    console.log('App Hide')
+
+  //提示框，有按钮
+  showModal: function (msg) {
+    wx.showModal({
+      title: msg,
+      showCancel: false,
+    });
   },
+
+  //提示，无按钮
+  showToast: function (msg, icon) {
+    wx.showToast({
+      title: msg,
+      icon: icon,
+      duration: 2000
+    })
+  },
+
   globalData: {
     userInfo: null
   }

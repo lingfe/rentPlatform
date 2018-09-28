@@ -30,6 +30,11 @@ Page({
           'url': 'pages/indexTo/yuYue/yuYue'
         },
         {
+          'icon': '/assets/images/ico/ico_menu/icon_01.png',
+          'text': '餐饮食品',
+          'url': 'pages/indexTo/yuYue/yuYue'
+        },
+        {
           'icon': '/assets/images/ico/ico_menu/icon_03.png',
           'text': '企业合作',
           'url': 'service'

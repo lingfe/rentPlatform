@@ -1,0 +1,26 @@
+
+/**
+  path: /assets/wxss/lbt.wxss
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称:  轮播图
+  描述:  
+  wxml:
+      <swiper class="index-banner" indicator-dots="{{true}}"
+        autoplay="{{true}}" interval="{{4000}}" duration="{{1000}}">
+        <block wx:for="{{info.images}}"  wx:key="{{item}}">
+          <swiper-item>
+            <image src="{{item}}" mode="aspectFill" class="slide-image"/>
+          </swiper-item>
+        </block>
+      </swiper>
+
+**/
+
+.index-banner{
+	width: 100%;
+	height: 474rpx;
+}
+.index-banner .slide-image{
+	width: 100%;
+}

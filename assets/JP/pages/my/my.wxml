@@ -10,7 +10,7 @@
     <view class='page_myUserInfo_caozou'>
       <view class='page_myUserInfo_caozou_caozou'>
         <view class='page_myUserInfo_caozou_caozou_image'>{{helpInfo.count}}88</view>
-        <view class='page_myUserInfo_caozou_caozou_title'>喜欢次数</view>
+        <view class='page_myUserInfo_caozou_caozou_title'>关注</view>
       </view>
 
       <view class='page_myUserInfo_caozou_caozou'>
@@ -36,6 +36,14 @@
         <view class='page_caidang_caidang_title'>商户入口</view>
         <navigator url="/pages/myDrippingWater/volunteerCenter/volunteerCenter?user_id={{info.id}}" 
           class='page_caidang_caidang_text'>管理，营运..</navigator>
+      </view>
+      <view class='page_caidang_caidang'>
+        <view class='page_caidang_caidang_image'>
+          <image src='/assets/images/my/zyzzx.png'></image>
+        </view>
+        <view class='page_caidang_caidang_title'>我的关注</view>
+        <navigator url="/pages/myDrippingWater/volunteerCenter/volunteerCenter?user_id={{info.id}}" 
+          class='page_caidang_caidang_text'>关注的商家,企业..</navigator>
       </view>
       <view class='page_caidang_caidang'>
         <view class='page_caidang_caidang_image'>
