@@ -1,78 +1,89 @@
-
-
 /**
   path: /assets/wxss/model/model2.wxss
   作者:  lingfe 
   时间:  2018-09-26
-  model: 预约
+  model: 新鲜野货（常规，专用布局方式）
   描述:  表示模块2，用推荐菜单的数据类型展示和布局样式
 **/
 
- .model2_model_img{
-   width: 100%;
-   height: auto;
-   padding-top: 0rpx;
-   padding-bottom: 10rpx;
- }
- .model2_img{
-   width: 100%;
-   height: 400rpx;
- }
- .model2_model_title{
-   width: 100%;
-   height: 50rpx;
-   line-height: 50rpx;
-   text-align: center;
-   font-size: 34rpx;
-     overflow: hidden; /**自动隐藏文字*/
-  text-overflow: ellipsis;/**文字隐藏后添加省略号*/
-  white-space: nowrap;/**强制不换行*/
- }
- .model2_model_content{
-   width: 90%;
-   margin: auto;
-   height: auto;
-   max-height: 80rpx;
-   line-height: 40rpx;
-   font-size: 26rpx;
-   color: #AAA;
-   text-align: center;
-     overflow: hidden; /**自动隐藏文字*/
-  /* text-overflow: ellipsis;/**文字隐藏后添加省略号*/
-  /* white-space: nowrap;*强制不换行 */ 
-  padding-bottom: 10rpx;
- }
- .model2_model_style{
-   width: 60%;
-  height: 50rpx;
-  margin: auto;
-  line-height: 50rpx;
-  text-align: center;
-  padding-bottom: 10rpx;
- }
- .model2_data_biaoqian_view{
-  font-size: 22rpx;
-  float: left;
-  color: #AAA;
-  width: 30%;
-  overflow: hidden; /**自动隐藏文字*/
-  text-overflow: ellipsis;/**文字隐藏后添加省略号*/
-  white-space: nowrap;/**强制不换行*/
-}
-.model2_data_biaoqian_view image{
-  height: 22rpx;
-  width: 22rpx;
-  position: relative;
-  top: 3rpx;
-}
 
-/*链接*/
-.model2_navigator:active {
-  background-color:#fff;/*rgba(0, 0, 0, 0.1);*/
-  opacity:0.7;
+/*模块*/
+.model2 {
+   width: 94%;
+   margin: auto;
+   background-color: #fff;
+   margin-bottom: 20rpx;
+   box-shadow: 2px 2px 5px #888888;
+   border-radius: 10rpx;
+   border-top:1rpx solid #eee;
 }
-.model2_navigator {
-  height:auto;
-  width:auto;
-  display:block;
+.model2_title{
+  width: 94%;
+  height: 100rpx;
+  font-size: 28rpx;
+  margin: auto;
+}
+.model2_title_image{
+  width: 14%;
+  height: 100rpx;
+  float: left;
+}
+.model2_title_image image{
+  width: 100%;
+  height: 80rpx;
+  margin-top: 10rpx;
+  border-radius: 50%;
+}
+.model2_title_text{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 40%;
+  float: left;
+  margin-left: 2%; 
+}
+.model2_align_right{
+  text-align: right;
+}
+.model2_content{
+  width: 100%;
+  height: 430rpx;
+}
+.model2_content_left{
+  width: 100%;
+  height: 300rpx;
+  padding-bottom: 0rpx;
+}
+.model2_content_left image{
+  width: 100%;
+  margin: auto;
+  height: 300rpx;
+}
+.model2_content_right{
+  width:100%;
+}
+.model2_content_right_title{
+  width: 94%;
+  font-size: 34rpx;
+  margin: auto;
+  margin-top: 10rpx;
+}
+.model2_content_right_text{
+  width: 94%;
+  font-size: 26rpx;
+  color: #8f8f94;
+  margin: auto;
+  margin-top: 10rpx;
+
+}
+.model2_content_right_text_text{
+  width: 33%;
+  text-align: center;
+  float: left;
+  border-right: 1rpx solid;
+}
+.model2_no-right{
+  border-right:none;
+}
+.model2_text-danger{
+  color: #F25B4B !important
 }

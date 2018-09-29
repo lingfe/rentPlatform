@@ -4,18 +4,6 @@
   时间:  2018-09-26
   名称:  底部
   描述:  
-  wxml:
-  <!-- 底部 start -->
-  <view class='dibu'>
-    <view class='img_info'>
-      <image bindtap='bindtabAX' src="/assets/images/ico/ax{{ax}}.png"></image>
-    </view>
-    <view class='img_info' style='float:right;margin-right:2%;'>
-      <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
-    </view>
-    <view class='dibu_btn_false'>来2斤</view>
-  </view>
-  <!-- 底部 start -->
 **/
 
 .dibu{

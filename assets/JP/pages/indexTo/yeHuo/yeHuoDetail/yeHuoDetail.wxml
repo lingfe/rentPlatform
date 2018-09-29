@@ -5,114 +5,44 @@
  *   描述:  野货详细信息
  * 
  * */-->
+ 
+<!-- 导入资源 -->
+<import src="/assets/wxml/bottom.wxml" />
+<import src="/assets/wxml/imageText.wxml" />
+<import src="/assets/wxml/lbt.wxml" />
+<import src="/assets/wxml/label_and_description.wxml" />
+<import src="/assets/wxml/infoSources.wxml" />
+<import src="/assets/wxml/tabsMenu.wxml" />
+
 <view class='page'>
   <!-- 参数 start -->
   <view class='neiro_model'>
       <!-- 轮播图 start -->
-      <swiper class="index-banner" indicator-dots="{{true}}"
-        autoplay="{{true}}" interval="{{4000}}" duration="{{1000}}">
-        <block wx:for="{{info.images}}"  wx:key="{{item}}">
-          <swiper-item>
-            <image src="{{item}}" mode="aspectFill" class="slide-image"/>
-          </swiper-item>
-        </block>
-      </swiper>
+      <template is="lbt" data="{{info}}" />
       <!-- 轮播图 end -->
 
       <!-- 标题 -->
       <view class='model_title'>{{info.title}}</view>
 
       <!-- 标签+描述 -->
-      <view class='model_content'>
-        <!-- 标价 -->
-        <text class="data_biaoqian_view">{{info.price}}元/{{info.company}}</text>
-        <!-- 服务类型 -->
-        <text class="data_biaoqian_view" wx:if="{{info.serverType}}">{{info.serverType}}</text>
-        <!-- 行业 -->
-        <text class="data_biaoqian_view" wx:if="{{info.industryChoice}}">{{info.industryChoice}}</text>
-        <!-- 月销量 -->
-        <text class='data_biaoqian_view' wx:if="{{info.sellNum}}">月销量{{info.sellNum}}</text>
-        <!-- 喜欢人数 -->
-        <text class='data_biaoqian_view' wx:if="{{info.likeNum}}">{{info.likeNum}}人喜欢</text>
-        <!-- 浏览次数 -->
-        <text class="data_biaoqian_view">{{browse_num}}次浏览</text>
-        <!-- 描述 -->
-        <text>{{info.describe}}</text>
-      </view>
+      <template is="label_and_description" data="{{info,browse_num}}" />
       <!-- 标签+描述 end -->
   </view>
   <!-- 参数 end -->
 
   <!-- 信息来源  start -->
-  <view class="infoSource">
-    <view class="infoSource_image" >
-      <image src="{{info.sourceLog}}" class="image"/>
-    </view>
-    <view class="infoSource_name">
-      <text>{{info.sourceName}}</text>
-      <text class='infoSource_name_'>已实名</text>
-    </view>
-    <view class='infoSource_follow'>+关注</view>
-  </view>
+  <template is="infoSources" data="{{info}}" />
   <!-- 信息来源  end -->
 
   <!-- tab切换  start -->
-  <view class="weui-tab">
-       <!-- 菜单  start -->
-      <view class="weui-navbar" style='column-count: {{info.tabs.length}};'>
-        <view id="{{index}}"  wx:for="{{info.tabs}}" wx:key="*this"
-          class="weui-navbar__item {{activeIndex == index ? 'select_text' : ''}}" 
-          data-name="{{item}}" bindtap="tabClick">
-            {{item}}
-        </view>
-        <view class="weui-navbar__slider" 
-        style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
-      </view>
-      <!-- 菜单  end -->
-  </view>
+  <template is="tabsMenu" data="{{info,activeIndex,sliderLeft,sliderOffset}}" />
   <!-- tab切换 end -->
 
-  <!-- 内容  start-->
-  <view class="weui-tab__panel">
-      <!-- tabs内容部分  start-->
-      <view class="weui-tab__content" wx:for="{{info.tabs}}" wx:key="{{item}}" hidden="{{activeIndex != index }}">
-        <view class='tab_content'>            
-          <!-- 模块内容 start  -->
-          <view class='content_pro' wx:for-item="pro" wx:for="{{info.projectIntroduction[index].content}}" wx:key="*this">
-              <!-- 内容标题 -->
-              <view class='pro_title' wx:if="{{pro.title}}">{{pro.title}}</view>
-              <!-- 内容content -->
-              <view class='pro_content' wx:if="{{pro.content != null}}">
-                <text>{{pro.content}}</text>
-                <!-- 加粗的内容content_Bold -->
-                <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
-              </view>
-              <!-- 内容加粗content_Bold -->
-              <view class='pro_content' wx:elif="{{pro.content_Bold != null}}">
-                <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
-              </view>
-              <!-- 图片img -->
-              <image mode="widthFix" wx:if="{{pro.img !=null}}" class='pro_img' src='{{pro.img}}'></image>
-              <!-- 图片说明文字text -->
-              <view class='img_text' wx:if="{{pro.text != null}}">{{pro.text}}</view>
-          </view>
-          <!-- 模块内容 end  -->
-        </view>
-        <view class='bottom'></view>
-      </view>
-      <!-- tabs内容部分  end-->
-  </view>
-  <!-- 内容  end-->
+  <!-- tabs内容，图片与文字布局  start-->
+  <template is="imageText" data="{{info,activeIndex}}" />
+  <!-- tabs内容，图片与文字布局  end-->
 
   <!-- 底部 start -->
-  <view class='dibu'>
-    <view class='img_info'>
-      <image bindtap='bindtabAX' src="/assets/images/ico/ax{{ax}}.png"></image>
-    </view>
-    <view class='img_info' style='float:right;margin-right:4%;'>
-      <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
-    </view>
-    <view class='dibu_btn_false'>来2斤</view>
-  </view>
-  <!-- 底部 start -->
+  <template is="bottom" data="{{ax}}" />
+  <!-- 底部 end -->
 </view>

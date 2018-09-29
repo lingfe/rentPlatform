@@ -4,20 +4,6 @@
   时间:  2018-09-26
   名称:  标签+描述
   描述:  
-  wxml:
-      <view class='model_content'>
-        <!-- 标价 -->
-        <text class="data_biaoqian_view">{{info.price}}元/{{info.company}}</text>
-        <!-- 服务类型 -->
-        <text class="data_biaoqian_view" wx:if="{{info.serverType}}">{{info.serverType}}</text>
-        <!-- 行业 -->
-        <text class="data_biaoqian_view" wx:if="{{info.industryChoice}}">{{info.industryChoice}}</text>
-        <!-- 浏览次数 -->
-        <text class="data_biaoqian_view">{{browse_num}}次浏览</text>
-        <!-- 描述 -->
-        <text>{{info.describe}}</text>
-      </view>
-
 **/
 
  .model_content{

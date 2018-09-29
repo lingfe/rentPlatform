@@ -1,16 +1,12 @@
 /* pages/indexTo/yeHuo/yeHuoList/yeHuoList.wxss */
 
 @import '/assets/wxss/model/model1.wxss';
+@import '/assets/wxss/model/model2.wxss';
+@import '/assets/wxss/model/model3.wxss';
+@import '/assets/wxss/model/model4.wxss';
+@import '/assets/wxss/model/model5.wxss';
+@import '/assets/wxss/infoSources.wxss';
 
 page{
   padding-top: 20rpx;
-}
-
-.model {
-   width: 94%;
-   margin: auto;
-   background-color: #fff;
-   margin-bottom: 20rpx;
-   box-shadow: 2px 2px 5px #888888;
-   border-radius: 10rpx;
 }

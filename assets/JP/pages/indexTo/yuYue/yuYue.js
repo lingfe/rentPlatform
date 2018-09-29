@@ -6,6 +6,8 @@ Page({
    */
   data: {
     yuyue_caidan:[
+      { name: "吃饭预约", img_url: "http://img5.imgtn.bdimg.com/it/u=2524272065,3217768444&fm=26&gp=0.jpg" ,
+        navigator:"/pages/indexTo/yeHuo/yeHuoList/yeHuoList?category=5"},
       { img_url: "http://img0.imgtn.bdimg.com/it/u=3598093799,2587685729&fm=26&gp=0.jpg", name:"剪发预约"},
       { img_url: "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3879609563,1970982058&fm=26&gp=0.jpg", name:"洗车(到店/上门)预约"},
       { img_url: "http://img2.imgtn.bdimg.com/it/u=1302683880,3693782916&fm=26&gp=0.jpg", name:"看病预约"},

@@ -1,0 +1,26 @@
+
+<!--
+/**
+  path: /assets/wxml/infoSources.wxml
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称: 信息来源
+  描述:  
+**/
+-->
+
+
+<!-- 信息来源  start -->
+<template name="infoSources">
+  <view class="infoSource">
+    <view class="infoSource_image" >
+      <image src="{{info.sourceLog}}" class="image"/>
+    </view>
+    <view class="infoSource_name">
+      <text>{{info.sourceName}}</text>
+      <text class='infoSource_name_'>已实名</text>
+    </view>
+    <view class='infoSource_follow'>+关注</view>
+  </view>
+</template>
+<!-- 信息来源  end -->

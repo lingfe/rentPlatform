@@ -7,7 +7,7 @@ Page({
    */
   data: {
     lists: app.localData.tuijian_list,
-    varieties:0,//默认0=八月瓜
+    category:0,//默认0=其他
   },
 
   /**
@@ -16,7 +16,7 @@ Page({
   onLoad: function (options) {
     var that=this;
     that.setData({
-      varieties: options.varieties
+      category: options.category
     });
   },
 

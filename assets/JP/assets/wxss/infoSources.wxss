@@ -5,21 +5,6 @@
   时间:  2018-09-26
   名称:  信息来源
   描述:  
-  wxml:
-  <!-- 信息来源  start -->
-  <view class="infoSource">
-    <navigator url="/pages/index/info/visitFriends/visitFriends?personalId={{userinfo.id}}">
-      <view class="infoSource_image" >
-        <image src="{{info.sourceLog}}" class="image"/>
-      </view>
-      <view class="infoSource_name">
-        <text>{{info.sourceName}}</text>
-        <text class='infoSource_name_'>已实名</text>
-      </view>
-      <view class='infoSource_follow'>+关注</view>
-    </navigator>
-  </view>
-  <!-- 信息来源  end -->
 **/
 
 

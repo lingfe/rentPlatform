@@ -1,39 +1,13 @@
 <!--pages/indexTo/yeHuo/yeHuoList/yeHuoList.wxml-->
+<!-- 导入资源 -->
+<import src="/assets/wxml/model.wxml" />
+
 <view class='page'>
-  <!-- 野货model0 start -->
-  <navigator url="/pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail" wx:for="{{lists}}" wx:key="*this"
-    wx:if="{{ item.varieties == varieties }}" class='model'>
-    <view class='model{{item.model}}_content'>
-      <view class='model{{item.model}}_content_left'>
-        <image wx:if="{{item.img}}" src='{{item.img}}' mode='aspectFill'></image>
-      </view>
-      <view class='model{{item.model}}_content_right'>
-        <view class='model{{item.model}}_content_right_title'>{{item.title}}</view>     
-        <view class='model{{item.model}}_content_right_text'>
-          <progress percent="{{item.surplusNum}}" activeColor="#330066" />
-        </view>
-        <view class='model{{item.model}}_content_right_text'>
-          <view class='model{{item.model}}_content_right_text_text'>
-            金额:<span class="model1_text-danger">{{item.money}}</span>元/{{item.company}}
-          </view>
-          <view class='model{{item.model}}_content_right_text_text'>
-            已出售：<span class="model1_text-danger">{{item.sellNum}}</span>份
-          </view>
-          <view class='model{{item.model}}_content_right_text_text model1_no-right'>
-            <span class="model1_text-danger">{{item.likeNum}}</span>次转发
-          </view>
-        </view>
-      </view>
+  <!-- 内容 model  start -->
+  <view class='page_model'>
+    <view wx:if="{{ item.category == category }}"  wx:for="{{lists}}" wx:key="{{item.model}}">
+      <template is="model{{item.model}}" data="{{item}}" />
     </view>
-    <view class='model{{item.model}}_title'>
-              <view class='model{{item.model}}_title_image'>
-                <image src='{{item.sourceLog}}'></image>
-              </view>
-              <view class='model{{item.model}}_title_text'>{{item.sourceName}}</view>
-              <view class='model{{item.model}}_title_text model1_align_right'>
-                <span style="color: #F25B4B;font-weight: 500;">{{item.likeNum}}</span> 人喜欢
-              </view>
-    </view>
-  </navigator>
-  <!-- 野货model1 end -->
+  </view>
+  <!-- 内容 model  end -->
 </view>

@@ -1,0 +1,88 @@
+
+
+/**
+  path: /assets/wxss/model/model3.wxss
+  作者:  lingfe 
+  时间:  2018-09-26
+  model: 生活预约（常规，专用布局方式）
+  描述:  表示模块3，用推荐菜单的数据类型展示和布局样式
+**/
+
+.model3 {
+   width: 94%;
+   margin: auto;
+   background-color: #fff;
+   margin-bottom: 20rpx;
+   box-shadow: 2px 2px 5px #888888;
+   border-radius: 10rpx;
+   border-top:1rpx solid #eee;
+}
+
+ .model3_model_img{
+   width: 100%;
+   height: auto;
+   padding-top: 0rpx;
+   padding-bottom: 10rpx;
+ }
+ .model3_img{
+   width: 100%;
+   height: 400rpx;
+ }
+ .model3_model_title{
+   width: 100%;
+   height: 50rpx;
+   line-height: 50rpx;
+   text-align: center;
+   font-size: 34rpx;
+     overflow: hidden; /**自动隐藏文字*/
+  text-overflow: ellipsis;/**文字隐藏后添加省略号*/
+  white-space: nowrap;/**强制不换行*/
+ }
+ .model3_model_content{
+   width: 90%;
+   margin: auto;
+   height: auto;
+   max-height: 80rpx;
+   line-height: 40rpx;
+   font-size: 26rpx;
+   color: #AAA;
+   text-align: center;
+     overflow: hidden; /**自动隐藏文字*/
+  /* text-overflow: ellipsis;/**文字隐藏后添加省略号*/
+  /* white-space: nowrap;*强制不换行 */ 
+  padding-bottom: 10rpx;
+ }
+ .model3_model_style{
+   width: 100%;
+  height: 50rpx;
+  margin: auto;
+  line-height: 50rpx;
+  text-align: center;
+  padding-bottom: 10rpx;
+ }
+ .model3_data_biaoqian_view{
+  font-size: 22rpx;
+  float: left;
+  color: #AAA;
+  width: 33%;
+  overflow: hidden; /**自动隐藏文字*/
+  text-overflow: ellipsis;/**文字隐藏后添加省略号*/
+  white-space: nowrap;/**强制不换行*/
+}
+.model3_data_biaoqian_view image{
+  height: 22rpx;
+  width: 22rpx;
+  position: relative;
+  top: 3rpx;
+}
+
+/*链接*/
+.model3_navigator:active {
+  background-color:#fff;/*rgba(0, 0, 0, 0.1);*/
+  opacity:0.7;
+}
+.model3_navigator {
+  height:auto;
+  width:auto;
+  display:block;
+}

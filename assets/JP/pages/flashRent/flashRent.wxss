@@ -1,4 +1,20 @@
 
+@import '/assets/wxss/model/model1.wxss';
+@import '/assets/wxss/model/model2.wxss';
+@import '/assets/wxss/model/model3.wxss';
+@import '/assets/wxss/model/model4.wxss';
+@import '/assets/wxss/model/model5.wxss';
+
+@import '/assets/wxss/infoSources.wxss';
+
+
+.page_model{
+  margin-top:100rpx;
+}
+.infoSource{
+  border-top: 1rpx solid #eee;
+}
+
 /**头**/
 .dahuo_top {
   width: 750rpx;
@@ -343,18 +359,6 @@
     height: 100%; */
     margin-top:100rpx;
 }
-.model {
-   width: 94%;
-   margin: auto;
-   background-color: #fff;
-   margin-bottom: 20rpx;
-   box-shadow: 2px 2px 5px #888888;
-   border-radius: 10rpx;
-   border-top:1rpx solid #eee;
-}
-@import '/assets/wxss/model/model0.wxss';
-@import '/assets/wxss/model/model1.wxss';
-@import '/assets/wxss/model/model2.wxss';
 .text-red {
     color: #fb5d5d;
 }

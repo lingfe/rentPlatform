@@ -1,0 +1,209 @@
+<!--
+/**
+  path: /assets/wxml/model.wxml
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称: 用推荐菜单的数据类型展示和布局样式
+  描述:  
+**/
+-->
+
+<import src="/assets/wxml/infoSources.wxml" />
+
+<!-- 0.(其他布局方式) start -->
+<template name="model0">
+</template>
+<!-- (其他布局方式) end -->
+
+<!-- 1.(官方闪租) start -->
+<template name="model1">
+  <view class="model1"  >
+            <!-- 基本说明信息 start -->
+            <view class="model{{item.model}}_hot-item-top">
+                <!-- 图片 start -->
+                <view class="model{{item.model}}_hot-img">
+                    <image src="{{item.img}}"></image>
+                </view>
+                <!-- 图片 end -->
+
+                <!-- 参数 start -->
+                <view class="model{{item.model}}_hot-item-top-right">
+                    <text class="model{{item.model}}_hot-item-title">{{item.title}}</text>
+                    <view class="model{{item.model}}_hot-item-price">{{item.price}}/{{item.company}}
+                      原价/{{item.originalPrice}} {{item.explain}}
+                    </view>
+                    <view class="model{{item.model}}_hot-item-No-time-box">
+                        <view class="model1_hot-item-No" wx:for="{{item.label}}" wx:key="*this">{{item}}</view>
+                        <view class="model{{item.model}}_hot-item-time">{{item.dateTime}}</view>
+                    </view> 
+                </view>
+                <!-- 参数 end -->
+            </view>
+            <!-- 基本说明信息 end -->
+
+            <!-- 操作部分 start -->
+            <!-- <view class="model{{item.model}}_hot-item-btm">
+                <view class="model{{item.model}}_hot-item-user-box">
+                  <text class="model{{item.model}}_hot-item-btn">直接买</text>
+                </view>
+                <text class="model{{item.model}}_hot-item-btn">Phone</text>||
+                <text class="model{{item.model}}_hot-item-btn">马上租</text>
+            </view> -->
+            <!-- 操作部分 end -->
+
+            <!-- 来源和地址信息 start -->
+            <!-- <view class="model{{item.model}}_hot-item-btm">
+              <view class="model{{item.model}}_hot-item-No" 
+              bindtap='showModal' 
+              data-title='{{item.source}}'
+              data-msg='{{item.sourceName}}'>
+                ({{item.source}})<text class="model{{item.model}}_text-{{item.sourceCredit}}">{{item.sourceName}}</text>
+              </view>
+              <view class="model{{item.model}}_hot-item-No" 
+              bindtap='showModal' 
+              data-title='位置'
+              data-msg='{{item.address}}'>{{item.address}}</view>
+            </view> -->
+            <!-- 来源和地址信息 end -->
+        </view>
+</template>
+<!-- (官方闪租) end -->
+
+<!-- 2.(新鲜野货) start -->
+<template name="model2">
+  <navigator url="/pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail" class='model2'>
+            <view class='model{{item.model}}_content'>
+              <view class='model{{item.model}}_content_left'>
+                <image wx:if="{{item.img}}" src='{{item.img}}' mode='aspectFill'></image>
+              </view>
+              <view class='model{{item.model}}_content_right'>
+                <view class='model{{item.model}}_content_right_title'>{{item.title}}</view>
+                
+                <view class='model{{item.model}}_content_right_text'>
+                  <progress percent="{{item.surplusNum}}" activeColor="#330066" />
+                </view>
+                <view class='model{{item.model}}_content_right_text'>
+                  <view class='model{{item.model}}_content_right_text_text'>
+                    金额:<span class="model{{item.model}}_text-danger">{{item.money}}</span>元/{{item.company}}
+                  </view>
+                  <view class='model{{item.model}}_content_right_text_text'>
+                    已出售：<span class="model{{item.model}}_text-danger">{{item.sellNum}}</span>份
+                  </view>
+                  <view class='model{{item.model}}_content_right_text_text model{{item.model}}_no-right'>
+                    <span class="model{{item.model}}_text-danger">{{item.likeNum}}</span>次转发
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class='model{{item.model}}_title'>
+              <view class='model{{item.model}}_title_image'>
+                <image src='{{item.sourceLog}}'></image>
+              </view>
+              <view class='model{{item.model}}_title_text'>{{item.sourceName}}</view>
+              <view class='model{{item.model}}_title_text model{{item.model}}_align_right'>
+                <span style="color: #F25B4B;font-weight: 500;">{{item.likeNum}}</span> 人喜欢
+              </view>
+            </view>
+        </navigator>
+</template>
+<!-- (新鲜野货) end -->
+
+<!-- 3.(生活预约) start -->
+<template name="model3">
+        <view  class='model3'>
+          <view  class='model{{item.model}}_navigator' bindtap='bindtapNavigator' id='{{item.id}}' data-releasetype='{{item.releaseType}}'>
+          <view class='model{{item.model}}_model_img'>
+            <image class='model{{item.model}}_img' src='{{item.img}}'></image>
+          </view>
+          <view class='model{{item.model}}_model_title'>{{item.title}}</view>
+          <view class='model{{item.model}}_model_content'>{{item.remark}} </view>
+          <view class='model{{item.model}}_model_style'>
+            <view class="model{{item.model}}_data_biaoqian_view">
+            <image src="/assets/images/info/qtje.png"></image>
+            人均 {{item.headUses}}￥
+            </view>
+            <view class="model{{item.model}}_data_biaoqian_view">
+            <image src="/assets/images/type.png"></image>
+            {{item.phone}}
+            </view>
+            <view class="model{{item.model}}_data_biaoqian_view">
+            <image src="/assets/images/hanye.png"></image>
+            {{item.dateTime}}
+            </view>
+          </view>
+          </view>
+        </view>
+</template>
+<!-- (生活预约) end -->
+
+<!-- 4.(餐饮食品) start -->
+<template name="model4">
+  <view class='model4'>
+    <view class="model4_image">
+      <image src='{{item.sourceLog}}'></image>
+    </view>
+    <view class='model4_content'>
+      <view class='model4_content_title'>
+        <span class="model4_content_title_label" wx:if="{{item.is_subscribe == 1}}">可预约</span>
+        {{item.title}}
+      </view>
+      <view class='model4_content_param'>
+        <text>月售:{{item.sellNum}}|</text>
+        <text>{{item.charging_fee}}￥起送|</text>
+        <text>{{item.distribution_fee}}￥配送费</text>
+      </view>
+      <view class='model4_content_tuijing' wx:for="{{item.tuijian_list}}" wx:for-item="tuijian" wx:key="{{tuijian.img}}">
+        <view class='model4_content_tuijing_image'>
+          <image src='{{tuijian.img}}'></image>
+        </view>
+        <view class='model4_content_tuijing_content'>
+          <view class='model4_content_tuijing_content_title'>{{tuijian.title}}</view>
+          <view class='model4_content_tuijing_content_param'>
+            <text>月售:{{tuijian.sellNum}}|</text>
+            <text>{{tuijian.likeNum}}人喜欢</text>
+          </view>
+          <view class='model4_content_tuijing_content_pirce'>￥{{tuijian.price}}</view>
+        </view>
+      </view>
+
+      <view class='model4_content_text'>
+        <view class="model4_is_follow" wx:if="{{item.is_follow == 1}}">+关注</view>
+        <view class='model4_content_text_all'>查看全部></view>
+      </view>
+    </view>
+  </view>
+</template>
+<!-- (餐饮食品) end -->
+
+<!-- 5.(特殊宠物) start -->
+<template name="model5">
+  <view class="model5" >
+    <view class="model5_image">
+      <image src='{{item.img}}'></image>
+      <image src='{{item.img}}'></image>
+      <image src='{{item.img}}'></image>
+    </view>
+    <view class='model5_neiro'>
+      <view class='model5_neiro_title'>{{item.title}}</view>
+    </view>
+
+    <!-- 信息来源 start -->
+    <view class="infoSource">
+      <view class="infoSource_image" >
+        <image src="{{item.sourceLog}}" class="image"/>
+      </view>
+      <view class="infoSource_name">
+        <text>{{item.sourceName}}</text>
+        <text class='infoSource_name_'>已实名</text>
+      </view>
+      <view class='infoSource_follow'>+关注</view>
+    </view>
+    <!-- 信息来源 end -->
+  </view>
+</template>
+<!-- (特殊宠物) end -->
+
+<!-- 6.() start -->
+<template name="model6">
+
+</template>

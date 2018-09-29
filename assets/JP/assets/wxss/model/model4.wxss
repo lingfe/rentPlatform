@@ -1,0 +1,106 @@
+/**
+  path: /assets/wxss/model/model4.wxss
+  作者:  lingfe 
+  时间:  2018-09-26
+  model: 餐饮食品（常规，专用布局方式）
+  描述:  表示模块4，用推荐菜单的数据类型展示和布局样式
+**/
+
+.model4 {
+   width: 94%;
+   margin: auto;
+   background-color: #fff;
+   margin-bottom: 20rpx;
+   box-shadow: 2px 2px 5px #888888;
+   border-radius: 10rpx;
+   border-top:1rpx solid #eee;
+   display: flex;
+   padding-top: 10rpx;
+   padding-bottom: 10rpx;
+}
+.model4_image{
+  width: 14%;
+  margin-top: 1%;
+  margin-left: 2%;
+}
+.model4_image image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.model4_content{
+  width: 82%;
+}
+.model4_content_title{
+  width: 100%;
+  font-size: 32rpx;
+}
+.model4_content_title_label{
+ font-size: 30rpx;
+ border: 1rpx solid #eee;
+ color: #ddd;  
+ border-radius: 10rpx;
+}
+.model4_content_param{
+  width: 100%;
+  font-size: 26rpx;
+}
+
+/* 推荐*/
+.model4_content_tuijing{
+  width: 100%;
+  display: flex;
+  margin-top: 15rpx;
+}
+.model4_content_tuijing_image{
+  width: 20%;
+  margin-top: 10rpx;
+}
+.model4_content_tuijing_image image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.model4_content_tuijing_content{
+  width: 80%;
+}
+.model4_content_tuijing_content_title{
+  width: 100%;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.model4_content_tuijing_content_param{
+  width: 100%;
+  font-size: 26rpx;
+}
+.model4_content_tuijing_content_pirce{
+  width: 100%;
+  color: red;
+  font-size: 32rpx;
+}
+.model4_content_text{
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+/*查看全部*/
+.model4_content_text_all{
+  float: right;
+}
+.model4_content_text_all:active{
+  opacity: 0.5;
+}
+/* 关注 */
+.model4_is_follow {
+  width:100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background-color:#2A90D7;
+  color:#fff;
+  border-radius:10rpx;
+  float: left;
+}
+.model4_is_follow:active{
+  opacity: 0.5;
+}

@@ -12,8 +12,40 @@ export default{
 
   //推荐
   tuijian_list:[
+
+    /**餐饮食品 start */
     {
-      model:0,
+      model: 4, //布局model4
+      sourceLog: "https://p0.meituan.net/deal/3f47cdea4688224ddc30a1047e87472b93015.jpg",//log
+      title:"A谯家大头炮特色烤鱼",
+      is_subscribe:1,//是否可以预约0=否，不可以，1=是,可以。
+      is_follow: 1,//是否显示预约0=否，不显示，1=是,显示。
+      sellNum: 188,//销售数量
+      charging_fee:20,//起送费
+      distribution_fee:2,//配送费
+      category:5,//烤鱼
+      //推荐商品
+      tuijian_list:[
+        {
+          img:"https://p0.meituan.net/shaitu/59178c00c2bea2254344374ce67447512265801.jpg@55w_55h_1e_1c",//图片
+          title:"烤鱼草鱼1条3斤左右",//标题
+          sellNum: 188,//销售数量
+          likeNum: 55,//喜欢人数
+          price:88,//价格
+        },{
+          img: "https://p0.meituan.net/shaitu/59178c00c2bea2254344374ce67447512265801.jpg@55w_55h_1e_1c",//图片
+          title: "烤鱼江团1条3斤左右",//标题
+          sellNum: 188,//销售数量
+          likeNum: 55,//喜欢人数
+          price: 98,//价格
+        }
+      ],
+    },
+    /**餐饮食品 end */
+
+    //官方闪租 start
+    {
+      model:1,//布局model1
       img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg', //图
       title: '新货3m钓鱼竿',//标题
       price: '18.00',//价格
@@ -27,14 +59,16 @@ export default{
       sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
       address: '湿地公园南明区',//位置
       dateTime: '刚刚',//日期
+      category:1,//类别
     }, 
+    //官方闪租 start
     
-    //八月瓜 start
+    //新鲜野货 start
     {
-      model: 1,  //模块
+      model: 2,  //模块
       img: 'http://108108byg.com/uploads/allimg/170831/1-1FS1222647.jpg', //图片
       title: "八月瓜果苗", //标题
-      varieties: 0,//品种 0=八月瓜,1=牛纳尔果，羊奶果，2=蘑菇
+      category: 2,//类别
       money: 1, //价格
       company: "珠",  //单位
       surplusNum: 155,//剩余数量
@@ -46,10 +80,10 @@ export default{
       sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
       dateTime: '刚刚',//日期
       },{
-        model:1,  //模块
+        model:2,  //模块
         img:'http://108108byg.com/uploads/180202/3-1P202210TcA.jpg', //图片
         title:"八月炸野果八月瓜野香蕉", //标题
-      varieties: 0,//品种 0=八月瓜,1=牛纳尔果，羊奶果，2=蘑菇
+        category: 2,//类别
         money: 15, //价格
         company:"斤",  //单位
         surplusNum:155,//剩余数量
@@ -61,10 +95,10 @@ export default{
         sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
         dateTime: '刚刚',//日期
       }, {
-        model: 1,  //模块
+        model: 2,  //模块
         img: 'http://108108byg.com/uploads/170915/1-1F915011HO10-lp.jpg', //图片
         title: "麻皮八月瓜", //标题
-        varieties: "八月瓜",//品种
+        category: 2,//类别
         money: 10, //价格
         company: "斤",  //单位
         surplusNum: 155,//剩余数量
@@ -76,10 +110,11 @@ export default{
         sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
         dateTime: '刚刚',//日期
       }, {
-        model: 1,  //模块
+        model: 2,  //模块
         img: 'http://108108byg.com/uploads/allimg/171001/3-1G0011HJ3.jpg', //图片
         title: "八月瓜泡茶", //标题
-        varieties: "八月瓜",//品种
+      category: 2,//类别
+        category: 2,//类别
         money: 20, //价格
         company: "斤",  //单位
         surplusNum: 155,//剩余数量
@@ -91,10 +126,10 @@ export default{
         sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
         dateTime: '刚刚',//日期
       }, {
-        model: 1,  //模块
+        model: 2,  //模块
         img: 'http://108108byg.com/uploads/allimg/170907/1-1FZH32R7.jpg', //图片
         title: "八月瓜油", //标题
-        varieties: "八月瓜",//品种
+      category: 2,//类别
         money: 20, //价格
         company: "斤",  //单位
         surplusNum: 155,//剩余数量
@@ -106,10 +141,10 @@ export default{
         sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
         dateTime: '刚刚',//日期
       }, {
-        model: 1,  //模块
+        model: 2,  //模块
         img: 'http://108108byg.com/uploads/allimg/171020/3-1G020102437.jpg', //图片
         title: "八月瓜果酒", //标题
-        varieties: "八月瓜",//品种
+      category: 2,//类别
         money: 20, //价格
         company: "斤",  //单位
         surplusNum: 155,//剩余数量
@@ -121,10 +156,10 @@ export default{
         sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
         dateTime: '刚刚',//日期
       }, {
-      model: 1,  //模块
+      model: 2,  //模块
       img: 'http://108108byg.com/uploads/171122/3-1G122225T1G6.jpg', //图片
       title: "猫儿shi八月瓜", //标题
-      varieties: 0,//品种 0=八月瓜,1=牛纳尔果，羊奶果，2=蘑菇
+      category: 2,//类别
       money: 20, //价格
       company: "斤",  //单位
       surplusNum: 155,//剩余数量
@@ -136,14 +171,11 @@ export default{
       sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
       dateTime: '刚刚',//日期
     },
-    //八月瓜 end
-    
-    //牛纳尔果 start
     {
-      model: 1,  //模块
+      model: 2,  //模块
       img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1160545459,1736238826&fm=27&gp=0.jpg', //图片
       title: "贵州牛纳尔果", //标题
-      varieties: 1,//品种 0=八月瓜,1=牛纳尔果，羊奶果，2=蘑菇
+      category: 6,//类别
       money: 8, //价格
       company: "盒",  //单位
       surplusNum: 5,//剩余数量
@@ -156,10 +188,10 @@ export default{
       dateTime: '刚刚',//日期
     },
     {
-      model: 1,  //模块
+      model: 2,  //模块
       img: 'http://108108byg.com/uploads/180417/1-1P41H12925a2-lp.jpg', //图片
       title: "云南羊奶果", //标题
-      varieties: 1,//品种 0=八月瓜,1=牛纳尔果，羊奶果，2=蘑菇
+      category: 6,//类别
       money: 8, //价格
       company: "盒",  //单位
       surplusNum: 55,//剩余数量
@@ -171,25 +203,46 @@ export default{
       sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
       dateTime: '刚刚',//日期
     },
-    //牛纳尔果 end
+    //新鲜野货 end
 
-    /*预约剪发 start */
+    /*生活预约 start */
     {
-      model: 2,  //模块
+      model: 3,  //模块
       img: 'https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C253%2C802%2C485%3Bw%3D720%3Bq%3D99/sign=98f69c2091504fc2b610ea45d8edcb23/e7cd7b899e510fb3b8fc67bfd333c895d1430c34.jpg', //图片
       title: "雾都美容美发店烫染368", //标题
+      category: 3,//类别
       source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
       sourceName: '雾都美容美发',//来源名称
       sourceLog: 'https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C253%2C802%2C485%3Bw%3D720%3Bq%3D99/sign=98f69c2091504fc2b610ea45d8edcb23/e7cd7b899e510fb3b8fc67bfd333c895d1430c34.jpg',//来源LOG
       sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
       address:'贵阳市花溪区贵筑路19号林都国际项1栋1单元4楼',//地址
-      phone: "085183625295|",//联系电话
+      phone: "085183625295",//联系电话
       businessTime:"09:00-19:00",//营业时间
       headUses:"65",//人均消费￥
       dateTime: '刚刚',//日期
       remark:"仅售368元，价值1888元美发设计师亲自染烫2选1！免费WiFi，需预约！",
     }
-    /*预约剪发 end */
+    /*生活预约 end */
+
+    /**特殊宠物 start */
+    ,{
+      model:5,  //模块
+      img: 'http://www.qnong.com.cn/uploadfile/2018/0910/20180910111719388.jpg', //图片
+      title: "养宠物猫猫狗狗，不如养几只土元", //标题
+      source: 3,//来源(0.官方,1.个人，2.商家，3.企业)
+      sourceName: '土元养殖场',//来源名称
+      category: 4,//类别
+      sourceLog: 'http://f.hiphotos.baidu.com/baike/s%3D220/sign=9467fc4add54564ee165e33b83df9cde/d53f8794a4c27d1e0f28fb9d1bd5ad6eddc43859.jpg',//来源LOG
+      sourceCredit: 1,//来源信用(0.未认证,1.已实名认证)
+      address: '贵阳市花溪区贵筑路19号林都国际项1栋1单元4楼',//地址
+      phone: "085183625295",//联系电话
+      businessTime: "09:00-19:00",//营业时间
+      headUses: "65",//人均消费￥
+      dateTime: '刚刚',//日期
+      remark: "土元又叫土鳖虫，是一种野生的昆虫药材，药用价值极高，野生的土元喜欢生活在阴暗、潮湿、腐殖质丰富的松土中，一般在一些土质、木质房屋墙",
+    }
+    /**特殊宠物 end */
+    
   ],
 
   throwInTheCityData: [{        //投放城市数据   

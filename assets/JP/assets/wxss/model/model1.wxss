@@ -2,89 +2,154 @@
   path: /assets/wxss/model/model1.wxss
   作者:  lingfe 
   时间:  2018-09-26
-  model: 野货
+  model：官方闪租（常规，专用布局方式）
   描述:  表示模块1，用推荐菜单的数据类型展示和布局样式
 **/
 
+.model1 {
+   width: 94%;
+   margin: auto;
+   background-color: #fff;
+   margin-bottom: 20rpx;
+   box-shadow: 2px 2px 5px #888888;
+   border-radius: 10rpx;
+   border-top:1rpx solid #eee;
+}
 
-/*模块*/
-.model1{
-  width: 94%;
-  background-color: #fff;
-  border: 1rpx solid #efeff4;
-  border-radius: 10rpx;
-  margin: auto;
-  margin-bottom: 20rpx;
-  padding-bottom: 20rpx;
-  margin-top: 20rpx;
-}
-.model1_title{
-  width: 94%;
-  height: 100rpx;
-  font-size: 28rpx;
-  margin: auto;
-}
-.model1_title_image{
-  width: 14%;
-  height: 100rpx;
-  float: left;
-}
-.model1_title_image image{
-  width: 100%;
-  height: 80rpx;
-  margin-top: 10rpx;
-  border-radius: 50%;
-}
-.model1_title_text{
-  height: 100rpx;
-  line-height: 100rpx;
-  width: 40%;
-  float: left;
-  margin-left: 2%; 
-}
-.model1_align_right{
-  text-align: right;
-}
-.model1_content{
-  width: 100%;
-  height: 430rpx;
-}
-.model1_content_left{
-  width: 100%;
-  height: 300rpx;
-  padding-bottom: 0rpx;
-}
-.model1_content_left image{
-  width: 100%;
-  margin: auto;
-  height: 300rpx;
-}
-.model1_content_right{
-  width:100%;
-}
-.model1_content_right_title{
-  width: 94%;
-  font-size: 34rpx;
-  margin: auto;
-  margin-top: 10rpx;
-}
-.model1_content_right_text{
-  width: 94%;
-  font-size: 26rpx;
-  color: #8f8f94;
-  margin: auto;
-  margin-top: 10rpx;
+.model1_hot-item-top {
+    display: flex;
+    width: 100%;
+    height: 220rpx;
+    padding: 30rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: rgb(255,255,255);
+    border-bottom:1rpx solid #aaa;
 
 }
-.model1_content_right_text_text{
-  width: 33%;
-  text-align: center;
-  float: left;
-  border-right: 1rpx solid;
+
+.model1_hot-img, .model1_hot-img image {
+    width: 160rpx;
+    height: 160rpx;
 }
-.model1_no-right{
-  border-right:none;
+
+.model1_hot-item-top-right {
+    width: 506rpx;
+    height: 160rpx;
+    margin-left: 24rpx;
 }
-.model1_text-danger{
-  color: #F25B4B !important
+
+.model1_hot-item-title {
+    display: block;
+    width: 100%;
+    height: 40rpx;
+    margin: -4rpx 0 30rpx 0;
+    line-height: 40rpx;
+    font-size: 32rpx;
+    color: #444;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.model1_hot-item-price {
+    margin-bottom: 30rpx;
+    font-size: 28rpx;
+    color: #fb5d5d;
+    overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+
+}
+
+.model1_hot-item-No-time-box {
+    display: flex;
+    width: 100%;
+    height: 36rpx;
+    line-height: 36rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.model1_hot-item-No {
+    width: 50%;
+    overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+
+.model1_text-red {
+    color: #fb5d5d;
+}
+
+.hot-item-time {
+    width: 300rpx;
+    text-align: right;
+}
+
+.model1_hot-item-btm {
+    display: flex;
+    width: 100%;
+    height: 92rpx;
+    padding: 22rpx 30rpx;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,.7); 
+    font-size: 28rpx;
+    border-bottom:1rpx solid #aaa;
+}
+
+.model1_hot-item-user-box {
+    display: flex;
+    width: 580rpx;
+    height: 48rpx;
+    overflow: hidden;
+}
+
+.model1_hot-item-user-img {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 20rpx;
+}
+
+.model1_hot-item-user-box image {
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.model1_hot-item-btn {
+    display: block;
+    width: 120rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    font-size: 28rpx;
+    color: #fb5d5d;
+    text-align: center;
+    border: 1rpx solid #fb5d5d;
+    border-radius: 4rpx;
+    box-sizing: border-box;
+}
+
+.model1_hot-item-btn:active{
+   color: #aaa;
+   border: #aaa;
+   box-shadow: 2px 2px 5px #aaa;
+ }
+
+.model1_promptHide {
+    display: none;
+}
+
+/*未认证   此银色提醒用户谨慎*/
+.model1_text-0{
+  color: magenta;
+}
+/*已认证，未实名*/
+.model1_text-1{
+  color: blue;
+}
+/*已认证,已实名*/
+.model1_text-2{
+  color: green;
 }

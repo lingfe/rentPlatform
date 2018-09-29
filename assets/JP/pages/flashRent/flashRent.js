@@ -78,7 +78,7 @@ Page({
   //初始化设置
   onReady: function () {
     wx.setNavigationBarTitle({
-      title: '闪租'
+      title: '来自周边儿推荐'
     })
   },
 

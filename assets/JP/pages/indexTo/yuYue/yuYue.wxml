@@ -7,10 +7,10 @@
  * */-->
 <view class='page'>
   <view class='page_view'>
-    <view  class='view_model'  wx:for="{{yuyue_caidan}}"  wx:key="{{item.img_url}}">
+    <navigator url="{{item.navigator}}" class='view_model'  wx:for="{{yuyue_caidan}}"  wx:key="{{item.img_url}}">
       <view class='view_model_image' style='background-image:url({{item.img_url}});'></view>
       <view  class="view_model_title">{{item.name}}</view>
-    </view>
+    </navigator>
   </view>
 </view>
 

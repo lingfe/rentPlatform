@@ -15,13 +15,13 @@ Page({
   data: {
     lbt_images:[
       { img_url: "http://108108byg.com/uploads/180824/3-1PR4120012W9.jpg", name: "八月瓜", 
-        navigator:"/pages/indexTo/yeHuo/yeHuoList/yeHuoList?varieties=0"},
+        navigator:"/pages/indexTo/yeHuo/yeHuoList/yeHuoList?category=2"},
       {
         img_url: "http://108108byg.com/uploads/allimg/180417/1-1P41H12I5-51.jpg", name: "牛纳尔.羊奶果",
-        navigator: "/pages/indexTo/yeHuo/yeHuoList/yeHuoList?varieties=1"
+        navigator: "/pages/indexTo/yeHuo/yeHuoList/yeHuoList?category=6"
       },
       { img_url:"http://img2.imgtn.bdimg.com/it/u=2784462959,72305985&fm=26&gp=0.jpg",name:"蘑菇",
-        navigator: "/pages/indexTo/yeHuo/yeHuoList/yeHuoList?varieties=2"}      
+        navigator: "/pages/indexTo/yeHuo/yeHuoList/yeHuoList?category=7"}      
     ],
   },
 

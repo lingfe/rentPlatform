@@ -1,0 +1,39 @@
+<!--
+/**
+  path: /assets/wxml/imageText.wxml
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称: tabs内容，图片与文字布局
+  描述:  
+**/
+-->
+
+<!--tabs内容，图片与文字布局  start-->
+<template name="imageText">
+  <view class="weui-tab__content" wx:for="{{info.tabs}}" wx:key="{{item}}" hidden="{{activeIndex != index }}">
+        <view class='tab_content'>            
+          <!-- 模块内容 start  -->
+          <view class='content_pro' wx:for-item="pro" wx:for="{{info.projectIntroduction[index].content}}" wx:key="*this">
+              <!-- 内容标题 -->
+              <view class='pro_title' wx:if="{{pro.title}}">{{pro.title}}</view>
+              <!-- 内容content -->
+              <view class='pro_content' wx:if="{{pro.content != null}}">
+                <text>{{pro.content}}</text>
+                <!-- 加粗的内容content_Bold -->
+                <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
+              </view>
+              <!-- 内容加粗content_Bold -->
+              <view class='pro_content' wx:elif="{{pro.content_Bold != null}}">
+                <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
+              </view>
+              <!-- 图片img -->
+              <image mode="widthFix" wx:if="{{pro.img !=null}}" class='pro_img' src='{{pro.img}}'></image>
+              <!-- 图片说明文字text -->
+              <view class='img_text' wx:if="{{pro.text != null}}">{{pro.text}}</view>
+          </view>
+          <!-- 模块内容 end  -->
+        </view>
+        <view class='bottom'></view>
+  </view>
+</template>
+<!-- tabs内容，图片与文字布局  end-->
