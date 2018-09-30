@@ -10,16 +10,6 @@
   </swiper>
 </template>
 
-<!--index_index_navs-->
-<template name="index_index_navs_tmpl">
-  <block wx:for="{{navs}}" wx:key="item.id">
-    <view class="l-c-c" catchtap="go" data-type="{{item.url}}">
-      <image src="{{item.image}}" class="slide-image"/>
-      <text>{{item.text}}</text>
-    </view>
-  </block>
-</template>
-
 <!--index_index_items-->
 <template name="index_index_items_tmpl">
   <block wx:for="{{items}}" wx:key="item.id">

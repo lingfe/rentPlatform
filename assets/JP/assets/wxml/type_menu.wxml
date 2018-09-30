@@ -1,0 +1,21 @@
+
+<!--
+/**
+  path: /assets/wxml/type_menu.wxml
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称: 分类菜单
+  描述:  
+**/
+-->
+
+<!-- 分类菜单 start -->
+<template name="type_menu">
+  <view class="index-menu">
+    <navigator url='{{item.navigator}}' class='index-menu-item' wx:for="{{navs}}" wx:key="item.id">
+      <image src="{{item.image}}" class="slide-image"/>
+      <text>{{item.text}}</text>
+    </navigator>
+  </view>
+</template>
+<!-- 分类菜单 end -->

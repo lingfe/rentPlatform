@@ -12,7 +12,7 @@
 <template name="lbt">
       <swiper class="index-banner" indicator-dots="{{true}}"
         autoplay="{{true}}" interval="{{4000}}" duration="{{1000}}">
-        <block wx:for="{{info.images}}"  wx:key="{{item}}">
+        <block wx:for="{{images}}"  wx:key="{{item}}">
           <swiper-item>
             <image src="{{item}}" mode="aspectFill" class="slide-image"/>
           </swiper-item>

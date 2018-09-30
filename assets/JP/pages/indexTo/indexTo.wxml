@@ -8,7 +8,7 @@
     </block>
   </swiper>
 	<view class="index-menu">
-		<navigator class="index-menu-item" wx:for="{{indexmenu}}" wx:key="{{item.url}}" url="/{{item.url}}">
+		<navigator class="index-menu-item" wx:for="{{indexmenu}}" wx:key="{{item.url}}" url="{{item.url}}">
 			<image src="{{item.icon}}"></image>
 			<text>{{item.text}}</text>
 		</navigator>

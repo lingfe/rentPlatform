@@ -17,27 +17,27 @@ Page({
         {
           'icon': '/assets/images/ico/ico_menu/icon_01.png',
           'text': '官方闪租',
-          'url': 'pages/index/index'
+          'url': '/pages/index/index'
         },
         {
           'icon': '/assets/images/ico/ico_menu/icon_01.png',
           'text': '新鲜野货',
-          'url': 'pages/indexTo/yeHuo/yeHuo'
+          'url': '/pages/indexTo/yeHuo/yeHuo'
         },
         {
           'icon': '/assets/images/ico/ico_menu/icon_01.png',
           'text': '生活预约',
-          'url': 'pages/indexTo/yuYue/yuYue'
+          'url': '/pages/indexTo/yuYue/yuYue'
         },
         {
           'icon': '/assets/images/ico/ico_menu/icon_01.png',
           'text': '餐饮食品',
-          'url': 'pages/indexTo/yuYue/yuYue'
+          'url': '/pages/indexTo/yuYue/yuYue'
         },
         {
           'icon': '/assets/images/ico/ico_menu/icon_01.png',
           'text': '特殊宠物',
-          'url': 'pages/indexTo/yuYue/yuYue'
+          'url': '/pages/indexTo/yeHuo/yeHuoList/yeHuoList?category=4'
         },
         {
           'icon': '/assets/images/ico/ico_menu/icon_03.png',
