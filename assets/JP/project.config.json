@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 14,
+			"current": 20,
 			"list": [
 				{
 					"id": 0,
@@ -124,6 +124,41 @@
 					"name": "野货详情",
 					"pathName": "pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "微信登陆",
+					"pathName": "pages/wxUserinfoLogin/wxUserinfoLogin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请成为商户",
+					"pathName": "pages/indexTo/admissionApply/applyMerchant/applyMerchant",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "官方审核管理",
+					"pathName": "pages/my/auditing/auditing",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加商铺",
+					"pathName": "pages/my/myShops/addShops/addShops",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的商铺",
+					"pathName": "pages/my/myShops/myShops",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加商品",
+					"pathName": "pages/my/myShops/addShops/add_commodity/add_commodity"
 				}
 			]
 		}

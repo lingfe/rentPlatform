@@ -8,12 +8,107 @@
 **/
 -->
 
+<!-- 审核商户申请数据 start -->
+<template name="other_auditing_applyMerchant">
+    <!-- 块  start-->
+    <view class="weui-tab__content"
+      wx:for="{{tabs}}"
+      wx:for-item="tab"
+      wx:key="{{tab}}"
+      hidden="{{activeIndex != index}}">
+
+        <!-- 审核商户申请数据 start-->
+        <view class='list' wx:if="{{list.length != 0}}">
+          <view class='list_item'  wx:for="{{list}}" wx:key="{{item}}">
+            <view class='item'>
+              <view class='item_text'>申请编号: {{item.id}}</view>
+            </view>
+            <view class='item'>
+              <view class='item_text'>申请时间: {{item.cdate}}</view>
+              <view class='item_static'>
+                <image class='item_static_img' id="{{item.contactNumber}}"
+                 bindtap='bindtapPhone' src='/assets/images/my/phone.png'/>
+                <text wx:if="{{item.state == 0}}" class='item_static_text'>未审核</text>
+                <text wx:if="{{item.state == 1}}" class='item_static_text'>已通过</text>
+                <text wx:if="{{item.state == 2}}" class='item_static_text'>不通过</text>
+              </view>
+            </view>
+            <view class='item_border'></view>
+            <view class='item'>
+              <view class='item_text'>真实姓名: {{item.realName}}</view>
+              <view class='item_text'>联系电话: {{item.contactNumber}}</view>
+              <view class='item_text'>身份证号: {{item.sfz}}</view>
+              <view class='item_text'>地点位置: {{item.position_info}}</view>
+              <view class='item_text'>详细地址: {{item.address}}</view>
+              <view class='item_btn' wx:if="{{item.state==0}}">
+                <button class='consultation_bottom_btn' 
+                  id='{{item.id}}' 
+                  data-state="1"
+                  bindtap='bindtapnostate'>通过</button>
+                <button class='consultation_bottom_btn' 
+                  data-state="2"
+                  id='{{item.id}}' 
+                  bindtap='bindtapnostate'>不通过</button>
+              </view>
+              <view class='item_btn' wx:if="{{item.state == 1}}">
+                <button class='consultation_bottom_btn' 
+                  id='{{item.id}}' 
+                  data-state="0"
+                  bindtap='bindtapnostate'>驳回</button>
+              </view>
+              <view class='item_btn' wx:if="{{item.state == 2}}">
+                <button class='consultation_bottom_btn' 
+                  id='{{item.id}}' 
+                  data-state="0"
+                  bindtap='bindtapnostate'>重新审核</button>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 审核商户申请数据 end-->
+
+        <!-- 空数据 start-->
+        <view class='list' wx:else>
+          <view class='list_item'>
+            <view class='list_item_img' >
+              <view class='item_img'>暂时没有数据哦(0_0)</view>
+            </view>
+          </view>
+        </view>
+        <!-- 空数据 end-->
+    </view>
+    <!-- 块 end-->
+
+</template>
+<!-- 审核商户申请数据 end-->
+
+<!-- 选择图片 start -->
+<template name="other_select_picture">
+              <!-- 选择图片  start -->
+              <view class="weui-uploader__bd">
+                      <view class="weui-uploader__files" id="uploaderFiles">
+                        <block wx:for="{{arr}}" wx:key="*this">
+                          <view wx:if="{{item !=null}}" 
+                          class="weui-uploader__file" bindlongtap="previewImage" id="{{item}}">
+                            <image class="img_tt" 
+                            src="/assets/images/delete.png" 
+                            bindtouchend="bindtapImageDelete" data-img="{{item}}" />
+                            <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                          </view>
+                        </block>
+                      </view>
+                      <view class="weui-uploader__input-box" bindtap="chooseImage"
+                       wx:if="{{arr.length!=6}}">+</view>
+              </view>
+              <!-- 选择图片  end -->
+</template>
+<!-- 选择图片 end -->
 
 <!-- 推荐部分 start -->
 <template name="other_tuijing_images">
-  <block wx:for="{{items}}" wx:key="item.id">
+  <block wx:for="{{images_list}}" wx:key="item.id">
     <view class="item">
-      <image src="{{item.image}}" class="slide-image"/>
+      <image src="{{item.imgUrl}}" class="slide-image"/>
     </view>
   </block>
 </template>

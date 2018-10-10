@@ -1,0 +1,13 @@
+<!--pages/my/admin/admin.wxml-->
+<view class='page'>
+  <!-- 模块菜单选择 start -->
+  <view class='find_menu'>
+    <navigator url="{{item.navigator}}?typeMenu_id={{item.id}}" 
+    wx:for="{{lbt_images}}"  wx:key="{{item.id}}" class='menu'>
+       <image class='menu_img' src='{{item.img_url}}'></image>
+       <view class='menu_text'>{{item.name}}</view>
+       <view class='menu_v'>></view>
+    </navigator>
+  </view>
+  <!-- 模块菜单选择 end -->
+</view>

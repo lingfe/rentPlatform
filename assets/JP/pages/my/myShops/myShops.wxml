@@ -1,0 +1,23 @@
+<!--pages/my/merchantEntrance/Merchant entrance.wxml-->
+<view class='page'>
+  <!-- 模块菜单选择 start -->
+  <view class='find_menu'>
+    <navigator wx:if="{{list.length != 0}}" url="/pages/my/myShops/addShops/addShops?id={{item.id}}" 
+    wx:for="{{list}}"  wx:key="{{item.id}}" class='menu'>
+       <image class='menu_img' src='{{item.logo}}'></image>
+       <view class='menu_text'>{{item.shopsName}}</view>
+       <view class='menu_v'>></view>
+    </navigator>
+
+    <view class='menu' wx:if="{{list.length == 0}}">
+       <view class='menu_text no'>您还没有商铺哦(0_0)</view>
+    </view>
+  </view>
+  <!-- 模块菜单选择 end -->
+
+  <!-- 点我创建一个吧 -->
+  <navigator wx:if="{{list.length == 0}}" 
+  url="/pages/my/myShops/addShops/addShops" class='botton_creator'>点我创建一个吧!</navigator>
+  <navigator wx:if="{{list.length != 0}}" 
+  url="/pages/my/myShops/addShops/addShops" class='botton_creator to'>+</navigator>
+</view>

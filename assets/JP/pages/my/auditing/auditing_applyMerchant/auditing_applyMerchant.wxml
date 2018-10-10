@@ -1,0 +1,90 @@
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-10-28
+ *   描述:  审核商户申请
+ * 
+ * */-->
+<import src="/assets/wxml/tabsMenu.wxml" />
+<import src="/assets/wxml/other.wxml" />
+
+<view class='page'>
+  <!-- tab切换  start -->
+  <view class="weui-tab">
+    <!-- 菜单  start -->
+    <template is="tabsMenu_model2" data="{{tabs,activeIndex,sliderLeft,sliderOffset}}" />
+    <!-- 菜单  end -->
+    
+    <!-- 内容  start-->
+    <view class="weui-tab__panel">
+
+      <!-- 审核商户申请数据 start-->
+      <template is="other_auditing_applyMerchant" data="{{list,activeIndex,tabs}}" />
+      <!-- 审核商户申请数据 end-->
+
+    </view>
+    <!-- 内容  end-->
+  </view>
+  <!-- tab切换  end-->
+
+  <!-- 计算清单 start-->
+  <view class='Calculationlist' wx:if="{{cst== true}}" id='eixt' bindtap='CalculationlistBindtap'>
+    <form bindsubmit="submitForm">
+    <view class='huishou_form' catchtap='CalculationlistBindtap'> 
+      <view class='form_frist'>计算清单</view>
+      <view class='form'>
+        <view class='title'>
+          <image class='title_img' src='/assets/images/index/yifu.png'></image>
+          旧衣
+        </view>
+        <view class='input'>
+          <input  bindinput='inputusedClothes' type='text' placeholder='请输入'/>
+        </view>
+        <view class='title'>斤</view>
+      </view>
+      
+      <view class='form'>
+        <view class='title'>
+          <image class='title_img' src='/assets/images/index/yifu.png'></image>
+        废纸</view>
+        <view class='input'>
+          <input  bindinput='inputwastePaper' type='text' placeholder='请输入'/>
+        </view>
+        <view class='title'>斤</view>
+      </view>
+
+      <view class='form'>
+        <view class='title'>
+          <image class='title_img' src='/assets/images/index/yifu.png'></image>
+        其他</view>
+        <view class='input'>
+          <input bindinput='inputother' type='text' placeholder='请输入' />
+        </view>
+        <view class='title'>斤</view>
+      </view>
+
+      <view class='form'>
+        <view class='title'>
+        <image class='title_img' src='/assets/images/index/yifu.png'></image>
+        密匙</view>
+        <view class='input'>
+          <input value='{{collector}}' bindinput='inputcollector' type='text' placeholder='上门回收同事填写' />
+        </view>
+      </view>
+
+      <view class='form_text'>
+        <view class='text_text'>1斤旧衣=1分</view>
+        <view class=''>
+          <view class='text_text_last'>1斤废纸/其他=0.3分</view>
+          <view class='text_text_right'>合计: <span class="span">{{form.num}}分</span></view>
+        </view>
+      </view>
+
+      <button class='form_last' form-type="submit">确定</button>
+    </view>
+    </form>
+  </view>
+  <!-- 计算清单 end-->
+</view>
+
+
+

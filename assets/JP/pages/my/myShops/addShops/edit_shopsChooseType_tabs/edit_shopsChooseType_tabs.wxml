@@ -1,0 +1,25 @@
+<!--pages/my/myShops/addShops/edit_shopsChooseType_tabs/edit_shopsChooseType_tabs.wxml-->
+<view class='page'>
+<form class='page_form' bindsubmit='bindFormSubmit'>
+              <!-- 商铺选购分类tabs菜单名称   start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                  商铺选购分类tabs菜单名称<text style='color:red;'>*</text></view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='text' name="tabs_name" value='{{form.tabs_name}}' 
+                  maxlength='20'
+                  placeholder='请输入新的名称'></input>
+                </view>
+              </view>
+              <!-- 商铺选购分类tabs菜单名称   end-->
+
+              <!-- 确定编辑 start -->
+              <view class="page_btn">
+                <button class="page_btn_button" formType="submit">
+                确定编辑</button>
+              </view>
+              <!-- 确定编辑  end -->
+        </form>     
+</view>

@@ -1,0 +1,13 @@
+<!--pages/indexTo/restaurant_food_list/restaurant_food_list.wxml-->
+<!-- 导入资源 -->
+<import src="/assets/wxml/model.wxml" />
+
+<view class='page'>
+  <!-- 内容 model  start -->
+  <view class='page_model'>
+    <view wx:for="{{list}}" wx:key="{{item.model}}">
+      <template is="model{{item.model}}" data="{{item}}" />
+    </view>
+  </view>
+  <!-- 内容 model  end -->
+</view>

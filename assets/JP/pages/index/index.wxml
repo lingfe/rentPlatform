@@ -6,16 +6,16 @@
 <view class="container">
 
     <!-- 轮播图 -->
-    <template is="lbt" data="{{...info}}"/>
+    <template is="lbt" data="{{lbt_attribute}}"/>
     
     <!-- 分类菜单 -->
-    <template is="type_menu" data="{{...info}}"/>
+    <template is="type_menu" data="{{type_menu}}"/>
 
-    <view class="text">
-        <view class="line_y"></view>
-        <text>官方直租</text>
+    <view class="guanfangzhizu">
+        <view class="guanfangzhizu_line_y"></view>
+        <text class='guanfangzhizu_text'>官方直租</text>
     </view>
 
     <!-- 推荐部分 -->
-    <template is="other_tuijing_images" data="{{...info}}"/>
+    <template is="other_tuijing_images" data="{{...lbt_attribute}}"/>
 </view>

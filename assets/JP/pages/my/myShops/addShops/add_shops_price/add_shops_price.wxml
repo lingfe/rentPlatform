@@ -1,0 +1,55 @@
+<!--pages/my/myShops/addShops/add_shops_price/add_shops_price.wxml-->
+<view class='page'>
+<form class='page_form' bindsubmit='bindFormSubmit'>
+              <!-- 起送费   start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                  起送费<text style='color:red;'>*</text></view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='text' name="charging_fee" value='{{form.charging_fee}}' 
+                  placeholder='请输入起送费'></input>
+                  <label>元</label>
+                </view>
+              </view>
+              <!-- 起送费   end-->
+              
+              <!-- 配送费   start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                  配送费<text style='color:red;'>*</text></view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='text' name="distribution_fee" value='{{form.distribution_fee}}' 
+                  placeholder='请输入配送费'></input>
+                  <label>元</label>
+                </view>
+              </view>
+              <!-- 配送费   end-->
+
+              <!-- 人均消费   start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                  人均消费<text style='color:red;'>*</text></view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='text' name="per_capita_price" value='{{form.per_capita_price}}' 
+                  placeholder='请输入人均消费'></input>
+                  <label>元</label>
+                </view>
+              </view>
+              <!-- 配送费   end-->
+
+
+              <!-- 确定编辑 start -->
+              <view class="page_btn">
+                <button class="page_btn_button" formType="submit">
+                  {{ param == 'update'?'编辑':'保存'}}
+                </button>
+              </view>
+              <!-- 确定编辑  end -->
+        </form>     
+</view>

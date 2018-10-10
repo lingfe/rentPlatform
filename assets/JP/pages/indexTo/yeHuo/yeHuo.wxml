@@ -5,23 +5,20 @@
  *   描述:  野货.
  * 
  * */-->
+ <!-- 导入资源 -->
+<import src="/assets/wxml/lbt.wxml" />
+
 <view class='page'>
-  <!-- 轮播图 start -->
-  <swiper class="index-banner" indicator-dots="{{true}}"
-    autoplay="{{true}}" interval="{{4000}}" duration="{{1000}}">
-    <block wx:for="{{lbt_images}}"  wx:key="{{item.img_url}}">
-      <swiper-item>
-        <image src="{{item.img_url}}" mode="aspectFill" class="slide-image"/>
-      </swiper-item>
-    </block>
-  </swiper>
-  <!-- 轮播图 end -->
+
+  <!-- 轮播图 -->
+  <template is="lbt" data="{{lbt_attribute}}"/>
 
   <!-- 菜单 start -->
   <view class='find_menu'>
-    <navigator url="{{item.navigator}}" wx:for="{{lbt_images}}"  wx:key="{{item.img_url}}" class='menu'>
-       <image class='menu_img' src='{{item.img_url}}'></image>
-       <view class='menu_text'>{{item.name}}</view>
+    <navigator url="{{item.navigator}}?typeMenu_id={{item.id}}" 
+    wx:for="{{type_menu}}"  wx:key="{{item.id}}" class='menu'>
+       <image class='menu_img' src='{{item.typeMenuIcoUrl}}'></image>
+       <view class='menu_text'>{{item.typeMenuName}}</view>
        <view class='menu_v'>></view>
     </navigator>
   </view>

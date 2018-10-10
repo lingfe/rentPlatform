@@ -1,0 +1,3 @@
+/* pages/my/myShops/addShops/shops_price/shops_price.wxss */
+
+@import '/pages/indexTo/admissionApply/applyMerchant/applyMerchant.wxss';

@@ -14,13 +14,15 @@
 <template name="infoSources">
   <view class="infoSource">
     <view class="infoSource_image" >
-      <image src="{{info.sourceLog}}" class="image"/>
+      <image src="{{user_info.avatar}}" class="image" />
     </view>
     <view class="infoSource_name">
-      <text>{{info.sourceName}}</text>
-      <text class='infoSource_name_'>已实名</text>
+      <text>{{user_info.username}}</text>
+      <text class='infoSource_name_' wx:if="{{user_info.is_authentication == 1}}">已实名</text>
+      <text class='infoSource_name_' wx:else>未认证,请谨慎交易!</text>
     </view>
-    <view class='infoSource_follow'>+关注</view>
+    <view class='infoSource_follow'  wx:if="{{user_info.is_follow == 1}}">+关注</view>
+    <view class='infoSource_follow'  wx:else>主页></view>
   </view>
 </template>
 <!-- 信息来源  end -->

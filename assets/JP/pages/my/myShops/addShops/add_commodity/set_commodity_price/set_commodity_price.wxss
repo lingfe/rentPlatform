@@ -1,0 +1,6 @@
+/* pages/my/myShops/addShops/add_commodity/set_commodity_price/set_commodity_price.wxss */
+@import '/pages/indexTo/admissionApply/applyMerchant/applyMerchant.wxss';
+
+.page_radio_radio {
+  
+}

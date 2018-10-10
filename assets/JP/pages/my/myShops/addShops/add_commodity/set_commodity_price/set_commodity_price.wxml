@@ -1,0 +1,72 @@
+<!--pages/my/myShops/addShops/add_commodity/set_commodity_price/set_commodity_price.wxml-->
+<view class='page'>
+<form class='page_form' bindsubmit='bindFormSubmit'>
+              <!-- 原价   start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                  原价<text style='color:red;'>*</text></view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='text' name="original_price" value='{{form.original_price}}' 
+                  placeholder='请输入原价'></input>
+                  <label>元/{{form.price_company}}</label>
+                </view>
+              </view>
+              <!-- 起送费   end-->
+
+              
+              <!-- 现价   start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                  现价<text style='color:red;'>*</text></view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='text' name="present_price" value='{{form.present_price}}' 
+                  placeholder='请输入现价'></input>
+                  <label>元/{{form.price_company}}</label>
+                </view>
+              </view>
+              <!-- 现价   end-->
+
+              <!-- 价格单位：月,株,盒,斤，人 start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                    价格单位
+                  </view>
+                </view>
+                <view class='page_radio_radio'>
+                  <radio-group class="radio-group" bindchange="radioChange" name="price_company">
+                    <radio wx:for="{{price_company}}" 
+                    wx:key="item" checked='{{form.price_company == item}}' value="{{item}}" color='#0099ff' >{{item}}</radio>
+                  </radio-group>
+                </view>
+              </view>
+              <!-- 价格单位 end -->
+
+              <!-- 剩余数量   start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                  剩余数量<text style='color:red;'>*</text></view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='text' name="surplusNum" value='{{form.surplusNum}}' 
+                  placeholder='请输入剩余数量'></input>
+                  <label>{{form.price_company}}</label>
+                </view>
+              </view>
+              <!-- 剩余数量   end-->
+
+
+              <!-- 确定编辑 start -->
+              <view class="page_btn">
+                <button class="page_btn_button" formType="submit">
+                  {{ param == 'update'?'编辑':'保存'}}
+                </button>
+              </view>
+              <!-- 确定编辑  end -->
+        </form>     
+</view>

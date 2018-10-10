@@ -1,0 +1,94 @@
+<!--pages/indexTo/admissionApply/applyMerchant/applyMerchant.wxml-->
+<!-- 导入资源 -->
+<import src="/assets/wxml/other.wxml"/>
+
+<view class='page'>
+    <form bindsubmit='bindFormSubmit'>
+          <!-- 身份证   start-->
+          <view class='page_Fundraising_input'>
+            <view class='page_Fundraising_title_text'>
+              <view class='page_Fundraising_title_text_title'>
+              身份证号<text style='color:red;'>*</text></view>
+            </view>
+            <view class='page_Fundraising_input_input'>
+              <input type='digit' name="sfz" value='{{form.realName}}' 
+              maxlength='18'
+              placeholder='请输入身份证号'></input>
+            </view>
+          </view>
+          <!-- 身份证   end-->
+
+          <!-- 真实姓名   start-->
+          <view class='page_Fundraising_input'>
+            <view class='page_Fundraising_title_text'>
+              <view class='page_Fundraising_title_text_title'>
+              真实姓名<text style='color:red;'>*</text> </view>
+            </view>
+            <view class='page_Fundraising_input_input'>
+              <input type='text' 
+              value='{{form.realName}}' 
+              maxlength='4'
+              name="realName"
+              placeholder='请输入真实姓名'></input>
+            </view>
+          </view>
+          <!-- 筹款标题   end-->
+
+          <!-- 联系电话   start-->
+          <view class='page_Fundraising_input'>
+            <view class='page_Fundraising_title_text'>
+              <view class='page_Fundraising_title_text_title'>联系电话</view>
+            </view>
+            <view class='page_Fundraising_input_input'>
+              <input type='number' 
+              value='{{form.contactNumber}}'
+              maxlength='20' 
+              name="contactNumber"
+              placeholder='请输入联系号码'></input>
+            </view>
+          </view>
+          <!-- 联系电话   end-->
+
+          <!-- 详细地址   start-->
+          <view class='page_Fundraising_input'>
+            <view  class='page_Fundraising_title_text'>
+              <view class='page_Fundraising_title_text_title'>
+              详细地址<text style='color:red;'>*</text> </view>
+              <view bindtap='getAddress' url="/pages/zber/indexCity/indexCity" 
+              class='page_Fundraising_image_title_text'>
+              从地图选择地址>></view>
+            </view>
+            <view class='page_Fundraising_input_input'>
+              <input type='text' value='{{form.address}}' 
+              name="address" placeholder='请输入详细地址'></input>
+            </view>
+          </view>
+          <!-- 详细地址   end-->
+
+
+          <!-- 上传营业执照和身份证正反面 start-->
+          <view class='page_Fundraising_image'>
+            <view class='page_Fundraising_image_title'>
+              <view class='page_Fundraising_image_title_title'>
+              上传营业执照和身份证正反面<text style='color:red;'>*</text></view>
+              <view class='page_Fundraising_image_title_text' bindtap='image_isDisplay'>参考示例</view>
+            </view>
+            <view class="image-iamge">
+              <view class='page_Fundraising_image_text'>上传营业执照和身份证正反面
+              </view>
+              <!-- 选择图片 -->
+              <template is="other_select_picture" data="{{arr}}"/>
+            </view>
+          </view>
+          <!-- 上传营业执照和身份证正反面   end-->
+
+          <!-- 提交审核 start -->
+          <view class="page_btn">
+            <button class="page_btn_button" formType="submit">
+            提交审核</button>
+          </view>
+          <!-- 提交审核  end -->
+    </form>        
+</view>
+
+

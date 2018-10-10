@@ -66,3 +66,23 @@ page {
 .wx-swiper-dot text{
 	background: #f00;
 } */
+
+/* 标题 */
+.model_title{
+   width: 96%;
+   max-height: 120rpx;
+   font-size: 36rpx;
+   margin: auto;
+   padding-top: 10rpx;
+      /* overflow: hidden; *自动隐藏文字
+    text-overflow: ellipsis;*文字隐藏后添加省略号
+    white-space: nowrap;*强制不换行
+    margin-left:20rpx; */
+}
+
+/* 一条线 */
+.border_1rpx{
+  height: 1rpx;
+  width: 100%;
+  background-color: #eee;
+}

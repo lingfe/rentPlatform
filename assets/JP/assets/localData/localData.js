@@ -7,6 +7,9 @@ export default{
     2,//预约。预约剪发
   ],
 
+  //价格单位
+  price_company: ["月", "株", "盒", "斤","人", "份", "件"],
+
   //浏览\看过次数，
   browse_num: 1502,
 
@@ -46,10 +49,10 @@ export default{
     //官方闪租 start
     {
       model:1,//布局model1
-      img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1519751787,2797767522&fm=27&gp=0.jpg', //图
-      title: '新货3m钓鱼竿',//标题
+      img: '', //图
+      title: '',//标题
       price: '18.00',//价格
-      explain: '全新3m钓鱼竿,鱼饵。租满三个月免费送',//说明
+      explain: '',//说明
       originalPrice: '180.00',//原价
       company: '月',//单位(时，天,月，年)，
       label: ['非常新'],//标签
@@ -96,7 +99,7 @@ export default{
         dateTime: '刚刚',//日期
       }, {
         model: 2,  //模块
-        img: 'http://108108byg.com/uploads/170915/1-1F915011HO10-lp.jpg', //图片
+        img: '', //图片
         title: "麻皮八月瓜", //标题
         category: 2,//类别
         money: 10, //价格
@@ -111,7 +114,7 @@ export default{
         dateTime: '刚刚',//日期
       }, {
         model: 2,  //模块
-        img: 'http://108108byg.com/uploads/allimg/171001/3-1G0011HJ3.jpg', //图片
+        img: '', //图片
         title: "八月瓜泡茶", //标题
       category: 2,//类别
         category: 2,//类别
@@ -127,7 +130,7 @@ export default{
         dateTime: '刚刚',//日期
       }, {
         model: 2,  //模块
-        img: 'http://108108byg.com/uploads/allimg/170907/1-1FZH32R7.jpg', //图片
+        img: '', //图片
         title: "八月瓜油", //标题
       category: 2,//类别
         money: 20, //价格
@@ -142,7 +145,7 @@ export default{
         dateTime: '刚刚',//日期
       }, {
         model: 2,  //模块
-        img: 'http://108108byg.com/uploads/allimg/171020/3-1G020102437.jpg', //图片
+        img: '', //图片
         title: "八月瓜果酒", //标题
       category: 2,//类别
         money: 20, //价格
@@ -189,7 +192,7 @@ export default{
     },
     {
       model: 2,  //模块
-      img: 'http://108108byg.com/uploads/180417/1-1P41H12925a2-lp.jpg', //图片
+      img: '', //图片
       title: "云南羊奶果", //标题
       category: 6,//类别
       money: 8, //价格
@@ -209,37 +212,37 @@ export default{
     {
       model: 3,  //模块
       img: 'https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C253%2C802%2C485%3Bw%3D720%3Bq%3D99/sign=98f69c2091504fc2b610ea45d8edcb23/e7cd7b899e510fb3b8fc67bfd333c895d1430c34.jpg', //图片
-      title: "雾都美容美发店烫染368", //标题
+      title: "", //标题
       category: 3,//类别
       source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)
       sourceName: '雾都美容美发',//来源名称
-      sourceLog: 'https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C253%2C802%2C485%3Bw%3D720%3Bq%3D99/sign=98f69c2091504fc2b610ea45d8edcb23/e7cd7b899e510fb3b8fc67bfd333c895d1430c34.jpg',//来源LOG
+      sourceLog: '',//来源LOG
       sourceCredit: '2',//来源信用(0.未认证,1.已认证，未实名,2.已认证，已实名)
-      address:'贵阳市花溪区贵筑路19号林都国际项1栋1单元4楼',//地址
+      address:'',//地址
       phone: "085183625295",//联系电话
       businessTime:"09:00-19:00",//营业时间
       headUses:"65",//人均消费￥
       dateTime: '刚刚',//日期
-      remark:"仅售368元，价值1888元美发设计师亲自染烫2选1！免费WiFi，需预约！",
+      remark:"",
     }
     /*生活预约 end */
 
     /**特殊宠物 start */
     ,{
       model:5,  //模块
-      img: 'http://www.qnong.com.cn/uploadfile/2018/0910/20180910111719388.jpg', //图片
-      title: "养宠物猫猫狗狗，不如养几只土元", //标题
+      img: '', //图片
+      title: "~", //标题
       source: 3,//来源(0.官方,1.个人，2.商家，3.企业)
-      sourceName: '土元养殖场',//来源名称
+      sourceName: '',//来源名称
       category: 4,//类别
-      sourceLog: 'http://f.hiphotos.baidu.com/baike/s%3D220/sign=9467fc4add54564ee165e33b83df9cde/d53f8794a4c27d1e0f28fb9d1bd5ad6eddc43859.jpg',//来源LOG
+      sourceLog: '',//来源LOG
       sourceCredit: 1,//来源信用(0.未认证,1.已实名认证)
-      address: '贵阳市花溪区贵筑路19号林都国际项1栋1单元4楼',//地址
-      phone: "085183625295",//联系电话
+      address: '',//地址
+      phone: "",//联系电话
       businessTime: "09:00-19:00",//营业时间
-      headUses: "65",//人均消费￥
+      headUses: "",//人均消费￥
       dateTime: '刚刚',//日期
-      remark: "土元又叫土鳖虫，是一种野生的昆虫药材，药用价值极高，野生的土元喜欢生活在阴暗、潮湿、腐殖质丰富的松土中，一般在一些土质、木质房屋墙",
+      remark: "",
     }
     /**特殊宠物 end */
 

@@ -1,0 +1,57 @@
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-8-2
+ *   描述:  个人_个人资料_修改电话号码
+ * 
+ * */-->
+<view class="page">
+  <view class="margin_left">
+    <!-- 电话号码信息 start -->
+    <view class="text_center">
+      <view class='text_center_image'>
+        <image src='http://pic.yupoo.com/lingfe/23057e4d/f2892157.png'></image>
+      </view>
+      <view class='text_center_text'>绑定手机号有助于同步您在公众号或app发的项目以及您的爱心记录！</view>
+      <!-- <text>{{user.mobile != null ? user.mobile:'未绑定'}}</text> -->
+    </view>
+    <!-- 电话号码信息 end -->
+
+    <!-- 填写电话号码 start -->
+    <view class="weui-search-bar" style="background-color:#fff;padding:10px 10px;">
+      <view class="bg_search">
+        <view class="weui-search-bar__box ">
+          <input type="number" maxlength='11' class="weui-search-bar__input" 
+          bindinput="bindinputValue" 
+          placeholder="请输入电话号码" 
+          value="{{inputVal}}" 
+          focus="{{inputShowed}}" bindinput="inputTypingPhone" />
+        </view>
+      </view>
+    </view>
+    <!-- 填写电话号码 end -->
+
+    <!-- 获取验证码 start -->
+    <view class="weui-search-bar" style="background-color:#fff;padding:10px 10px;">
+      <view class="bg_search">
+        <view class="weui-search-bar__box ">
+          <input type="text" class="weui-search-bar__input" 
+          bindinput="bindinputValue" 
+          placeholder="请输入验证码" 
+          value="{{inputVal}}" 
+          focus="{{inputShowed}}" bindinput="inputTypingYZM" />
+        </view>
+        <view class="VerificationCode">
+          <view style="display:{{selected  == true?'block':'none'}};" bindtap="countdown">{{second}}s后重新获取</view>
+          <view class='class_bj' style="display:{{selected1 == true?'block':'none'}};" bindtap="getphone">点击获取验证码</view>
+        </view>
+      </view>
+    </view>
+    <!-- 获取验证码 end -->
+
+    <!-- 提交按钮  start -->
+    <view class="weui-btn-area">
+      <button form-type="submit" class='button {{bg}}'  bindtap='bindtapUpdatePhone'>绑定</button>
+    </view>
+    <!-- 提交按钮  end -->
+  </view>
+</view>

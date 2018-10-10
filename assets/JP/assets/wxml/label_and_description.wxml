@@ -9,23 +9,27 @@
 **/
 -->
 
+<!-- 标签+描述 用于店铺 -->
+<template name="label_and_description_model1">
+      <view class='model_content'>
+        <!-- 标签 -->
+        <span class="data_biaoqian_view" 
+        wx:for="{{lable_list}}" 
+        wx:key="{{item}}">{{item}}</span>
+      </view>
+</template>
+<!-- 标签+描述 用于店铺 end -->
+
 <!-- 标签+描述 -->
 <template name="label_and_description">
       <view class='model_content'>
-        <!-- 标价 -->
-        <text class="data_biaoqian_view">{{info.price}}元/{{info.company}}</text>
-        <!-- 服务类型 -->
-        <text class="data_biaoqian_view" wx:if="{{info.serverType}}">{{info.serverType}}</text>
-        <!-- 行业 -->
-        <text class="data_biaoqian_view" wx:if="{{info.industryChoice}}">{{info.industryChoice}}</text>
-        <!-- 月销量 -->
-        <text class='data_biaoqian_view' wx:if="{{info.sellNum}}">月销量{{info.sellNum}}</text>
-        <!-- 喜欢人数 -->
-        <text class='data_biaoqian_view' wx:if="{{info.likeNum}}">{{info.likeNum}}人喜欢</text>
-        <!-- 浏览次数 -->
-        <text class="data_biaoqian_view">{{browse_num}}次浏览</text>
+        <!-- 标签 -->
+        <text class="data_biaoqian_view" 
+        wx:for="{{lable_list}}" 
+        wx:key="{{item}}">{{item}}</text>
+
         <!-- 描述 -->
-        <text>{{info.describe}}</text>
+        <text wx:if="{{tab_release_info.describe_info}}">{{tab_release_info.describe_info}}</text>
       </view>
 </template>
 <!-- 标签+描述 end -->

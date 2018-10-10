@@ -1,0 +1,4 @@
+/* pages/my/myShops/addShops/add_commodity/add_commodity.wxss */
+@import '/pages/indexTo/admissionApply/applyMerchant/applyMerchant.wxss';
+/*选择图片*/
+@import '/assets/wxss/select_pricture.wxss';

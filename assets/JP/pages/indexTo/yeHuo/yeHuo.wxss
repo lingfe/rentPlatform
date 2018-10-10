@@ -3,6 +3,10 @@
  *   时间:  2018-09-26
  *   描述:  野货.
  * */
+
+ /*轮播 */
+@import '/assets/wxss/lbt.wxss';
+
  page{
    background-color: #F7F8F3;
  }

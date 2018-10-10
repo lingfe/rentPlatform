@@ -1,0 +1,165 @@
+/**  
+ *   作者:  lingfe 
+ *   时间:  2017-10-9
+ *   描述:  首页城市选择
+ * 
+ * */
+ page{
+  background-color: #fff;
+}
+
+/*定位*/
+.top_top{
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+}
+.bg_b_img{
+  margin-top: 30rpx;
+  margin-left: 46rpx;
+  float: left;
+}
+.bg_b_img image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.bg_b_text{
+  margin-left: 14rpx;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  float: left;
+}
+
+/*筛选*/
+.pageScreen{
+  width: 100%;
+  height: auto;
+  background-color:rgba(0, 0, 0, 0.5);
+}
+.scressClose{
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  width: 218rpx;
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0.5);
+}
+.page__bdScreen {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  z-index: 11;
+  float: left;
+}
+
+.www{
+  width:100%;
+  height: auto;
+  background-color: #fff;
+  border-right:1px solid #E4E4E4;
+  float: left;
+}
+
+.ccc{
+  float: left;
+  width: 408rpx;
+  height: 1360rpx;
+  background-color: #ebebeb;
+}
+.botton_view{
+  height: 400rpx;
+  width: auto;
+  background-color: #fff;
+  position:fixed;
+  bottom: 0rpx;
+  float: left;
+}
+.biaoqian{
+  margin-top: 0rpx;
+  top: 0px;
+  height: 400rpx;
+  width: 550rpx;
+  overflow:scroll;
+  float: left;
+}
+
+/*操作*/
+.operation{
+  width:600rpx;
+  height: 100rpx;
+  background-color: red;
+  text-align: center;
+  bottom: -2rpx;
+  position: fixed;
+  margin-top: 0px;
+}
+.operation_close{
+ height: 100rpx; 
+ width: 156rpx;
+ background-color: #F2F2F2;
+ line-height: 100rpx;
+ float: left;
+}
+.operation_ok{
+  height: 100rpx;
+  width: 400rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color:#14BAC8; 
+  float: left;
+  color: #fff;
+}
+
+.border_tab{
+  border-left: 8px #14BAC8 solid;
+  height: 17px;
+  font-size: 26rpx;
+  text-align:left;
+  background-color: #ebebeb;
+  color: #636363;
+}
+
+.stop_title{
+  border-left: 8px #fff solid;
+  height: 17px;
+  font-size:26rpx; 
+  text-align:left;
+
+}
+.stop{
+  height: 17px;
+  margin-bottom: 2rpx;
+  font-size:26rpx; 
+}
+.stop_1{
+  font-size: 26rpx;
+  margin-left: 26rpx;
+}
+.stop_1:before{
+  border-top:0px solid #fff; 
+  border-bottom:0rpx solid #fff;
+}
+.stop_1:after{
+  border-top:0px solid #fff; 
+  border-bottom:0rpx solid #fff;
+}
+.flaot_left{
+  margin-left: 27rpx;
+  float: left;
+}
+.flaot_right{
+  margin-right: 30rpx;
+  float: right;
+}
+
+.bg_color{
+  color: #636363;
+  background-color: #d9d9d9;
+}
+
+
+/* 沟沟 */
+.img_wh{
+  width:20px;
+  height:20px;
+}

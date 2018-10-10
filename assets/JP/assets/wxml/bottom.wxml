@@ -20,4 +20,18 @@
       <view class='dibu_btn_false'>来2斤</view>
     </view>
   </template>
-  <!-- 底部 start -->
+  <!-- 底部 end -->
+
+    <!-- 底部 start -->
+  <template name="bottom">
+    <view class='dibu'>
+      <view class='img_info'>
+        <image bindtap='bindtabAX' src="/assets/images/ico/ax{{ax}}.png"></image>
+      </view>
+      <view class='img_info' style='float:right;margin-right:4%;'>
+        <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
+      </view>
+      <view class='dibu_btn_false'>选好了</view>
+    </view>
+  </template>
+  <!-- 底部 end -->

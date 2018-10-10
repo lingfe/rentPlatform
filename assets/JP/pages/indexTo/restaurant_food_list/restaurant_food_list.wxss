@@ -1,0 +1,6 @@
+/* pages/indexTo/restaurant_food_list/restaurant_food_list.wxss */
+@import '/assets/wxss/model/model4.wxss';
+
+.page{
+  padding-top: 20rpx;
+}

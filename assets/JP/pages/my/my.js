@@ -19,8 +19,7 @@ Page({
     //获取当前用户信息，比如:余额
     that.getUserInfo(that);
     //获取用户是否已绑定银行卡
-    that.getis_bank(that);
-
+    //that.getis_bank(that);
   },
 
   //获取用户是否已绑定银行卡
@@ -70,29 +69,23 @@ Page({
   //获取当前用户信息，比如:余额
   getUserInfo: function (that) {
     wx.request({
-      url: app.config.dszjPath_web + 'api/User/info',
+      url: app.config.zberPath_web + 'zber_sys/userinfo/getUserInfo',
       method: "GET",
-      header: {
-        Token: wx.getStorageSync("token")
+      data:{
+        openid:wx.getStorageSync("openid")
       },
       success: function (res) {
         console.log(res);
-        that.setData({
-          user: res.data.data
-        });
+        if(res.data.state == 200){
+          that.setData({
+            user: res.data.data
+          });
+        }else{
+          ////提示信息，或跳转到登陆
+          app.btnLogin(res.data);
+        }
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    var that = this;
-    //获取当前用户信息，比如:余额
-    that.getUserInfo(that);
-    //获取爱心统计信息
-    that.gethelpInfo(that);
   },
 
   //用户下拉动作

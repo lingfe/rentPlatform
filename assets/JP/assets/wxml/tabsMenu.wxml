@@ -10,13 +10,13 @@
 
 <!-- tab切换  start -->
 <template name="tabsMenu">
-  <view class="weui-tab">
-       <!-- 菜单  start -->
-      <view class="weui-navbar" style='column-count: {{info.tabs.length}};'>
-        <view id="{{index}}"  wx:for="{{info.tabs}}" wx:key="*this"
+  <view class="weui-tab" wx:if="{{info.length != 0}}">
+      <!-- 菜单  start -->
+      <view class="weui-navbar" style='column-count: {{info.length}};'>
+        <view id="{{index}}"  wx:for="{{info}}" wx:key="*this"
           class="weui-navbar__item {{activeIndex == index ? 'select_text' : ''}}" 
-          data-name="{{item}}" bindtap="tabClick">
-            {{item}}
+          data-name="{{item.tabs_name}}" bindtap="tabClick">
+            {{item.tabs_name}}
         </view>
         <view class="weui-navbar__slider" 
         style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
@@ -25,3 +25,47 @@
   </view>
 </template>
 <!-- tab切换 end -->
+
+<!-- tab切换 model1用于餐饮食品店铺  start -->
+<template name="tabsMenu_model1">
+  <view class="weui-tab">
+      <!-- 菜单  start -->
+      <view class="weui-navbar" style='column-count: {{info.length}};'>
+        <view id="-1" 
+          class="weui-navbar__item {{activeIndex == -1 ? 'select_text' : ''}}" 
+          data-name="{{item.tabs_name}}" bindtap="tabClick">
+            选购
+        </view>
+        <view id="-2" 
+          class="weui-navbar__item {{activeIndex == -2 ? 'select_text' : ''}}" 
+          data-name="{{item.tabs_name}}" bindtap="tabClick">
+            基本信息
+        </view>
+        <view id="{{index}}"  wx:for="{{info}}" wx:key="*this"
+          class="weui-navbar__item {{activeIndex == index ? 'select_text' : ''}}" 
+          data-name="{{item.tabs_name}}" bindtap="tabClick">
+            {{item.tabs_name}}
+        </view>
+      </view>
+      <!-- 菜单  end -->
+  </view>
+</template>
+<!-- tab切换 model1用于餐饮食品店铺 end -->
+
+<!-- tab切换 model2用于审核商户申请  start -->
+<template name="tabsMenu_model2">
+    <!-- 菜单  start -->
+    <view class="weui-navbar" style="border-bottom:none;">
+      <block wx:for="{{tabs}}" wx:key="*this">
+        <view id="{{index}}" 
+        class="weui-navbar__item {{activeIndex == index ? 'select_text' : ''}}" 
+        data-name="{{item}}" bindtap="tabClick">
+          <view class="weui-navbar__title">{{item}}</view>
+        </view>
+      </block>
+      <view class="weui-navbar__slider" 
+      style="background-color:#14BAC8;left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+    <!-- 菜单  end -->
+</template>
+<!-- tab切换 model2用于审核商户申请  end -->

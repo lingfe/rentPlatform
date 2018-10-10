@@ -1,0 +1,157 @@
+/* pages/indexTo/admissionApply/applyMerchant/applyMerchant.wxss */
+/*选择图片*/
+@import '/assets/wxss/select_pricture.wxss';
+
+page{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+
+/*input start*/
+.page_Fundraising_input{
+  width: 100%;
+  /* height:120rpx; */
+  
+}
+.page_Fundraising_input_input{
+  width: 94%;
+  height: 80rpx;
+  margin: auto;
+  border-radius: 16rpx;
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+.page_Fundraising_input_input input{
+  width: 90%;
+  height: 80rpx;
+  position: absolute;
+  margin-top: 0%;
+  font-size: 30rpx;
+  padding-left:30rpx; 
+}
+.page_Fundraising_input_input label{
+  height: 80rpx;
+  line-height: 80rpx;
+  float: right;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+
+.page_Fundraising_input_text{
+  width: 100%;
+  height: 40rpx;
+  font-size: 26rpx;
+  margin-top:10rpx;
+
+}
+.page_Fundraising_input_text_text{
+  width: 94%;
+  height: 26rpx;
+  line-height: 26rpx;
+  margin: 0 auto;
+}
+.page_Fundraising_title_text{
+  width: 94%;
+  height: 40rpx;
+  margin: 0 auto;
+  margin-top:30rpx;
+
+}
+.page_Fundraising_title_text_title{
+  width: 50%;
+  height: 40rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #0092ff;
+  line-height: 40rpx;
+  float: left;
+}
+.page_Fundraising_title_text_text{
+  width: 50%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  float: right;
+  text-align: right;
+  text-decoration: underline;
+}
+/*input  end*/
+
+/* _radio :start*/
+.page_radio_radio{
+  width: 94%;
+  margin: auto;
+}
+.page_radio_radio radio{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  padding-left: 20rpx;
+}
+/* _radio end*/
+
+
+/*添加图片*/
+.page_Fundraising_image{
+  width: 100%;
+  margin-top: 30rpx;
+}
+.page_Fundraising_image_title{
+  width: 94%;
+  height: 40rpx;
+  margin: 0 auto;
+}
+.page_Fundraising_image_title_title{
+    width: 58%;
+  height: 40rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #0092ff;
+  line-height: 40rpx;
+  float: left;
+}
+.page_Fundraising_image_title_text{
+  width: 42%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  float: right;
+  text-align: right;
+  text-decoration: underline;
+}
+
+
+
+.image-iamge{
+  width: 94%;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius:16rpx;
+  margin-top: 10rpx;
+}
+.page_Fundraising_image_text{
+  width: 94%;
+  height: 80rpx;
+  font-size: 28rpx;
+  margin: 0 auto;
+  padding-top:20rpx; 
+  padding-bottom: 20rpx;
+  background: #fff;
+  z-index: -10;
+}
+/*添加图片 end*/
+
+
+/*下一步  start*/
+.page_btn {
+  margin:1.17647059em 15px .3em;
+  padding-bottom: 40rpx;
+}
+.page_btn_button {
+  color:#FFFFFF;
+  background-color:#0092ff;
+  border-radius: 8px;
+}
+/*下一步  end*/

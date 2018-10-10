@@ -3,6 +3,7 @@
   作者:  lingfe 
   时间:  2018-09-26
   model：官方闪租（常规，专用布局方式）
+  显示内容有: 图片1张，标题，价格/单位,原价、描述、标签、时间
   描述:  表示模块1，用推荐菜单的数据类型展示和布局样式
 **/
 
@@ -58,8 +59,8 @@
     color: #fb5d5d;
     overflow:hidden;
 text-overflow:ellipsis;
-white-space:nowrap;
-
+/* white-space:nowrap; */
+ height: 100rpx;
 }
 
 .model1_hot-item-No-time-box {

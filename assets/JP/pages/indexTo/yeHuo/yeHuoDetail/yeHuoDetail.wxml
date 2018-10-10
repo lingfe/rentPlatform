@@ -18,20 +18,20 @@
   <!-- 参数 start -->
   <view class='neiro_model'>
       <!-- 轮播图 start -->
-      <template is="lbt" data="{{info}}" />
+      <template is="lbt" data="{{...releaseInfo}}" />
       <!-- 轮播图 end -->
 
       <!-- 标题 -->
-      <view class='model_title'>{{info.title}}</view>
+      <view class='model_title'>{{releaseInfo.tab_release_info.title}}</view>
 
       <!-- 标签+描述 -->
-      <template is="label_and_description" data="{{info,browse_num}}" />
+      <template is="label_and_description" data="{{lable_list,...releaseInfo}}" />
       <!-- 标签+描述 end -->
   </view>
   <!-- 参数 end -->
 
   <!-- 信息来源  start -->
-  <template is="infoSources" data="{{info}}" />
+  <template is="infoSources" data="{{...releaseInfo}}" />
   <!-- 信息来源  end -->
 
   <!-- tab切换  start -->

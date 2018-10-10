@@ -1,0 +1,139 @@
+/**  
+ *   作者:  lingfe 
+ *   时间:  2017-8-2
+ *   描述:  个人_个人资料_修改电话号码
+ * 
+ * */
+.page{
+  width: 100%;
+  background-color: #fff;
+  height: auto;
+}
+.margin_left{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  margin-top: 0rpx;
+}
+.bg_search{
+  background-color: #fff;
+  border-radius: 5px;
+  width: 626rpx;
+  height: 83rpx;
+  border:1rpx solid #e6e6ea;
+  margin-left: 40rpx;
+}
+.VerificationCode {
+  height:71rpx;
+  width:120rpx;
+  font-size:16rpx;
+  background-color: #0099ff;
+  color: #fff;
+  border: 1rpx solid #0099ff;
+  border-radius:50px;
+  position:relative;
+  text-align:center;
+  line-height:80rpx;
+  top:-61rpx;
+  left:495rpx;
+  z-index:100;
+
+}
+.weui-search-bar__input {
+height:28px;
+line-height:28px;
+font-size: 20rpx;
+font-family:"黑体";
+margin-top: 10rpx;
+margin-left: 0rpx;
+}
+
+.text_center{
+  text-align: center;
+  font-size: 24rpx;
+  font-family:"黑体";
+  padding-top: 42rpx;
+}
+.text_center_image{
+  width: 100%;
+  height: 180rpx;
+}
+.text_center_image image{
+  width:130rpx;
+  height: 150rpx;
+}
+.text_center_text{
+  width: 70%;
+  margin: auto;
+}
+
+.weui-search-bar {
+position:relative;
+padding:8px 10px;
+display:-webkit-box;
+display:-webkit-flex;
+display:flex;
+box-sizing:border-box;
+background-color:#efeff4;
+border-top:1rpx solid #fff;
+border-bottom:1rpx solid #fff;
+}
+
+button[type="primary"] {
+color:#FFFFFF;
+background-color:#0099ff;
+}
+
+button {
+position:relative;
+display:block;
+margin-left:auto;
+margin-right:auto;
+padding-left:14px;
+padding-right:14px;
+box-sizing:border-box;
+font-size:18px;
+text-align:center;
+text-decoration:none;
+line-height:83rpx;
+border-radius:5px;
+-webkit-tap-highlight-color:transparent;
+overflow:hidden;
+width:626rpx;
+height:83rpx;
+border:none;
+margin-top: 65rpx;
+}
+
+/*确定选择*/
+.weui-btn-area {
+  margin:1.17647059em 15px .3em;
+  padding-bottom: 80rpx;
+}
+
+.button{
+  color:#FFFFFF;
+  background-color:#ddd;
+  border-radius: 8px;
+}
+.bg{
+  background-color:#0099ff;
+}
+
+
+button::after {
+content:" ";
+width:200%;
+height:200%;
+position:absolute;
+top:0;
+left:0;
+border:1px solid  #E8EFEF;
+-webkit-transform:scale(0.5);
+transform:scale(0.5);
+-webkit-transform-origin:0 0;
+transform-origin:0 0;
+box-sizing:border-box;
+border-radius:10px;
+
+}

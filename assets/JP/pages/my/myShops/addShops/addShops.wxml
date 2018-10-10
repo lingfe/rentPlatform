@@ -1,0 +1,338 @@
+<!--pages/my/myShops/addShops/addShops.wxml-->
+<!-- 导入资源 -->
+<import src="/assets/wxml/infoSources.wxml" />
+<import src="/assets/wxml/tabsMenu.wxml" />
+<import src="/assets/wxml/imageText.wxml" />
+<import src="/assets/wxml/bottom.wxml" />
+<import src="/assets/wxml/label_and_description.wxml" />
+<import src="/assets/wxml/other.wxml" />
+
+<view class='page'>
+    <!-- 菜单  start -->
+    <view class="weui-tab" wx:if="{{tab.length != 0}}">
+      <!-- 菜单  start -->
+      <view class="weui-navbar" style="border-bottom:none;">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" 
+          class="weui-navbar__item {{tab_index == index ? 'select_text' : ''}}" 
+          data-name="{{item}}" bindtap="tabClick_to">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+      </view>
+      <!-- 菜单  end -->
+    </view>
+    <!-- 菜单  end -->
+    
+    <!-- 内容  start-->
+    <view class="weui-tab__panel">
+      <!-- 块  start-->
+      <!-- 预览效果 start -->
+      <view class="weui-tab__content"
+        hidden="{{tab_index != 0}}">
+        <view class='page_ylang'>
+
+          <!-- 标签+描述 -->
+          <template is="label_and_description_model1" data="{{lable_list}}" />
+          <!-- 标签+描述 end -->
+
+          <!-- 信息来源  start -->
+          <template is="infoSources" data="{{user_info}}" />
+          <!-- 信息来源  end -->
+
+          <!-- 导航菜单  start -->
+          <view class="weui-tab">
+                <view class="weui-navbar" style='column-count: {{info.length}};'>
+                  <view id="-1" 
+                    class="weui-navbar__item {{activeIndex == -1 ? 'select_text' : ''}}" 
+                    data-name="{{item.tabs_name}}" bindtap="tabClick">
+                      选购
+                  </view>
+                  <view id="-2" 
+                    class="weui-navbar__item {{activeIndex == -2 ? 'select_text' : ''}}" 
+                    data-name="{{item.tabs_name}}" bindtap="tabClick">
+                      基本信息
+                  </view>
+                  <view id="{{index}}"  wx:for="{{info}}" wx:key="*this"
+                    class="weui-navbar__item {{activeIndex == index ? 'select_text' : ''}}" 
+                    data-name="{{item.tabs_name}}" bindtap="tabClick">
+                      {{item.tabs_name}}
+                  </view>
+                  <!-- 添加商铺tabs导航菜单 -->
+                  <navigator class="weui-navbar__item"
+                  url="{{navigator.add_tabs}}?shops_id={{basicInfo.id}}" >+</navigator>
+                  <!-- 编辑商铺tabs导航菜单 -->
+                  <navigator wx:if="{{activeIndex>=0}}" class="weui-navbar__item"
+                  url="{{navigator.edit_tabs}}?id={{info[activeIndex].id}}" >edit</navigator>
+                  <!-- 删除商铺tabs导航菜单 -->
+                  <view wx:if="{{activeIndex>=0}}"  bindtap='bindtapDeleteTabs'
+                  id="{{info[activeIndex].id}}"  class="weui-navbar__item" >-</view>
+                </view>
+          </view>
+          <!-- 导航菜单  end -->
+
+          <!-- 基本信息 start -->
+          <view class="weui-tab__content"  hidden="{{activeIndex != -2 }}">
+              <view class='tab_content'>            
+                <!-- 模块内容 start  -->
+                <view class='content_pro'>
+                    <!-- 店铺介绍  -->
+                    <view wx:if="{{basicInfo}}" class='pro_shopIntroduce'>
+                      <image class='pro_shopIntroduce_logo' src='{{basicInfo.logo}}'></image>
+                      <view class='pro_shopIntroduce_name'>{{basicInfo.shopsName}}</view>
+                      <navigator class='pro_shopIntroduce_param'>
+                        详细地址:\t{{basicInfo.address}}
+                        <text style='float:right;'>></text>
+                      </navigator>
+                      <view class='pro_shopIntroduce_param' >
+                        营业时间:\t{{basicInfo.businessHours}}</view>
+                      <navigator class='pro_shopIntroduce_param' bindtap='bodaPhone' 
+                      id="{{pro.shopIntroduce.tel}}">
+                        联系电话:\t{{basicInfo.contactNumber}}
+                        <text style='float:right;'>></text>
+                      </navigator>
+                      <view class='pro_shopIntroduce_param'>
+                        门店照片</view>
+                      <view class='pro_shopIntroduce_images'>
+                        <image wx:for="{{basicInfo.images_list}}" wx:key="{{item.id}}" 
+                        src='{{item.imgUrl}}'></image>
+                      </view>
+                      <view class='pro_shopIntroduce_text'>信息反馈</view>
+                    </view>
+                </view>
+              </view>
+          </view>
+          <!-- 基本信息 end -->
+
+          <!-- 选购 start  -->
+          <view class='tabs_content' wx:if="{{activeIndex  == -1}}">
+            <!-- 商铺选购分类tabs菜单 start -->
+            <view class="nav_left">
+              <block wx:for="{{shopsChooseType_tabs_list}}" wx:key="{{item.id}}">
+                <view class="nav_left_items {{activeIndex_to == index ? 'active' : ''}}" 
+                bindtap="switchRightTab"  id="{{item.id}}" data-index="{{index}}">{{item.tabs_name}}</view>
+              </block>
+              <!-- 添加商铺选购分类tabs菜单 -->
+              <navigator class="nav_left_items"
+               url="{{navigator.add_shopsChooseType_tabs}}?shops_id={{basicInfo.id}}" >+</navigator>
+               <!-- 编辑商铺选购分类tabs菜单 -->
+              <navigator wx:if="{{activeIndex_to>=0}}" class="nav_left_items"
+               url="{{navigator.edit_shopsChooseType_tabs}}?id={{shopsChooseType_tabs_list[activeIndex_to].id}}" >edit</navigator>
+               <!-- 删除商铺选购分类tabs菜单 -->
+              <view wx:if="{{activeIndex_to>=0}}"  bindtap='bindtapDeleteShopChooseTypeTabs'
+                id="{{shopsChooseType_tabs_list[activeIndex_to].id}}"  class="nav_left_items" >-</view>
+            </view>
+            <!-- 商铺选购分类tabs菜单 end -->
+
+            <!-- 商铺商品 start -->
+            <view class='nav_right'>
+              <view  class="for_block" wx:if="{{shops_commodity_list.length!=0}}">
+                <block wx:for="{{shops_commodity_list}}" 
+                wx:key="{{item.id}}">
+                  <view bindtap='commodityBtn' id="{{item.id}}" class="nav_right_items">
+                      <image src="{{item.img}}"></image>
+                      <view class='nav_right_items_param'>
+                        <view class='nav_right_items_title'>{{item.commodityName}}</view>
+                        <view class='nav_right_items_price'>￥36</view>
+                        <view class='nav_right_items_jia'>+</view>
+                      </view>
+                  </view>
+                </block>
+              </view>
+              <view wx:else>暂无数据</view>
+            </view>
+            <!-- 商铺商品 end -->
+
+            <!-- 删除商铺商品  -->
+            <navigator wx:if="{{commodity_id}}" bindtap='delete_commodity' 
+              id="{{commodity_id}}" 
+              class='botton_creator jian'>-</navigator>
+
+            <!-- 编辑商铺商品  -->
+            <navigator wx:if="{{commodity_id}}"
+             url="{{navigator.commodity_edit}}?id={{commodity_id}}"
+             class='botton_creator edit'>edit</navigator>
+
+            <!-- 添加商铺商品  -->
+            <navigator url="{{navigator.add_commodity}}?id={{shopsChooseType_tabs_list[activeIndex_to].id}}&shops_id={{basicInfo.id}}"
+             class='botton_creator to'>+</navigator>
+          </view>
+          <!-- 选购 end  -->
+
+          <!-- tabs内容，图片与文字布局  start-->
+          <template is="imageText" data="{{info,activeIndex}}" />
+          <!-- tabs内容，图片与文字布局  end-->
+
+          <!-- 评论 start  -->
+          <!-- 评价 end -->
+
+          <!-- 底部 start -->
+          <template is="bottom" data="{{ax}}" />
+          <!-- 底部 end -->
+        </view>
+      </view>
+      <!-- 预览效果 end -->
+
+      <!-- 基本信息 start -->
+      <view class="weui-tab__content"
+        hidden="{{tab_index != 1}}">
+        <form class='page_form' bindsubmit='bindFormSubmit'>
+              <!-- 上传商铺logo或门面照片 start-->
+              <input hidden='hidden' name="id" value='{{basicInfo.id}}'></input>
+              <view class='page_Fundraising_image'>
+                <view class='page_Fundraising_image_title'>
+                  <view class='page_Fundraising_image_title_title'>
+                  上传商铺logo或门面照片<text style='color:red;'>*</text></view>
+                  <navigator wx:if="{{basicInfo.id}}" 
+                    url="{{navigator.add_shops_price}}?shops_id={{basicInfo.id}}" 
+                    class='page_Fundraising_image_title_text'>
+                    <text style='color:red;'>设置起送费、平均消费等</text>
+                  </navigator>
+                </view>
+                <view class="image-iamge">
+                  <view class='page_Fundraising_image_text'>上传商铺logo或门面照片
+                  </view>
+                  <!-- 选择图片  start -->
+                  <view class="weui-uploader__bd">
+                          <view class="weui-uploader__files" id="uploaderFiles">
+                            <block>
+                              <view class="weui-uploader__file" 
+                              bindlongtap="previewImage" id="{{basicInfo.logo}}">
+                                <image class="img_tt" 
+                                src="/assets/images/delete.png" 
+                                bindtouchend="bindtapImageDelete" data-img="{{basicInfo.logo}}" />
+                                <image class="weui-uploader__img" 
+                                src="{{basicInfo.logo}}" mode="aspectFill" />
+                              </view>
+                            </block>
+                          </view>
+                          <view class="weui-uploader__input-box" bindtap="chooseImage"
+                          wx:if="{{basicInfo.logo == null}}">+</view>
+                  </view>
+                  <!-- 选择图片  end -->
+                </view>
+              </view>
+              <!-- 上传营业执照和身份证正反面   end-->
+
+              <!-- 商铺名称   start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                  商铺名称<text style='color:red;'>*</text></view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='text' name="shopsName" value='{{basicInfo.shopsName}}' 
+                  maxlength='20'
+                  placeholder='请输入商铺名称'></input>
+                </view>
+              </view>
+              <!-- 商铺名称   end-->
+
+              <!-- 营业时间   start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                  营业时间<text style='color:red;'>*</text> </view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='text' 
+                  value='{{basicInfo.businessHours}}' 
+                  maxlength='20'
+                  name="businessHours"
+                  placeholder='请输入营业时间'></input>
+                </view>
+              </view>
+              <!-- 营业时间   end-->
+
+              <!-- 联系电话   start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>联系电话</view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='number' 
+                  value='{{basicInfo.contactNumber}}'
+                  maxlength='20' 
+                  name="contactNumber"
+                  placeholder='请输入联系号码'></input>
+                </view>
+              </view>
+              <!-- 联系电话   end-->
+
+              <!-- 详细地址   start-->
+              <view class='page_Fundraising_input'>
+                <view  class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                  详细地址<text style='color:red;'>*</text> </view>
+                  <view bindtap='getAddress' url="/pages/zber/indexCity/indexCity" 
+                  class='page_Fundraising_image_title_text'>
+                  从地图选择地址>></view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='text' value='{{basicInfo.address}}' 
+                  name="address" placeholder='请输入详细地址'></input>
+                </view>
+              </view>
+              <!-- 详细地址   end-->
+
+
+              <!-- 上传门店内外周边环境照片 start-->
+              <view class='page_Fundraising_image'>
+                <view class='page_Fundraising_image_title'>
+                  <view class='page_Fundraising_image_title_title'>
+                  上传门店内外周边环境照片</view>
+                  <view class='page_Fundraising_image_title_text' bindtap='image_isDisplay'>参考示例</view>
+                </view>
+                <view class="image-iamge">
+                  <view class='page_Fundraising_image_text'>上传门店内外周边环境照片
+                  </view>
+                  <!-- 选择图片 -->
+                  <template is="other_select_picture" data="{{arr}}"/>
+                </view>
+              </view>
+              <!-- 上传门店内外周边环境照片   end-->
+
+              <!-- 提交审核 start -->
+              <view class="page_btn">
+                <button class="page_btn_button" formType="submit">
+                {{ basicInfo ==null?'保存':'编辑'}}
+                </button>
+              </view>
+              <!-- 提交审核  end -->
+        </form>     
+      </view>
+      <!-- 基本信息 end -->
+
+      <!-- 其他导航菜单内容说明 start -->
+      <view class="weui-tab__content"
+        hidden="{{tab_index != 2}}">
+        <view class='tab_content'>            
+          <!-- 模块内容 start  -->
+          <view class='content_pro' wx:for-item="pro" 
+          wx:for="{{bujusming_list}}" wx:key="{{item}}">
+              <!-- 内容标题 -->
+              <view class='pro_title' wx:if="{{pro.title}}">{{pro.title}}</view>
+              <!-- 内容content -->
+              <view class='pro_content' wx:if="{{pro.content != null}}">
+                <text>{{pro.content}}</text>
+                <!-- 加粗的内容content_Bold -->
+                <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
+              </view>
+              <!-- 内容加粗content_Bold -->
+              <view class='pro_content' wx:elif="{{pro.content_Bold != null}}">
+                <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
+              </view>
+              <!-- 图片img -->
+              <image mode="widthFix" wx:if="{{pro.img !=null}}" class='pro_img' src='{{pro.img}}'></image>
+              <!-- 图片说明文字text -->
+              <view class='img_text' wx:if="{{pro.text != null}}">{{pro.text}}</view>
+          </view>
+          <!-- 模块内容 end  -->
+        </view>
+      </view>
+      <!-- 其他导航菜单内容说明 end -->
+
+      <!-- 块 end-->
+    </view>
+    <!-- 内容  start-->
+</view>

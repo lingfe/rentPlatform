@@ -4,39 +4,49 @@
   时间:  2018-09-26
   名称:  图片与文字布局
   描述:  
-  wxml:
-      <!-- tabs内容部分  start-->
-      <view class="weui-tab__content" wx:for="{{info.tabs}}" wx:key="{{item}}" hidden="{{activeIndex != index }}">
-        <view class='tab_content'>
-            <!-- 模块标题 start  -->
-            <view class='content_title' wx:if="{{info.projectIntroduction[index].title !=null}}">
-              {{info.projectIntroduction[index].title}}
-            </view>
-            <!-- 模块标题 end  -->
-            
-            <!-- 模块内容 start  -->
-            <view class='content_pro' wx:for-item="pro" wx:for="{{info.projectIntroduction[index].content}}" wx:key="*this">
-              <!-- 内容content -->
-              <view class='pro_content' wx:if="{{pro.content != null}}">{{pro.content}}
-                <!-- 加粗的内容content_Bold -->
-                <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
-              </view>
-              <!-- 内容加粗content_Bold -->
-              <view class='pro_content' wx:elif="{{pro.content_Bold != null}}">
-                <span class='content_Bold' wx:if="{{pro.content_Bold != null}}">{{pro.content_Bold}}</span>
-              </view>
-              <!-- 标题title -->
-              <view class='img_title' wx:if="{{pro.title != null}}">{{pro.title}}</view>
-              <!-- 图片img -->
-              <image mode="widthFix" wx:if="{{pro.img !=null}}" class='pro_img' src='{{pro.img}}'></image>
-            </view>
-            <!-- 模块内容 end  -->
-        </view>
-        <view class='bottom'></view>
-      </view>
-      <!-- tabs内容部分  end-->
-
 **/
+
+/* 店铺介绍 */
+.pro_shopIntroduce{
+  width: 100%;
+  margin: auto;
+}
+.pro_shopIntroduce_logo{
+  width: 100%;
+  height:480rpx;
+  border-radius:50%;
+}
+.pro_shopIntroduce_name{
+  text-align: center;
+  font-size: 50rpx;
+  font-weight: bold;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.pro_shopIntroduce_param{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+    overflow: hidden; /**自动隐藏文字*/
+  text-overflow: ellipsis;/**文字隐藏后添加省略号*/
+  white-space: nowrap;/**强制不换行*/
+}
+.pro_shopIntroduce_images{
+  width: 100%;
+}
+.pro_shopIntroduce_images image{
+  width: 33%;
+  height: 220rpx;
+}
+.pro_shopIntroduce_text{
+  width: 100%;
+  height: 80rpx;
+  font-size: 30rpx;
+  color: #330066;
+  text-align: center;
+  line-height: 80rpx;
+}
 
 .weui-tab__content{
   width:100%;
@@ -51,7 +61,7 @@
   padding-bottom:20rpx;
   background-color:#fff;
   margin-top: 20rpx;
-  margin-bottom: 30rpx;
+  margin-bottom: 110rpx;
 }
 .content_pro{
   width: 96%;

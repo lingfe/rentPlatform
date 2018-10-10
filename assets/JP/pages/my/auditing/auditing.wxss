@@ -1,0 +1,3 @@
+/* pages/my/admin/admin.wxss */
+
+@import "/pages/indexTo/admissionApply/admissionApply.wxss";

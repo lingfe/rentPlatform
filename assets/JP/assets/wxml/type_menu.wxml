@@ -11,11 +11,12 @@
 
 <!-- 分类菜单 start -->
 <template name="type_menu">
-  <view class="index-menu">
-    <navigator url='{{item.navigator}}' class='index-menu-item' wx:for="{{navs}}" wx:key="item.id">
-      <image src="{{item.image}}" class="slide-image"/>
-      <text>{{item.text}}</text>
-    </navigator>
-  </view>
+	<view class="index-menu">
+		<navigator class="index-menu-item" wx:for="{{type_menu}}" wx:key="{{item.id}}" 
+    url="{{item.navigator}}?typeMenu_id={{item.id}}">
+			<image src="{{item.typeMenuIcoUrl}}"></image>
+			<text>{{item.typeMenuName}}</text>
+		</navigator>
+	</view>
 </template>
 <!-- 分类菜单 end -->

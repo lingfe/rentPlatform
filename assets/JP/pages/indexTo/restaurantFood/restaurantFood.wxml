@@ -1,0 +1,97 @@
+<!--pages/indexTo/restaurantFood/restaurantFood.wxml-->
+
+<import src="/assets/wxml/infoSources.wxml" />
+<import src="/assets/wxml/tabsMenu.wxml" />
+<import src="/assets/wxml/imageText.wxml" />
+<import src="/assets/wxml/bottom.wxml" />
+<import src="/assets/wxml/label_and_description.wxml" />
+
+<view class='page'>
+
+  <!-- 标签+描述 -->
+  <template is="label_and_description_model1" data="{{...basicInfo}}" />
+  <!-- 标签+描述 end -->
+
+  <!-- 信息来源  start -->
+  <template is="infoSources" data="{{...basicInfo}}" />
+  <!-- 信息来源  end -->
+
+  <!-- tab切换  start -->
+  <template is="tabsMenu_model1" data="{{...basicInfo,activeIndex}}" />
+  <!-- tab切换 end -->
+
+          <!-- 基本信息 start -->
+          <view class="weui-tab__content"  hidden="{{activeIndex != -2 }}">
+              <view class='tab_content'>            
+                <!-- 模块内容 start  -->
+                <view class='content_pro'>
+                    <!-- 店铺介绍  -->
+                    <view wx:if="{{basicInfo}}" class='pro_shopIntroduce'>
+                      <image class='pro_shopIntroduce_logo' src='{{basicInfo.logo}}'></image>
+                      <view class='pro_shopIntroduce_name'>{{basicInfo.shopsName}}</view>
+                      <navigator class='pro_shopIntroduce_param'>
+                        详细地址:\t{{basicInfo.address}}
+                        <text style='float:right;'>></text>
+                      </navigator>
+                      <view class='pro_shopIntroduce_param' >
+                        营业时间:\t{{basicInfo.businessHours}}</view>
+                      <navigator class='pro_shopIntroduce_param' bindtap='bodaPhone' 
+                      id="{{pro.shopIntroduce.tel}}">
+                        联系电话:\t{{basicInfo.contactNumber}}
+                        <text style='float:right;'>></text>
+                      </navigator>
+                      <view class='pro_shopIntroduce_param'>
+                        门店照片</view>
+                      <view class='pro_shopIntroduce_images'>
+                        <image wx:for="{{basicInfo.images_list}}" wx:key="{{item.id}}" 
+                        src='{{item.imgUrl}}'></image>
+                      </view>
+                      <view class='pro_shopIntroduce_text'>信息反馈</view>
+                    </view>
+                </view>
+              </view>
+          </view>
+          <!-- 基本信息 end -->
+
+          <!-- 选购 start  -->
+          <view class='tabs_content' wx:if="{{activeIndex  == -1}}">
+            <!-- 商铺选购分类tabs菜单 start -->
+            <view class="nav_left">
+              <block wx:for="{{basicInfo.shopsChooseType_tabs_list}}" wx:key="{{item.id}}">
+                <view class="nav_left_items {{activeIndex_to == index ? 'active' : ''}}" 
+                bindtap="switchRightTab"  id="{{index}}">{{item.tabs_name}}</view>
+              </block>
+            </view>
+            <!-- 商铺选购分类tabs菜单 end -->
+
+            <!-- 商铺商品 start -->
+            <view class='nav_right'>
+              <view  class="for_block" wx:if="{{shops_commodity_list.length!=0}}">
+                <block wx:for="{{shops_commodity_list}}" 
+                wx:key="{{item.id}}">
+                  <view class="nav_right_items">
+                      <image src="{{item.img}}"></image>
+                      <view class='nav_right_items_param'>
+                        <view class='nav_right_items_title'>{{item.commodityName}}</view>
+                        <view class='nav_right_items_jia'>+</view>
+                      </view>
+                  </view>
+                </block>
+              </view>
+              <view wx:else>暂无数据</view>
+            </view>
+            <!-- 商铺商品 end -->
+          </view>
+          <!-- 选购 end  -->
+
+  <!-- tabs内容，图片与文字布局  start-->
+  <template is="imageText" data="{{...basicInfo,activeIndex}}" />
+  <!-- tabs内容，图片与文字布局  end-->
+
+  <!-- 评论 start  -->
+  <!-- 评价 end -->
+
+  <!-- 底部 start -->
+  <template is="bottom" data="{{ax}}" />
+  <!-- 底部 end -->
+</view>

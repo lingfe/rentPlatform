@@ -9,7 +9,6 @@
  .model_content{
    width: 96%;
    height: auto;
-   max-height: 310rpx;
    font-size: 28rpx;
    color: #868686;
    margin: auto;

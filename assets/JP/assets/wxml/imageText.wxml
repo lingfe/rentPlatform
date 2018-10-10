@@ -10,10 +10,12 @@
 
 <!--tabs内容，图片与文字布局  start-->
 <template name="imageText">
-  <view class="weui-tab__content" wx:for="{{info.tabs}}" wx:key="{{item}}" hidden="{{activeIndex != index }}">
+  <view class="weui-tab__content" wx:for="{{info}}" 
+  wx:key="{{item.id}}" hidden="{{activeIndex != index }}">
         <view class='tab_content'>            
           <!-- 模块内容 start  -->
-          <view class='content_pro' wx:for-item="pro" wx:for="{{info.projectIntroduction[index].content}}" wx:key="*this">
+          <view class='content_pro' wx:for-item="pro" 
+          wx:for="{{item.content}}" wx:key="*this">
               <!-- 内容标题 -->
               <view class='pro_title' wx:if="{{pro.title}}">{{pro.title}}</view>
               <!-- 内容content -->
@@ -34,6 +36,7 @@
           <!-- 模块内容 end  -->
         </view>
         <view class='bottom'></view>
+        <navigator url="/pages/my/myShops/addShops/addShops" class='botton_creator to'>+</navigator>
   </view>
 </template>
 <!-- tabs内容，图片与文字布局  end-->

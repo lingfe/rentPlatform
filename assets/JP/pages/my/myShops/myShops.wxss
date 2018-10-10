@@ -1,0 +1,31 @@
+/* pages/my/merchantEntrance/Merchant entrance.wxss */
+@import "/pages/indexTo/admissionApply/admissionApply.wxss";
+
+.no{
+  width: 100%;
+  text-align: center;
+}
+.botton_creator{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-top: 1rpx solid #eee;
+  position: fixed;
+  bottom: 0rpx;
+  background-color: #330066;
+  color: #fff;
+  font-size: 32rpx;
+}
+.botton_creator:active{
+  opacity: 0.5;
+}
+.to{
+  bottom: 100rpx;
+  right: 30rpx;
+  height: 100rpx;
+  line-height: 90rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  font-size: 70rpx;
+}

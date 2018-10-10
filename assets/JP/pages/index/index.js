@@ -49,33 +49,61 @@ Page( {
       ]
     },
   },
-
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo( {
-      url: '../logs/logs'
-    })
-  },
   
-  swiperchange: function(e) {
-    //FIXME: 当前页码
-    //console.log(e.detail.current)
+
+  //加载
+  onLoad: function(options) {
+    var that = this;
+    that.setData({
+      superiorId: options.typeMenu_id
+    });
+
+    //get分类菜单
+    that.getWhereSuperiorId(that);
+    //get轮播图图片和属性
+    that.getLbtAttributeInfo(that);
   },
 
-  onLoad: function() {
-    console.log( 'onLoad' )
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo( function( userInfo ) {
-      //更新数据
-      that.setData( {
-        userInfo: userInfo
-      })
+  //get轮播图图片和属性
+  getLbtAttributeInfo: function (that) {
+    wx.request({
+      url: app.config.zberPath_web + 'zber_sys/lbt_attribute/getLbtAttributeInfo',
+      method: "POST",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: {
+        setId: that.data.superiorId,//分类菜单id,项目id，其他id。如果=0，则表示最顶级，也就是服务菜单的轮播图属性
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.data.state == 200) {
+          that.setData({ lbt_attribute: res.data.data.lbt_attribute });
+        } else {
+          app.showModal(res.data.msg);
+        }
+      }
     })
   },
-  go: function(event) {
-    wx.navigateTo({
-      url:  event.currentTarget.dataset.type
+
+  //get分类菜单
+  getWhereSuperiorId: function (that) {
+    wx.request({
+      url: app.config.zberPath_web + 'zber_sys/type_menu/getWhereSuperiorId',
+      method: "POST",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data:{
+        superiorId: that.data.superiorId,//上级id，根据此id得到菜单
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.data.state == 200) {
+          that.setData({ type_menu: res.data.data });
+        }
+      }
     })
-  }
+  },
+
 })

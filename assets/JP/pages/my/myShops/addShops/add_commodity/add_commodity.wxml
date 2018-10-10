@@ -1,0 +1,69 @@
+<!--pages/my/myShops/addShops/add_commodity/add_commodity.wxml-->
+<view class='page'>
+<form class='page_form' bindsubmit='bindFormSubmit'>
+              <!-- 商品名称   start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                  商品名称<text style='color:red;'>*</text></view>
+                </view>
+                <view class='page_Fundraising_input_input'>
+                  <input type='text' name="commodityName" value='{{form.commodityName}}' 
+                  placeholder='请输入商品名称'></input>
+                </view>
+              </view>
+              <!-- 商品名称   end-->
+
+              <!-- 是否推荐 start-->
+              <view class='page_Fundraising_input'>
+                <view class='page_Fundraising_title_text'>
+                  <view class='page_Fundraising_title_text_title'>
+                    是否推荐
+                  </view>
+                </view>
+                <view class='page_radio_radio'>
+                  <radio-group class="radio-group" name="shops_recommend">
+                    <radio value="1" color='#0099ff' >是</radio>
+                    <radio value="0" color='#0099ff' checked="true" >否</radio>
+                  </radio-group>
+                </view>
+              </view>
+              <!-- 是否推荐 end -->
+
+              <!-- 图片 start-->
+              <view class='page_Fundraising_image'>
+                <view class='page_Fundraising_image_title'>
+                  <view class='page_Fundraising_image_title_title'>
+                  图片<text style='color:red;'>*</text></view>
+                </view>
+                <view class="image-iamge">
+                  <view class='page_Fundraising_image_text'>
+                    请选择请清晰，明了，干净的图片
+                  </view>
+                  <!-- 选择图片  start -->
+                  <view class="weui-uploader__bd">
+                          <view wx:if="{{form.img != null}}" class="weui-uploader__files" id="uploaderFiles">
+                              <view class="weui-uploader__file" 
+                              bindlongtap="previewImage" id="{{form.img}}">
+                                <image class="img_tt" 
+                                src="/assets/images/delete.png" 
+                                bindtouchend="bindtapImageDelete" data-img="{{form.img}}" />
+                                <image class="weui-uploader__img" 
+                                src="{{form.img}}" mode="aspectFill" />
+                              </view>
+                          </view>
+                          <view class="weui-uploader__input-box" bindtap="chooseImage">+</view>
+                  </view>
+                  <!-- 选择图片  end -->
+                </view>
+              </view>
+              <!-- 图片   end-->
+
+              <!-- 保存 start -->
+              <view class="page_btn">
+                <button class="page_btn_button" formType="submit">
+                保存</button>
+              </view>
+              <!-- 保存  end -->
+        </form>     
+</view>

@@ -16,8 +16,31 @@ Page({
   onLoad: function (options) {
     var that=this;
     that.setData({
-      category: options.category
-    });
+      typeMenu_id: options.typeMenu_id
+    }) ;
+    //根据分类菜单id得到项目信息zber_sys/release_info/getWhere_TypeMenu_id?typeMenu_id=kjhkdfghsd
+    that.getWhere_TypeMenu_id(that);
+  },
+
+  //根据分类菜单id得到项目信息zber_sys
+  getWhere_TypeMenu_id:function(that){
+    wx.request({
+      url: app.config.zberPath_web +'zber_sys/release_info/getWhere_TypeMenu_id',
+      method:"get",
+      data:{
+        typeMenu_id: that.data.typeMenu_id,
+      },
+      success:function(res){
+        console.log(res);
+        if(res.data.state == 200){
+          that.setData({
+            release_list: res.data.data.release_info_list
+          });
+        }else{
+          app.showModel(res.data.msg);
+        }
+      }
+    })
   },
 
   /**

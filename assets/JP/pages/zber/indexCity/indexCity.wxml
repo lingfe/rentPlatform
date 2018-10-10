@@ -1,0 +1,40 @@
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-10-9
+ *   描述:  首页城市选择
+ * 
+ * */-->
+
+<view class="page">
+  <!-- 定位   start-->
+  <!-- <view class="top_top " 
+  bindtap="bindtapGetAddres" 
+  id="{{index}}" 
+  data-shortName='{{addressInfo}}' 
+  size="mini"  bindtap="tabClick">
+    <view class="bg_b_img">
+      <image src="/assets/images/address.png"></image>
+    </view>
+    <view class="bg_b_text">{{addressInfo}}</view>
+  </view> -->
+  <!-- 定位   end-->
+
+  <!-- 城市信息   start-->
+  <view class="page pageScreen">
+    <view class="page_bd page__bdScreen">
+      <view class="weui-tab">
+        <!-- 遍历  start -->
+        <view class="www">
+          <block wx:for="{{ad_info}}" wx:key="{{item}}">
+            <view id="{{index}}" data-shortName='{{item}}' 
+            class="weui-navbar__item {{activeIndex == index ? ' border_tab' : 'stop_title'}}" bindtap="tabClick">
+              <view class="weui-navbar__title stop_1">{{item}}</view>
+            </view>
+          </block>
+        </view>
+        <!-- 遍历  end -->
+      </view>
+    </view>
+  </view>
+  <!-- 城市信息   end-->
+</view>

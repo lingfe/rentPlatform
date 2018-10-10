@@ -1,78 +1,42 @@
 
 /*轮播 */
+@import '/assets/wxss/lbt.wxss';
+/*分类菜单*/
+@import '/assets/wxss/type_menu.wxss';
 
 page {
   background-color: #F2f2f2;
 }
 
-
-/*分类菜单 start*/
-.index-menu{
-	width: 100%;
-	display: -webkit-flex;
-	display: -webkit-box;
-	display: flex;
-	-webkit-flex-wrap: wrap;
-	        flex-wrap: wrap;
-	background: #fff;
-}
-.index-menu-item{
-	-webkit-flex: 0 0 25%;
-	-webkit-box-flex: 0;
-	        flex: 0 0 25%;
-	max-width: 25%;
-	text-align: center;
-	margin-top: 10rpx;
-/* 	border-top: 1rpx solid #ddd;
-	border-bottom: 1rpx solid #ddd;
-	border-right: 1rpx solid #ddd; */
-	padding: 20rpx 20rpx;
-	box-sizing: border-box;
-	margin-bottom: -1rpx;
-}
-.index-menu-item image{
-	width: 110rpx;
-	height: 110rpx;
-}
-.index-menu-item text{
-	display: block;
-	font-size: 30rpx;
-	line-height: 1.4;
-	white-space: nowrap;
-}
-/*分类菜单 end*/
-
-view.text {
+/*官方直租title start*/
+.guanfangzhizu{
+  width: 100%;
   display: flex;
+}
+.guanfangzhizu_text {
   align-items: center;
-  position: relative;
-  padding: 10px 10px 10px 12px;
   font-size: 15px;
   color: #656565;
+  margin-left: 4%;
+  height: 80rpx;
+  line-height: 80rpx;
 }
-
-view.text:before {
-    position: absolute;
-    display: block;
-    content: ' ';
-    left: -5px;
-    width: 2px;
-    height: 100%;
-    background-color: #09bb07;
-}
-.line_y {
+.guanfangzhizu_line_y {
   width: 3px;
-  height: 100%;
-  height: 18px;
+  height: 40rpx;
   display: inline-block;
-  background-color: #09bb07;
+  background-color: #330066;
+  margin-left: 10rpx;
+  margin-top: 20rpx;
 }
-view.text text {
-  margin-left: 10px;
-  line-height: 18px;
-}
+/*官方直租title end*/
 
+/*推荐部分 start*/
 .item {
-  margin-bottom: 7px;
-  height: 126px;
+  width: 100%;
 }
+.item image{
+  width: 100%;
+  height: 260rpx;
+}
+/*推荐部分 end*/

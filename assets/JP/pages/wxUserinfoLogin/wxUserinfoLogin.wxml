@@ -1,0 +1,35 @@
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-7-26
+ *   描述:  微信登录
+ * 
+ * */-->
+<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+    <open-data class="userinfo-nickname" type="userNickName"></open-data>
+    <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+    
+    <text class="userinfo-motto">
+      获取您的公开信息，如:头像，名称等
+    </text>
+  </view>
+  <!-- 相关条款  end -->
+  <checkbox-group bindchange="bindAgreeChange" name="isAgree">
+    <label class="weui-agree" for="weuiAgree">
+      <view class="weui-agree__text title">
+        <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="true" />
+        <view class="weui-agree__checkbox-icon">
+          <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9"></icon>
+        </view>
+        阅读并同意
+        <navigator url="/pages/dahuo/useProtocol/useProtocol" class="weui-agree__link">《用户使用规则》</navigator>
+      </view>
+    </label>
+  </checkbox-group>
+  <!-- 相关条款  end -->
+  <view class="weui-btn-area">
+    <button class="weui-btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo"  >确定登录</button>
+  </view>
+</view>
