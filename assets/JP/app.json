@@ -18,7 +18,7 @@
     "pages/indexTo/yeHuo/yeHuoList/yeHuoList",
     "pages/wxUserinfoLogin/wxUserinfoLogin",
     "pages/bindingPhone/bindingPhone",
-    "pages/indexTo/restaurantFood/restaurantFood",
+    "pages/indexTo/restaurant_food_list/restaurantFood/restaurantFood",
     "pages/indexTo/admissionApply/admissionApply",
     "pages/indexTo/admissionApply/applyMerchant/applyMerchant",
     "pages/zber/indexCity/indexCity",

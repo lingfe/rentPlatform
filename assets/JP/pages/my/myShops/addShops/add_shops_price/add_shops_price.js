@@ -28,7 +28,13 @@ Page({
       //根据商铺id查询价格参数
       that.getWhwereSetId(options.shops_id);
     } else {
-      app.showModal("请先保存基本信息后再来添加!");
+      wx.showModal({
+        title: '提示',
+        content: '请先保存基本信息后再来添加',
+        success: function (res) {
+          wx.navigateBack();
+        }
+      })
     }
   },
 

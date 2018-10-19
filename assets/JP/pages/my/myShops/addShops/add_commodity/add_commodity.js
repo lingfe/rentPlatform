@@ -27,8 +27,13 @@ Page({
         shops_id:options.shops_id,
       });
     } else {
-      app.showModal("请先选择一个商铺选购tabs分类菜单，再点击添加!");
-      wx.navigateBack();
+      wx.showModal({
+        title: '提示',
+        content: '请先选择一个商铺选购tabs分类菜单，再点击添加',
+        success:function(res){
+          wx.navigateBack();
+        }
+      })
     }
   },
 
@@ -68,7 +73,7 @@ Page({
 
           //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
           prevPage.setData({
-            shops_commodity_list: res.data.data
+            commodity_list: res.data.data
           })
           //返回上一页
           wx.navigateBack();

@@ -69,25 +69,27 @@
   width: 100%;
   height: 300rpx;
 }
-.nav_right .nav_right_items text{
-  display: block;
-  margin-top: 5px;
-  font-size: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 .nav_right_items:hover{
   opacity: 0.5;
-}
-.nav_right_items_title{
-  width: 80%;
-  font-size: 34rpx;
-  float: left;
 }
 .nav_right_items_param{
   width: 100%;
   text-align: center;
+}
+.nav_right_items_title{
+  width: 100%;
+  font-size: 34rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.nav_right_items_price{
+  width: 100%;
+  text-align: center;
+  display: flex;
+}
+.nav_right_items_price_param{
+  font-size: 26rpx;
+  width: 50%;
 }
 .nav_right_items_jia{
   width: 50rpx;
@@ -97,9 +99,10 @@
   background-color: #330066;
   color: #fff;
   border-radius: 50%;
-  float: right;
   margin-right: 6%;
+  position: absolute;
 }
 .nav_right_items_jia:active{
   opacity: 0.5;
 }
+

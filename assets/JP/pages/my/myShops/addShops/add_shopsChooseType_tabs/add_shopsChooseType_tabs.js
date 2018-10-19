@@ -24,7 +24,13 @@ Page({
         "form.shops_id": options.shops_id,
       });
     }else{
-      app.showModal("请先保存基本信息后再来添加!");
+      wx.showModal({
+        title: '提示',
+        content: '请先保存基本信息后再来添加',
+        success: function (res) {
+          wx.navigateBack();
+        }
+      })
     }
   },
 

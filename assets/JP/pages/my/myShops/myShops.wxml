@@ -16,7 +16,7 @@
   <!-- 模块菜单选择 end -->
 
   <!-- 点我创建一个吧 -->
-  <navigator wx:if="{{list.length == 0}}" 
+  <navigator wx:if="{{list.length == null}}" 
   url="/pages/my/myShops/addShops/addShops" class='botton_creator'>点我创建一个吧!</navigator>
   <navigator wx:if="{{list.length != 0}}" 
   url="/pages/my/myShops/addShops/addShops" class='botton_creator to'>+</navigator>

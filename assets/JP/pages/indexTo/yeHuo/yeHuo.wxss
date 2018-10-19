@@ -8,7 +8,7 @@
 @import '/assets/wxss/lbt.wxss';
 
  page{
-   background-color: #F7F8F3;
+   background-color: #eee;
  }
 
  .find_img{

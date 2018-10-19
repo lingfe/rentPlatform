@@ -26,8 +26,8 @@
                 </view>
                 <view class='page_radio_radio'>
                   <radio-group class="radio-group" name="shops_recommend">
-                    <radio value="1" color='#0099ff' >是</radio>
-                    <radio value="0" color='#0099ff' checked="true" >否</radio>
+                    <radio value="1" checked='{{form.shops_recommend!="null"}}' color='#0099ff' >是</radio>
+                    <radio value="0" color='#0099ff' checked='{{form.shops_recommend == "null"}}' >否</radio>
                   </radio-group>
                 </view>
               </view>

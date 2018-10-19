@@ -21,6 +21,10 @@ Page({
   onLoad: function (options) {
     var that = this;
     if (!app.checkInput(options.id)) {
+      that.setData({
+        id:options.id,
+        shops_id:options.shops_id,
+      });
       //根据商品id查询商品信息
       that.getWhereID(options.id);
     } else {
@@ -65,11 +69,13 @@ Page({
     //是否是商铺推荐
     if (e.detail.value.shops_recommend == 0) {
       form.shops_recommend = null;
+    }else{
+      form.shops_recommend = that.data.shops_id;
     }
 
     //发起请求
     wx.request({
-      url: app.config.zberPath_web + 'zber_sys/shops_commodity/save',
+      url: app.config.zberPath_web + 'zber_sys/shops_commodity/update',
       method: "POST",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -86,7 +92,7 @@ Page({
 
           //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
           prevPage.setData({
-            shops_commodity_list: res.data.data
+            commodity_list: res.data.data
           })
           //返回上一页
           wx.navigateBack();

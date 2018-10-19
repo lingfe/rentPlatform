@@ -22,8 +22,8 @@
   </template>
   <!-- 底部 end -->
 
-    <!-- 底部 start -->
-  <template name="bottom">
+  <!-- 底部_商铺 start -->
+  <template name="bottom_model1">
     <view class='dibu'>
       <view class='img_info'>
         <image bindtap='bindtabAX' src="/assets/images/ico/ax{{ax}}.png"></image>
@@ -34,4 +34,4 @@
       <view class='dibu_btn_false'>选好了</view>
     </view>
   </template>
-  <!-- 底部 end -->
+  <!-- 底部_商铺 end -->

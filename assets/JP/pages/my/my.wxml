@@ -27,8 +27,8 @@
 
   <!-- 菜单  start-->
   <view class='page_useCaidang'>
-    
     <view class='page_caidang'>
+      <!--  我的商铺 start -->
       <view class='page_caidang_caidang'>
         <view class='page_caidang_caidang_image'>
           <image src='/assets/images/my/zyzzx.png'></image>
@@ -37,6 +37,9 @@
         <navigator url="/pages/my/myShops/myShops?user_id={{info.id}}" 
           class='page_caidang_caidang_text'>管理，营运..</navigator>
       </view>
+      <!--  我的商铺 end -->
+
+      <!--  我的关注 start -->
       <view class='page_caidang_caidang'>
         <view class='page_caidang_caidang_image'>
           <image src='/assets/images/my/zyzzx.png'></image>
@@ -45,6 +48,9 @@
         <navigator url="/pages/myDrippingWater/volunteerCenter/volunteerCenter?user_id={{info.id}}" 
           class='page_caidang_caidang_text'>关注的商家,企业..</navigator>
       </view>
+      <!--  我的关注 end -->
+
+      <!--  个人资料 start -->
       <view class='page_caidang_caidang'>
         <view class='page_caidang_caidang_image'>
           <image src='/assets/images/my/zyzzx.png'></image>
@@ -53,6 +59,9 @@
         <navigator url="/pages/myDrippingWater/volunteerCenter/volunteerCenter?user_id={{info.id}}" 
           class='page_caidang_caidang_text'>修改头像,名称..</navigator>
       </view>
+      <!--  个人资料 end -->
+
+      <!--  官方维护营运 end -->
       <view class='page_caidang_caidang border-no'>
         <view class='page_caidang_caidang_image'>
           <image src='/assets/images/my/zyzzx.png'></image>
@@ -61,6 +70,7 @@
         <navigator url="/pages/my/auditing/auditing?user_id={{info.id}}" 
           class='page_caidang_caidang_text'>审核,管理..</navigator>
       </view>
+      <!--  官方维护营运 end -->
     </view>
 
     <view class='page_caidang'>

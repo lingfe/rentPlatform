@@ -7,6 +7,17 @@ export default{
     2,//预约。预约剪发
   ],
 
+  //布局说明
+  bujusming_list: [{
+    "title": "title表示标题,这是标题部分",
+    "content": "content表示内容,如:八月瓜产地分布于山西、湖南、河南、陕西、安徽、浙江、江西、福建、湖北、广东、广西、四川、重庆、云南、贵州、西藏等地，其中以贵州铜仁、湖南张家界天子山景区居多，农历八月瓜熟开口，索溪峪、杨家界等山麓谷地、林缘灌木丛中野生资源丰富，为上乘野果。",
+    "img": "http://108108byg.com/uploads/allimg/180202/3-1P202210558.jpg",
+    "text": "img图片,这是图片说明",
+    "content_Bold": "这里的内容加粗了，content_Bold",
+  }, {
+    "content_Bold": "这里另外一个item，这里的内容也加粗了，content_Bold",
+  }],
+
   //价格单位
   price_company: ["月", "株", "盒", "斤","人", "份", "件"],
 
@@ -211,7 +222,7 @@ export default{
     /*生活预约 start */
     {
       model: 3,  //模块
-      img: 'https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C253%2C802%2C485%3Bw%3D720%3Bq%3D99/sign=98f69c2091504fc2b610ea45d8edcb23/e7cd7b899e510fb3b8fc67bfd333c895d1430c34.jpg', //图片
+      img: '', //图片
       title: "", //标题
       category: 3,//类别
       source: '商家',//来源(0.官方,1.个人，2.商家，3.企业)

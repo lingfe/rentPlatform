@@ -6,10 +6,23 @@
 @import '/assets/wxss/model/model5.wxss';
 
 @import '/assets/wxss/infoSources.wxss';
+/* 菜单导航*/
+@import '/assets/wxss/tabsMenu.wxss';
+.weui-tab{
+  position: fixed;
+  top: 80rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.select_text{
+  height:80rpx;
+background-color:#eee;
+font-weight:bold;
+
+}
 
 
 .page_model{
-  margin-top:100rpx;
+  margin-top:200rpx;
 }
 .infoSource{
   border-top: 1rpx solid #eee;

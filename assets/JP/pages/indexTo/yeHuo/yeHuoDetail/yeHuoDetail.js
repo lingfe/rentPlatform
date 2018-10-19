@@ -19,6 +19,13 @@ Page({
     sliderOffset: 0,        //坐标x
     sliderLeft: 0,          //坐标y
 
+    //关注shuju 
+    user_follow:{
+      user_id:null,
+      state:0,
+      creator:wx.getStorageSync("openid"),
+      modify:"get",
+    }
   },
 
   /**
@@ -34,6 +41,40 @@ Page({
     that.getLbtAttributeInfo(that);
     //获取用户是否喜欢该项目
     that.getUserLike(that);
+    
+  },
+
+  //点击(关注/取消关注)
+  btnSetFollow:function(e){
+    var that=this;
+    that.data.user_follow.user_id= e.currentTarget.dataset.userid;
+    that.data.user_follow.state = e.currentTarget.dataset.state;
+    that.data.user_follow.creator= wx.getStorageSync("openid");
+
+    //关注数据,获取或保存或修改
+    that.get_or_save_or_update(that);
+  },
+
+  //关注数据,获取或保存或修改
+  get_or_save_or_update:function(that){
+    wx.request({
+      url: app.config.zberPath_web + 'zber_sys/user_follow/get_or_save_or_update',
+      method: "POST",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data:that.data.user_follow,
+      success:function(res){
+        console.log(res);
+        if(res.data.state==200){
+          that.setData({
+            user_follow:res.data.data,
+          });
+        }else{
+          app.showModal(res.data.msg);
+        }
+      }
+    })
   },
 
   //get轮播图图片和属性
@@ -95,6 +136,9 @@ Page({
             }
           });
 
+          //关注数据,获取或保存或修改
+          that.data.user_follow.user_id = releaseInfo.user_info.id;
+          that.get_or_save_or_update(that);
         }else{
           app.showModal(res.data.msg);
         }

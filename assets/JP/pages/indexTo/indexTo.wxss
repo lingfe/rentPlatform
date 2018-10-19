@@ -3,6 +3,9 @@
 /*分类菜单*/
 @import '/assets/wxss/type_menu.wxss';
 
+page{
+  background-color:#eee;
+}
 .page{
   margin: 0;
   padding: 0;

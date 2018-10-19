@@ -17,7 +17,7 @@
 
 <!-- 1.(官方闪租) start -->
 <template name="model1">
-  <navigator url="/pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail?id={{item.tab_release_info.id}}" 
+  <navigator url="/pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail?id={{item.id}}" 
    class="model1"  >
             <!-- 基本说明信息 start -->
             <view class="model1_hot-item-top">
@@ -29,53 +29,22 @@
 
                 <!-- 参数 start -->
                 <view class="model1_hot-item-top-right">
-                    <text class="model1_hot-item-title">{{item.tab_release_info.title}}</text>
+                    <text class="model1_hot-item-title">{{item.title}}</text>
                     <view class="model1_hot-item-price">
-                      {{item.price_info.present_price}}/{{item.price_info.price_company}}
-                      原价/{{item.price_info.original_price}} {{item.tab_release_info.describe_info}}
+                      {{item.price.present_price}}/{{item.price.price_company}}
+                      原价/{{item.price.original_price}} {{item.describe_info}}
                     </view>
-                    <!-- <view class="model1_hot-item-No-time-box">
-                        <view class="model1_hot-item-No" wx:for="{{item.tab_release_info.label}}" 
-                        wx:key="*this">
-                        {{item}}</view>
-                        <view class="model1_hot-item-time">{{item.dateTime}}</view>
-                    </view>  -->
                 </view>
                 <!-- 参数 end -->
             </view>
             <!-- 基本说明信息 end -->
-
-            <!-- 操作部分 start -->
-            <!-- <view class="model{{item.model}}_hot-item-btm">
-                <view class="model{{item.model}}_hot-item-user-box">
-                  <text class="model{{item.model}}_hot-item-btn">直接买</text>
-                </view>
-                <text class="model{{item.model}}_hot-item-btn">Phone</text>||
-                <text class="model{{item.model}}_hot-item-btn">马上租</text>
-            </view> -->
-            <!-- 操作部分 end -->
-
-            <!-- 来源和地址信息 start -->
-            <!-- <view class="model{{item.model}}_hot-item-btm">
-              <view class="model{{item.model}}_hot-item-No" 
-              bindtap='showModal' 
-              data-title='{{item.source}}'
-              data-msg='{{item.sourceName}}'>
-                ({{item.source}})<text class="model{{item.model}}_text-{{item.sourceCredit}}">{{item.sourceName}}</text>
-              </view>
-              <view class="model{{item.model}}_hot-item-No" 
-              bindtap='showModal' 
-              data-title='位置'
-              data-msg='{{item.address}}'>{{item.address}}</view>
-            </view> -->
-            <!-- 来源和地址信息 end -->
         </navigator>
 </template>
 <!-- (官方闪租) end -->
 
 <!-- 2.(新鲜野货) start -->
 <template name="model2">
-  <navigator url="/pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail?id={{item.tab_release_info.id}}" 
+  <navigator url="/pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail?id={{item.id}}" 
   class='model2'>
             <view class='model2_content'>
               <view class='model2_content_left'>
@@ -83,22 +52,21 @@
                 src='{{item.images[0].imgUrl}}' mode='aspectFill'></image>
               </view>
               <view class='model2_content_right'>
-                <view class='model2_content_right_title'>{{item.tab_release_info.title}}</view>
-                
+                <view class='model2_content_right_title'>{{item.title}}</view> 
                 <view class='model2_content_right_text'>
-                  <progress percent="{{item.price_info.surplusNum}}" activeColor="#330066" />
+                  <progress percent="{{item.price.surplusNum}}" activeColor="#330066" />
                 </view>
                 <view class='model2_content_right_text'>
                   <view class='model2_content_right_text_text'>
                     金额:<span class="model2_text-danger">
-                    {{item.price_info.present_price}}</span>元/{{item.price_info.price_company}}
+                    {{item.price.present_price}}</span>元/{{item.price.price_company}}
                   </view>
                   <view class='model2_content_right_text_text'>
                     已出售：<span class="model2_text-danger">
-                    {{item.tab_release_info.sell_num}}</span>份
+                    {{item.sell_num}}</span>份
                   </view>
                   <view class='model2_content_right_text_text model2_no-right'>
-                    <span class="model2_text-danger">{{item.tab_release_info.share_num}}</span>次转发
+                    <span class="model2_text-danger">{{item.share_num}}</span>次转发
                   </view>
                 </view>
               </view>
@@ -110,7 +78,7 @@
               <view class='model2_title_text'>{{item.user_info.username}}</view>
               <view class='model2_title_text model2_align_right'>
                 <span style="color: #F25B4B;font-weight: 500;">
-                {{item.tab_release_info.like_num}}</span> 人喜欢
+                {{item.like_num}}</span> 人喜欢
               </view>
             </view>
         </navigator>
@@ -119,29 +87,29 @@
 
 <!-- 3.(生活预约) start -->
 <template name="model3">
-        <view  class='model3'>
+        <navigator  class='model3'  url="/pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail?id={{item.id}}">
           <view  class='model{{item.model}}_navigator' bindtap='bindtapNavigator' id='{{item.id}}' data-releasetype='{{item.releaseType}}'>
           <view class='model{{item.model}}_model_img'>
-            <image class='model{{item.model}}_img' src='{{item.img}}'></image>
+            <image class='model{{item.model}}_img' src='{{item.images[0].imgUrl}}'></image>
           </view>
           <view class='model{{item.model}}_model_title'>{{item.title}}</view>
-          <view class='model{{item.model}}_model_content'>{{item.remark}} </view>
+          <view class='model{{item.model}}_model_content'>{{item.describe_info}} </view>
           <view class='model{{item.model}}_model_style'>
             <view class="model{{item.model}}_data_biaoqian_view">
             <image src="/assets/images/info/qtje.png"></image>
-            人均 {{item.headUses}}￥
+            人均 {{item.price.per_capita_price}}￥
             </view>
             <view class="model{{item.model}}_data_biaoqian_view">
             <image src="/assets/images/type.png"></image>
-            {{item.phone}}
+            {{item.user_info.mobile}}
             </view>
             <view class="model{{item.model}}_data_biaoqian_view">
             <image src="/assets/images/hanye.png"></image>
-            {{item.dateTime}}
+            {{item.mdate}}
             </view>
           </view>
           </view>
-        </view>
+        </navigator>
 </template>
 <!-- (生活预约) end -->
 
@@ -157,28 +125,29 @@
         {{item.shopsName}}
       </view>
       <view class='model4_content_param'>
-        <text>{{item.like_num}}人喜欢|</text>
-        <text>{{item.browse_num}}次浏览|</text>
-        <text>{{item.share_num}}次转发</text>
+        <text>人均{{item.shops_price.per_capita_price}}￥|</text>
+        <text>{{item.shops_price.charging_fee}}￥起送|</text>
+        <text>{{item.shops_price.distribution_fee}}￥配送</text>
       </view>
       <view class='model4_content_tuijing' 
       wx:for="{{item.commodity_list}}" wx:for-item="tuijian" wx:key="{{tuijian.id}}">
         <view class='model4_content_tuijing_image'>
-          <image src='{{tuijian.img}}'></image>
+          <image mode='scaleToFill' src='{{tuijian.img}}'></image>
         </view>
         <view class='model4_content_tuijing_content'>
           <view class='model4_content_tuijing_content_title'>{{tuijian.commodityName}}</view>
           <view class='model4_content_tuijing_content_param'>
-            <text>月售:{{tuijian.sellNum}}|</text>
-            <text>{{tuijian.likeNum}}人喜欢</text>
+            <text>转发{{tuijian.share_num}}次|</text>
+            <text>{{tuijian.like_num}}人喜欢</text>
           </view>
-          <view class='model4_content_tuijing_content_pirce'>￥{{tuijian.price}}</view>
+          <view class='model4_content_tuijing_content_pirce'>￥{{tuijian.price.present_price}}</view>
         </view>
       </view>
 
       <view class='model4_content_text'>
         <view class="model4_is_follow" wx:if="{{item.user_info.is_follow == 1}}">+关注</view>
-        <view class='model4_content_text_all'>查看全部></view>
+        <navigator url="/pages/indexTo/restaurant_food_list/restaurantFood/restaurantFood?id={{item.id}}"
+         class='model4_content_text_all'>查看全部></navigator>
       </view>
     </view>
   </view>
@@ -188,12 +157,12 @@
 <!-- 5.(特殊宠物) start -->
 <template name="model5">
   <navigator 
-    url="/pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail?id={{item.tab_release_info.id}}" class="model5" >
+    url="/pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail?id={{item.id}}" class="model5" >
     <view class="model5_image">
       <image wx:for="{{item.images}}" wx:key="{{item.id}}" src='{{item.imgUrl}}'></image>
     </view>
     <view class='model5_neiro'>
-      <view class='model5_neiro_title'>{{item.tab_release_info.title}}</view>
+      <view class='model5_neiro_title'>{{item.title}}</view>
     </view>
 
     <!-- 信息来源 start -->

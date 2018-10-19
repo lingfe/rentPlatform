@@ -8,5 +8,6 @@
 @import '/assets/wxss/infoSources.wxss';
 
 page{
+  background-color:#eee;
   padding-top: 20rpx;
 }

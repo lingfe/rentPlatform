@@ -3,14 +3,37 @@
 <import src="/assets/wxml/model.wxml" />
 
 <view class='page'>
+  <!-- tab切换  start -->
+  <view class="weui-tab">
+      <!-- 菜单  start -->
+      <view class="weui-navbar" style='column-count: {{tabs_list.length}};'>
+        <view id="-2" 
+          class="weui-navbar__item {{activeIndex == -2 ? 'select_text' : ''}}" 
+          data-name="关注" bindtap="tabClick">
+            关注
+        </view>
+        <view id="-1" 
+          class="weui-navbar__item {{activeIndex == -1 ? 'select_text' : ''}}" 
+          data-name="推荐" bindtap="tabClick">
+            推荐
+        </view>
+        <view id="{{index}}"  wx:for="{{tabs_list}}" wx:key="{{item.id}}"
+          class="weui-navbar__item {{activeIndex == index ? 'select_text' : ''}}" 
+          data-name="{{item.tabs_name}}" bindtap="tabClick">
+            {{item.tabs_name}}
+        </view>
+      </view>
+      <!-- 菜单  end -->
+  </view>
+  <!-- tab切换 end -->
+
   <!-- 头部 start   -->
   <view class="dahuo_top">
-    <navigator url="/pages/dahuo/indexCity/indexCity">
-      <view class="top_left">
-        <text>{{addressInfo}}</text>
+    <view class="top_left" bindtap='getAddress'>
+        <text>{{city}}</text>
         <image src="/assets/images/ico/ico_other/xlcd.png"></image>
-      </view>
-    </navigator>
+    </view>
+
     <view class="top_zho">
       <view class="top_zho_button" bindtap="bindtapButton">
         <view>{{PriceRange[priceIndex]}}</view>
@@ -18,125 +41,26 @@
       <view class="pricesList" wx:if="{{isPrices == true}}">
         <image class="img" src="/assets/images/ico/ico_other/u218.png"></image>
         <view class="bor">
-          <view class="border_bottom" wx:for="{{tabs[0].content}}" wx:key="*this">
-            <view wx:if="{{tabs[0].content[index].minThreshold != 50}}" 
-            class="prices {{index == num ? 'color': ''}}" 
-            bindtap="bindtapPrices" 
-            data-min="{{tabs[0].content[index].minThreshold}}" 
-            data-max="{{tabs[0].content[index].maxThreshold}}" 
-            data-index="{{index}}">
-              <view wx:if="{{tabs[0].content[index].minThreshold == '全部'}}">全部</view>
-              <view wx:else="">{{tabs[0].content[index].minThreshold}} - {{tabs[0].content[index].maxThreshold}} 万</view>
+          <view class="border_bottom" wx:for="{{PriceRange}}" wx:key="{{item}}">
+            <view id="{{index}}" class="prices {{index == priceIndex ? 'color': ''}}" 
+            bindtap="bindtapPrices" >
+              {{item}}
             </view>
-            <view wx:else="{{tabs[0].content[index].minThreshold == 50}}" 
-            class="prices {{index == num ? 'color': ''}}" 
-            bindtap="bindtapPrices" 
-            data-min="{{tabs[0].content[index].minThreshold}}" 
-            data-max="{{tabs[0].content[index].maxThreshold}}" data-index="{{index}}">
-              50万+</view>
           </view>
         </view>
       </view>
     </view>
     <view class="top_right" bindtap="bindtapScreen">
-      筛选
+      筛选>
     </view>
   </view>
   <!-- 头部 end  -->
 
   <!-- 内容 model  start -->
   <view class='page_model'>
-    <view wx:for="{{lists}}" wx:key="{{item.model}}">
+    <view wx:for="{{lists}}"  wx:key="{{item.model}}">
       <template is="model{{item.model}}" data="{{item}}" />
     </view>
   </view>
   <!-- 内容 model  end -->
 </view>
-
-<!-- 筛选   start-->
-<view style="display: {{screen == false ? 'none' : 'block' }};" class="page pageScreen">
-  <view class="scressClose" bindtap="bindtapScreen"></view>
-  <view class="page_bd page__bdScreen">
-    <view class="weui-tab">
-      <!-- tab菜单  start -->
-      <view class="www">
-        <block wx:for="{{tabs}}" wx:key="*this">
-          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? ' border_tab' : 'stop_title'}}" bindtap="tabClick">
-            <view class="weui-navbar__title stop_1">{{item.name}}</view>
-          </view>
-        </block>
-      </view>
-      <!-- tab菜单  end -->
-      <view class="ccc">
-        <!-- 金额  start -->
-        <view class="" hidden="{{activeIndex != 0}}">
-          <checkbox-group data-index="{{activeIndex}}">
-            <label wx:for="{{tabs[activeIndex].content}}" bindtap='clearBtn_to' data-value='{{item.minThreshold}}' data-index='{{index}}' data-name="AmountOfMoney" wx:key="{{item.name}}">
-              <view class="weui-navbar__item stop">
-                <view wx:if="{{item.minThreshold == 50}}" class="weui-navbar__title stop_1 flaot_left">
-                  50万+
-                </view>
-                <view wx:else="{{item.minThreshold != 50}}" class="weui-navbar__title stop_1 flaot_left">
-                  <view wx:if="{{tabs[0].content[index].minThreshold == '全部'}}">全部</view>
-                  <view wx:else="">{{tabs[0].content[index].minThreshold}} - {{tabs[0].content[index].maxThreshold}} 万</view>
-                </view>
-                <view class="flaot_right" wx:if="{{item.checked}}">
-                  <image class="img_wh" src="/images/ttt.png" />
-                </view>
-              </view>
-            </label>
-          </checkbox-group>
-        </view>
-        <!-- 金额  end -->
-
-        <!-- 类型  start -->
-        <view class="" hidden="{{activeIndex != 1}}">
-          <checkbox-group style="overflow:scroll;height:515px;" data-index="{{activeIndex}}">
-            <label wx:for="{{tabs[activeIndex].content}}" bindtap='clearBtn_to' data-value='{{item.name}}' data-index='{{index}}' data-name="in_releaseType" wx:key="{{item.name}}">
-              <view class="weui-navbar__item stop">
-                <view class="weui-navbar__title stop_1 flaot_left">{{item.name}}</view>
-                <view class="flaot_right" wx:if="{{item.checked}}">
-                  <text class='type_text'>{{item.notype}}</text>
-                  <image class="img_wh" src="/images/ttt.png" />
-                </view>
-              </view>
-            </label>
-          </checkbox-group>
-        </view>
-        <!-- 类型  end -->
-
-        <!-- 行业  start -->
-        <view class="" hidden="{{activeIndex != 2}}">
-          <checkbox-group style="overflow:scroll;max-height:515px;" data-index="{{activeIndex}}">
-            <label wx:for="{{tabs[activeIndex].content}}" bindtap='clearBtn_to' data-value='{{item.name}}' data-index='{{index}}' data-name="in_industryChoice" wx:key="{{item.name}}">
-              <view class="weui-navbar__item stop">
-                <view class="weui-navbar__title stop_1 flaot_left">{{item.name}}</view>
-                <view class="flaot_right" wx:if="{{item.checked}}">
-                  <image class="img_wh" src="/images/ttt.png" />
-                  <!-- <icon class="weui-icon-radio" type="success_no_circle"  color="#14BAC8" size="16"></icon> -->
-                </view>
-              </view>
-            </label>
-
-            <label>
-              <view class="weui-navbar__item stop">
-                <checkbox class="weui-check" />
-                <view class="weui-navbar__title stop_1 flaot_left"></view>
-              </view>
-            </label>
-          </checkbox-group>
-        </view>
-        <!-- 行业  end -->
-      </view>
-      <view class="botton_view">
-        <!-- 操作  start -->
-        <view class="operation">
-          <view class="operation_close" bindtap="bindtapReset">重置</view>
-          <view class="operation_ok" bindtap="bindtapOk">确定</view>
-        </view>
-        <!-- 操作  end -->
-      </view>
-    </view>
-  </view>
-</view>
-<!-- 筛选   end-->

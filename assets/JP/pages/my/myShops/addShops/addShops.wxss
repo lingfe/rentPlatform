@@ -1,7 +1,7 @@
 /* pages/my/myShops/addShops/addShops.wxss */
 
 @import '/pages/indexTo/admissionApply/applyMerchant/applyMerchant.wxss';
-@import '/pages/indexTo/restaurantFood/restaurantFood.wxss';
+@import '/pages/indexTo/restaurant_food_list/restaurantFood/restaurantFood.wxss';
 /*选择图片*/
 @import '/assets/wxss/select_pricture.wxss';
 

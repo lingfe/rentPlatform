@@ -36,8 +36,9 @@
   width: 100%;
 }
 .pro_shopIntroduce_images image{
-  width: 33%;
+  width: 30%;
   height: 220rpx;
+  margin-left: 3%;
 }
 .pro_shopIntroduce_text{
   width: 100%;

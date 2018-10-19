@@ -10,7 +10,7 @@ export default {
   //basePath_web: 'http://web.echsoft.cn/',
   //basePath_sys: 'http://sys.echsoft.cn/',
   dszjPath_web:'http://120.78.13.232/',
-  zberPath_web:"http://192.168.1.106:8080/",
+  zberPath_web:"http://10.0.0.12:8080/",
 
 
   // 上传图片地址   

@@ -126,15 +126,27 @@
 
             <!-- 商铺商品 start -->
             <view class='nav_right'>
-              <view  class="for_block" wx:if="{{shops_commodity_list.length!=0}}">
-                <block wx:for="{{shops_commodity_list}}" 
+              <view  class="for_block" wx:if="{{commodity_list.length != 0}}">
+                <block wx:for="{{commodity_list}}" 
                 wx:key="{{item.id}}">
                   <view bindtap='commodityBtn' id="{{item.id}}" class="nav_right_items">
-                      <image src="{{item.img}}"></image>
+                      <view class='nav_right_items_jia'>+</view>
+                      <image  src="{{item.img}}"></image>
                       <view class='nav_right_items_param'>
                         <view class='nav_right_items_title'>{{item.commodityName}}</view>
-                        <view class='nav_right_items_price'>￥36</view>
-                        <view class='nav_right_items_jia'>+</view>
+                        <view class='nav_right_items_price'>
+                          <view class='nav_right_items_price_param'>
+                            ￥<text class='red'>{{item.price.present_price}}</text>
+                            /{{item.price.price_company}}
+                          </view>
+                          <view class='nav_right_items_price_param'>
+                            <text class='red'>{{item.like_num}}</text>
+                            次转发
+                          </view>
+                          <view class='nav_right_items_price_param'>
+                            <text class='red'>{{item.share_num}}</text>人喜欢
+                          </view>
+                        </view>
                       </view>
                   </view>
                 </block>
@@ -150,7 +162,7 @@
 
             <!-- 编辑商铺商品  -->
             <navigator wx:if="{{commodity_id}}"
-             url="{{navigator.commodity_edit}}?id={{commodity_id}}"
+             url="{{navigator.commodity_edit}}?id={{commodity_id}}&shops_id={{basicInfo.id}}"
              class='botton_creator edit'>edit</navigator>
 
             <!-- 添加商铺商品  -->
@@ -165,10 +177,6 @@
 
           <!-- 评论 start  -->
           <!-- 评价 end -->
-
-          <!-- 底部 start -->
-          <template is="bottom" data="{{ax}}" />
-          <!-- 底部 end -->
         </view>
       </view>
       <!-- 预览效果 end -->
@@ -194,7 +202,8 @@
                   </view>
                   <!-- 选择图片  start -->
                   <view class="weui-uploader__bd">
-                          <view class="weui-uploader__files" id="uploaderFiles">
+                          <view  wx:if="{{basicInfo.logo != null}}"
+                           class="weui-uploader__files" id="uploaderFiles">
                             <block>
                               <view class="weui-uploader__file" 
                               bindlongtap="previewImage" id="{{basicInfo.logo}}">
@@ -206,8 +215,7 @@
                               </view>
                             </block>
                           </view>
-                          <view class="weui-uploader__input-box" bindtap="chooseImage"
-                          wx:if="{{basicInfo.logo == null}}">+</view>
+                          <view class="weui-uploader__input-box" bindtap="chooseImage">+</view>
                   </view>
                   <!-- 选择图片  end -->
                 </view>
@@ -295,7 +303,7 @@
               <!-- 提交审核 start -->
               <view class="page_btn">
                 <button class="page_btn_button" formType="submit">
-                {{ basicInfo ==null?'保存':'编辑'}}
+                {{ basicInfo.id ==null?'保存':'编辑'}}
                 </button>
               </view>
               <!-- 提交审核  end -->
@@ -335,4 +343,8 @@
       <!-- 块 end-->
     </view>
     <!-- 内容  start-->
+
+    <!-- 底部 start -->
+    <template is="bottom_model1" data="{{ax}}" />
+    <!-- 底部 end -->
 </view>

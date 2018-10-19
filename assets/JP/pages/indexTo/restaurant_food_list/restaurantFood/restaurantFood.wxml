@@ -59,21 +59,34 @@
             <view class="nav_left">
               <block wx:for="{{basicInfo.shopsChooseType_tabs_list}}" wx:key="{{item.id}}">
                 <view class="nav_left_items {{activeIndex_to == index ? 'active' : ''}}" 
-                bindtap="switchRightTab"  id="{{index}}">{{item.tabs_name}}</view>
+                bindtap="switchRightTab"  id="{{item.id}}" data-index="{{index}}">{{item.tabs_name}}</view>
               </block>
             </view>
             <!-- 商铺选购分类tabs菜单 end -->
 
             <!-- 商铺商品 start -->
             <view class='nav_right'>
-              <view  class="for_block" wx:if="{{shops_commodity_list.length!=0}}">
-                <block wx:for="{{shops_commodity_list}}" 
+              <view  class="for_block" wx:if="{{commodity_list.length!=0}}">
+                <block wx:for="{{commodity_list}}" 
                 wx:key="{{item.id}}">
                   <view class="nav_right_items">
+                      <view class='nav_right_items_jia'>+</view>
                       <image src="{{item.img}}"></image>
                       <view class='nav_right_items_param'>
                         <view class='nav_right_items_title'>{{item.commodityName}}</view>
-                        <view class='nav_right_items_jia'>+</view>
+                        <view class='nav_right_items_price'>
+                          <view class='nav_right_items_price_param'>
+                            ￥<text class='red'>{{item.price.present_price}}</text>
+                            /{{item.price.price_company}}
+                          </view>
+                          <view class='nav_right_items_price_param'>
+                            <text class='red'>{{item.like_num}}</text>
+                            次转发
+                          </view>
+                          <view class='nav_right_items_price_param'>
+                            <text class='red'>{{item.share_num}}</text>人喜欢
+                          </view>
+                        </view>
                       </view>
                   </view>
                 </block>

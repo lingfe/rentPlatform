@@ -1,4 +1,7 @@
 // pages/my/myShops/addShops/addShops.js
+var navigatorData = require('../../../../assets/localData/navigatorData');
+var shopsDetailsData = require('../../../../assets/localData/shopsDetailsData');
+
 var app=getApp();
 Page({
 
@@ -6,99 +9,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    city: wx.getStorageSync("city"),
     tabs: ["预览","基本信息","其他导航菜单内容说明"],
-    tab_index: 0,
+    tab_index: 1,
     activeIndex: -1,         //tab切换下标   
     activeIndex_to:-1,
 
     ax: 1,
     jia:"+",
-
-    //商铺选购分类tabs菜单
-    shopsChooseType_tabs_list: [
-      {
-        id: 1,
-        tabs_name:"测试数据"
-      },
-      {
-        id: 2,
-        tabs_name: "测试数据"
-      }
-    ],
-
-    //商铺商品
-    shops_commodity_list: [{
-      img: "https://p0.meituan.net/deal/3f47cdea4688224ddc30a1047e87472b93015.jpg",
-      commodityName: "测试测试测试测试测试测试测试测试测试测试测试测试",
-    }],
-
-    //用户信息
-    user_info: {
-      avatar: "/assets/images/ico/ico_menu/icon_01.png",
-      username: "lingfe",
-    },
-
-    //标签
-    lable_list: ["1人喜欢", "0次浏览", "0次转发"],
-
-    //tabs内容菜单导航
-    info: [],
-
-    //基本信息
-    basicInfo: {
-      logo: "http://108108byg.com/uploads/allimg/180202/3-1P202210558.jpg",
-      shopsName: "测试名称测试名称测试名称",
-      address: "测试地址测试地址测试地址测试地址测试地址",
-      businessHours: "测试:09:00-19:00",
-      contactNumber: "测试:08787-83573472",
-      images: [
-          "http://108108byg.com/skin/images/logo.png",
-          "http://108108byg.com/skin/images/logo.png",
-          "http://108108byg.com/skin/images/logo.png",
-          "http://108108byg.com/skin/images/logo.png"
-        ]
-    },
-
+    arr: [],  //选择图片的数组，预留。不包含编辑之前的数据，用于组装
     //布局说明
-    bujusming_list: [{
-      "title": "title表示标题,这是标题部分",
-      "content": "content表示内容,如:八月瓜产地分布于山西、湖南、河南、陕西、安徽、浙江、江西、福建、湖北、广东、广西、四川、重庆、云南、贵州、西藏等地，其中以贵州铜仁、湖南张家界天子山景区居多，农历八月瓜熟开口，索溪峪、杨家界等山麓谷地、林缘灌木丛中野生资源丰富，为上乘野果。",
-      "img": "http://108108byg.com/uploads/allimg/180202/3-1P202210558.jpg",
-      "text": "img图片,这是图片说明",
-      "content_Bold": "这里的内容加粗了，content_Bold",
-    },{
-        "content_Bold": "这里另外一个item，这里的内容也加粗了，content_Bold",
-    }],
-
-
-    //基本信息
-    form: {
-      shopsName: null,//商铺名称
-      contactNumber: null,//联系电话
-      address: null,//详细地址
-      businessHours:null,//营业时间
-
-      logo: null,//上传商铺logo或门面照片
-      position_info: null,//位置信息
-      city: wx.getStorageSync("city"),//城市
-      images: [],//上传门店内外周边环境照片
-      creator: wx.getStorageSync("openid"),//申请者
-    },
-    arr: [],                              //选择图片的数组，预留。不包含编辑之前的数据，用于组装
-   
+    bujusming_list:app.localData.bujusming_list,
     //跳转url
-    navigator:{
-      add_shopsChooseType_tabs:
-      "/pages/my/myShops/addShops/add_shopsChooseType_tabs/add_shopsChooseType_tabs",
-      edit_shopsChooseType_tabs:
-      "/pages/my/myShops/addShops/edit_shopsChooseType_tabs/edit_shopsChooseType_tabs",
-      add_tabs:"/pages/my/myShops/addShops/add_tabs/add_tabs",
-      edit_tabs: "/pages/my/myShops/addShops/edit_tabs/edit_tabs",
-      add_commodity:"/pages/my/myShops/addShops/add_commodity/add_commodity",
-      add_shops_price:"/pages/my/myShops/addShops/add_shops_price/add_shops_price",
-      commodity_edit:"/pages/my/myShops/addShops/commodity_edit/commodity_edit",
-    }
+    navigator: navigatorData.navigator,
   },
 
   /**
@@ -108,16 +30,52 @@ Page({
     var that = this;
     if(!app.checkInput(options.id)){
       //根据商铺id得到商铺详情
-      that.getWhereId(options.id);
-      //根据shops_id得到商铺选购分类tabs集合
-      that.getWhereShopsId(options.id);
-      //根据商铺id得到tabs导航菜单
-      that.getWhereShopsId_tabsList(options.id);
+      that.getWhereId_detail(options.id);
+    }else{
+      //得到本地数据
+      that.setData({
+        commodity_list:[],
+        //标签
+        lable_list: shopsDetailsData.basicInfo.lable_list,
+        //表单
+        form: shopsDetailsData.form,
+      });
     }
     //得到用户信息
     that.setData({
       id:options.id,
       user_info: wx.getStorageSync("userInfo")
+    })
+  },
+
+  //根据商铺id得到商铺详情
+  getWhereId_detail: function (id) {
+    var that=this;
+    wx.request({
+      url: app.config.zberPath_web + 'zber_sys/apply_shops/getWhereId_detail',
+      method: "get",
+      data: {
+        id: id,
+        openid: wx.getStorageSync("openid")
+      },
+      success: function (res) {
+        if (res.data.state = 200) {
+          that.setData({
+            //标签
+            lable_list: res.data.data.lable_list,
+            //用户信息
+            user_info: res.data.data.user_info,
+            //tabs导航菜单
+            info: res.data.data.tabs_list,
+            //选购tabs分类菜单
+            shopsChooseType_tabs_list: res.data.data.shopsChooseType_tabs_list,
+            //推荐商品
+            commodity_list: res.data.data.commodity_list,
+            //基本信息
+            basicInfo: res.data.data
+          });
+        }
+      }
     })
   },
 
@@ -239,31 +197,6 @@ Page({
     });
   },
 
-  //根据商铺id得到商铺详情
-  getWhereId:function(id){
-    var that=this;
-    wx.request({
-      url: app.config.zberPath_web + 'zber_sys/apply_shops/getWhereId',
-      method: "POST",
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      data: {
-        id:id
-      },
-      success: function (res) {
-        console.log(res);
-        if (res.data.state == 200) {
-          that.setData({
-            basicInfo:res.data.data
-          });
-        }else{
-          app.showModal(res.data.msg);
-        }
-      }
-    });
-  },
-
   //表单提交
   bindFormSubmit: function (e) {
     var that = this;
@@ -352,7 +285,7 @@ Page({
       success:function(res){
         console.log(res);
         that.setData({
-          shops_commodity_list:res.data.data
+          commodity_list:res.data.data
         });
       }
     })

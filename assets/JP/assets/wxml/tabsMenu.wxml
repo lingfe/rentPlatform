@@ -30,7 +30,7 @@
 <template name="tabsMenu_model1">
   <view class="weui-tab">
       <!-- 菜单  start -->
-      <view class="weui-navbar" style='column-count: {{info.length}};'>
+      <view class="weui-navbar" style='column-count: {{tabs_list.length}};'>
         <view id="-1" 
           class="weui-navbar__item {{activeIndex == -1 ? 'select_text' : ''}}" 
           data-name="{{item.tabs_name}}" bindtap="tabClick">
@@ -41,7 +41,7 @@
           data-name="{{item.tabs_name}}" bindtap="tabClick">
             基本信息
         </view>
-        <view id="{{index}}"  wx:for="{{info}}" wx:key="*this"
+        <view id="{{index}}"  wx:for="{{tabs_list}}" wx:key="{{item.id}}"
           class="weui-navbar__item {{activeIndex == index ? 'select_text' : ''}}" 
           data-name="{{item.tabs_name}}" bindtap="tabClick">
             {{item.tabs_name}}

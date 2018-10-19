@@ -86,3 +86,7 @@ page {
   width: 100%;
   background-color: #eee;
 }
+
+.red{
+  color: red;
+}

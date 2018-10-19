@@ -34,7 +34,7 @@ Page({
         console.log(res);
         if(res.data.state == 200){
           that.setData({
-            release_list: res.data.data.release_info_list
+            lists: res.data.data.lists
           });
         }else{
           app.showModel(res.data.msg);

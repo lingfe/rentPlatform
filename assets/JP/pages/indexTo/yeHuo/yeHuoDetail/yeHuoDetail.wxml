@@ -31,7 +31,7 @@
   <!-- 参数 end -->
 
   <!-- 信息来源  start -->
-  <template is="infoSources" data="{{...releaseInfo}}" />
+  <template is="infoSources" data="{{...releaseInfo,user_follow}}" />
   <!-- 信息来源  end -->
 
   <!-- tab切换  start -->

@@ -1,5 +1,8 @@
 /* pages/indexTo/admissionApply/admissionApply.wxss */
 
+page{
+  background-color:#eee;
+}
 
  .find_img{
    width: 100%;
